@@ -14,7 +14,7 @@ elif [ $version -eq 8 ]; then
     
 else
     ##Are we on Ubuntu?
-    version2=`sed 'lsb_release -a | grep Release: | cut -c 10-`
+    version2=`sed lsb_release -a | grep Release: | cut -c 10-`
     if [ $version2 -eq 18.04 ]; then 
         version_msg="Raspian 9.0 (Stretch)" 
         php_package="php7.0-cgi" 
