@@ -15,7 +15,6 @@ elif [ $version -eq 8 ]; then
 else
     ##Are we on Ubuntu?
     version2=`lsb_release -a | grep Release: | cut -c 10-11`
-    echo $version2
     if [ $version2 -eq 18 ]; then 
         version_msg="Ubuntu 18 (Bionic)" 
         php_package="php7.0-cgi" 
