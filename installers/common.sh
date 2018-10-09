@@ -17,7 +17,7 @@ else
     version2=`lsb_release -a | grep Release: | cut -c 10-11`
     if [ $version2 -eq 18 ]; then 
         version_msg="Ubuntu 18 (Bionic)" 
-        php_package="php7.0-cgi" 
+        php_package="php" 
     else
         version_msg="Raspian earlier than 8.0 (Wheezy)"
         webroot_dir="/var/www" 
@@ -28,6 +28,8 @@ fi
 phpcgiconf=""
 if [ "$php_package" = "php7.0-cgi" ]; then
     phpcgiconf="/etc/php/7.0/cgi/php.ini"
+elif [ "$php_package" = "php" ]; then
+    phpcgiconf="/etc/php/7.2/cgi/php.ini"
 elif [ "$php_package" = "php5-cgi" ]; then
     phpcgiconf="/etc/php5/cgi/php.ini"
 fi
