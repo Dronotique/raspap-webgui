@@ -11,10 +11,18 @@ if [ $version -eq 9 ]; then
 elif [ $version -eq 8 ]; then 
     version_msg="Raspian 8.0 (Jessie)" 
     php_package="php5-cgi" 
-else 
-    version_msg="Raspian earlier than 8.0 (Wheezy)"
-    webroot_dir="/var/www" 
-    php_package="php5-cgi" 
+    
+else
+    ##Are we on Ubuntu?
+    version2=`sed 'lsb_release -a | grep Release: | cut -c 10-`
+    if [ $version2 -eq 18.04 ]; then 
+        version_msg="Raspian 9.0 (Stretch)" 
+        php_package="php7.0-cgi" 
+    else
+        version_msg="Raspian earlier than 8.0 (Wheezy)"
+        webroot_dir="/var/www" 
+        php_package="php5-cgi" 
+    fi
 fi
 
 phpcgiconf=""
