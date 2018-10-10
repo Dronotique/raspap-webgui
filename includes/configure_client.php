@@ -54,6 +54,7 @@ function DisplayWPAConfig(){
     if ($wpa_file = fopen('/tmp/wifidata', 'w')) {
       fwrite($wpa_file, 'ctrl_interface=DIR=' . RASPI_WPA_CTRL_INTERFACE . ' GROUP=netdev' . PHP_EOL);
       fwrite($wpa_file, 'update_config=1' . PHP_EOL);
+      fwrite($wpa_file, 'country=' . RASPI_WIFI_COUNTRY_CODE . PHP_EOL);
 
       foreach(array_keys($_POST) as $post) {
         if (preg_match('/delete(\d+)/', $post, $post_match)) {
