@@ -4,8 +4,7 @@ define('RASPI_VERSION', '1.3.1');
 define('RASPI_CONFIG', '/etc/raspap');
 define('RASPI_CONFIG_NETWORKING',RASPI_CONFIG.'/networking');
 define('RASPI_ADMIN_DETAILS', RASPI_CONFIG.'/raspap.auth');
-#define('RASPI_WIFI_CLIENT_INTERFACE', 'wlan0');
-define('RASPI_WIFI_CLIENT_INTERFACE', 'wlan0_station');
+define('RASPI_WIFI_CLIENT_INTERFACE', 'wlan0');
 
 
 // Constants for configuration file paths.
@@ -13,8 +12,7 @@ define('RASPI_WIFI_CLIENT_INTERFACE', 'wlan0_station');
 define('RASPI_DNSMASQ_CONFIG', '/etc/dnsmasq.conf');
 define('RASPI_DNSMASQ_LEASES', '/var/lib/misc/dnsmasq.leases');
 define('RASPI_HOSTAPD_CONFIG', '/etc/hostapd/hostapd.conf');
-#define('RASPI_WPA_SUPPLICANT_CONFIG', '/etc/wpa_supplicant/wpa_supplicant.conf');
-define('RASPI_WPA_SUPPLICANT_CONFIG', '/etc/wpa_supplicant/wpa_supplicant-wlan0_station.conf');
+define('RASPI_WPA_SUPPLICANT_CONFIG', '/etc/wpa_supplicant/wpa_supplicant.conf');
 define('RASPI_HOSTAPD_CTRL_INTERFACE', '/var/run/hostapd');
 define('RASPI_WPA_CTRL_INTERFACE', '/var/run/wpa_supplicant');
 define('RASPI_OPENVPN_CLIENT_CONFIG', '/etc/openvpn/client.conf');
