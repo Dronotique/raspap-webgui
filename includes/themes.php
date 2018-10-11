@@ -8,6 +8,7 @@ function DisplayThemeConfig(){
   $cselected = '';
   $hselected = '';
   $tselected = '';
+  $aselected = '';
 
   switch( $_COOKIE['theme'] ) {
     case "custom.css":
@@ -17,8 +18,11 @@ function DisplayThemeConfig(){
       $hselected = ' selected="selected"';
       break;
     case "terminal.css":
-      $tselected = ' selected="selected"';
-      break;
+        $tselected = ' selected="selected"';
+        break;
+    case "alfonce.css":
+        $aselected = ' selected="selected"';
+        break;
   }
 
   ?>
@@ -38,6 +42,7 @@ function DisplayThemeConfig(){
             <label for="code"><?php echo _("Select a theme"); ?></label>  
               <select class="form-control" id="theme-select"><?php echo _("Select a Theme"); ?>
                 <option value="default" class="theme-link"<?php echo $cselected; ?>>RaspAP (default)</option>
+                <option value="alfonce" class="theme-link"<?php echo $aselected; ?>>Alfonce</option>
                 <option value="hackernews" class="theme-link"<?php echo $hselected; ?>>HackerNews</option>
                 <option value="terminal" class="theme-link"<?php echo $tselected; ?>>Terminal</option>
               </select>

@@ -19,10 +19,7 @@ function DisplayUpdate(){
           $uploaddir = '/var/www/uploads/';
           $uploadfile = $uploaddir . basename($_FILES['UpdateFirmwareFile']['name']);
           if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
-              $status->addMessage('File uploaded', 'info');
-              
-              
-              
+              $status->addMessage('File uploaded - You need to restart the module', 'info');
           } else {
               $status->addMessage('File uploaded error', 'danger');
           }

@@ -21,6 +21,7 @@ function setCookie(cname, cvalue, exdays) {
 
 var themes = {
     "default": "custom.css",
+    "alfonce": "alfonce.css",
     "hackernews" : "hackernews.css",
     "terminal" : "terminal.css",
 }
