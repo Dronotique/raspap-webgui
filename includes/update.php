@@ -15,11 +15,14 @@ function DisplayUpdate(){
       if($_FILES['UpdateFirmware']['error'] != ""){
           $status->addMessage($_FILES['UpdateFirmware']['error'] , 'danger');
       }else{
-          error_reporting(-1);
+          //error_reporting(-1);
           $uploaddir = '/var/www/uploads/';
           $uploadfile = $uploaddir . basename($_FILES['UpdateFirmwareFile']['name']);
           if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
               $status->addMessage('File uploaded', 'info');
+              
+              
+              
           } else {
               $status->addMessage('File uploaded error', 'danger');
           }
@@ -37,7 +40,7 @@ function DisplayUpdate(){
           <p><?php $status->showMessages(); ?></p>
           <form role="form" action="?page=update" method="POST" enctype="multipart/form-data">
             <?php CSRFToken() ?>
-            <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
             <div class="row">
                   <div class="form-group col-md-4">
             		<input type="submit" class="btn btn-outline btn-primary" name="UpdateWebUI" value="<?php echo _("Update Web UI"); ?>" />
