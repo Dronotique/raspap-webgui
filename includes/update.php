@@ -7,7 +7,7 @@ function DisplayUpdate(){
   
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
       exec( '(cd /var/www/html/ && sudo git pull)' );
-  }
+  } 
   
   
   ?>
