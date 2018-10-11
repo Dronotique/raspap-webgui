@@ -12,13 +12,17 @@ function DisplayUpdate(){
   }
   
   if ( isset($_POST['UpdateFirmware']) && CSRFValidate() ) {
-      error_reporting(-1);
-      $uploaddir = '/var/www/uploads/';
-      $uploadfile = $uploaddir . basename($_FILES['UpdateFirmwareFile']['name']);
-      if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
-          $status->addMessage('File uploaded', 'info');
-      } else {
-          $status->addMessage('File uploaded error', 'error');
+      if($_FILES['UpdateFirmware']['error'] != ""){
+          $status->addMessage($_FILES['UpdateFirmware']['error'] , 'danger');
+      }else{
+          error_reporting(-1);
+          $uploaddir = '/var/www/uploads/';
+          $uploadfile = $uploaddir . basename($_FILES['UpdateFirmwareFile']['name']);
+          if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
+              $status->addMessage('File uploaded', 'info');
+          } else {
+              $status->addMessage('File uploaded error', 'danger');
+          }
       }
   }
   
