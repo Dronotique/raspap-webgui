@@ -7,7 +7,9 @@ function DisplayUpdate(){
   
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
       exec( '(cd /var/www/html/ && sudo git pull)', $update_git );
-      echo("<!--  $update_git -->");
+      foreach( $update_git as $line ) {
+          echo("<!--  $line -->");
+      }
   } else{
       echo("<!--  pas de demande de MAJ GIT -->");
   }
