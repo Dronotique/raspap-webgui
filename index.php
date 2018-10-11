@@ -49,7 +49,7 @@ if (empty($_SESSION['csrf_token'])) {
 $csrf_token = $_SESSION['csrf_token'];
 
 if(!isset($_COOKIE['theme'])) {
-    $theme = "custom.css";
+    $theme = "alfonce.css";
 } else {
     $theme = $_COOKIE['theme'];
 }
