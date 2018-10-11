@@ -68,11 +68,16 @@ Add the following to the end of  `/etc/sudoers`:
 ```sh
 www-data ALL=(ALL) NOPASSWD:/sbin/ifdown wlan0
 www-data ALL=(ALL) NOPASSWD:/sbin/ifup wlan0
+www-data ALL=(ALL) NOPASSWD:/sbin/ifdown wlan1
+www-data ALL=(ALL) NOPASSWD:/sbin/ifup wlan1
 www-data ALL=(ALL) NOPASSWD:/bin/cat /etc/wpa_supplicant/wpa_supplicant.conf
 www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/wifidata /etc/wpa_supplicant/wpa_supplicant.conf
 www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli scan_results
 www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli scan
 www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli reconfigure
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan1 scan_results
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan1 scan
+www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan1 reconfigure
 www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/hostapddata /etc/hostapd/hostapd.conf
 www-data ALL=(ALL) NOPASSWD:/etc/init.d/hostapd start
 www-data ALL=(ALL) NOPASSWD:/etc/init.d/hostapd stop
@@ -83,7 +88,10 @@ www-data ALL=(ALL) NOPASSWD:/sbin/shutdown -h now
 www-data ALL=(ALL) NOPASSWD:/sbin/reboot
 www-data ALL=(ALL) NOPASSWD:/sbin/ip link set wlan0 down
 www-data ALL=(ALL) NOPASSWD:/sbin/ip link set wlan0 up
+www-data ALL=(ALL) NOPASSWD:/sbin/ip link set wlan1 down
+www-data ALL=(ALL) NOPASSWD:/sbin/ip link set wlan1 up
 www-data ALL=(ALL) NOPASSWD:/sbin/ip -s a f label wlan0
+www-data ALL=(ALL) NOPASSWD:/sbin/ip -s a f label wlan1
 www-data ALL=(ALL) NOPASSWD:/bin/cp /etc/raspap/networking/dhcpcd.conf /etc/dhcpcd.conf
 www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/enablelog.sh
 www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/disablelog.sh
