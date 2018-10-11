@@ -13,7 +13,7 @@ function DisplayUpdate(){
   
   if ( isset($_POST['UpdateFirmware']) && CSRFValidate() ) {
       $uploaddir = '/var/www/uploads/';
-      $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+      $uploadfile = $uploaddir . basename($_FILES['UpdateFirmwareFile']['name']);
       if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
           $status->addMessage('File uploaded', 'info');
       } else {
