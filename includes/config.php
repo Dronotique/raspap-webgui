@@ -28,6 +28,8 @@ define('RASPI_TORPROXY_ENABLED', false );
 define('RASPI_CONFAUTH_ENABLED', true );
 define('RASPI_CHANGETHEME_ENABLED', true );
 define('RASPI_VNSTAT_ENABLED', true );
+define('RASPI_UPDATE_ENABLED', true );
+
 
 // Locale settings
 define('LOCALE_ROOT', 'locale');

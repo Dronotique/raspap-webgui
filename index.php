@@ -14,7 +14,7 @@
  * @author     Bill Zimmerman <billzimmerman@gmail.com>
  * @license    GNU General Public License, version 3 (GPL-3.0)
  * @version    1.3.1
- * @link       https://github.com/billz/raspap-webgui
+ * @link       https://github.com/Dronotique/raspap-webgui
  * @see        http://sirlagz.net/2013/02/08/raspap-webgui/
  */
 
@@ -163,7 +163,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
               <?php endif; ?>
               <?php if ( RASPI_UPDATE_ENABLED ) : ?>
               <li>
-                <a href="index.php?page=update"><i class="fa fa-bar-chart fa-fw"></i> <?php echo _("Update"); ?></a>
+                <a href="index.php?page=update"><i class="fa fa-upload fa-fw"></i> <?php echo _("Update"); ?></a>
               </li>
               <?php endif; ?>
               <li>
