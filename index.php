@@ -117,7 +117,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
           <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
               <li>
-                <a href="index.php?page=wlan0_info"><i class="fa fa-dashboard fa-fw"></i> <?php echo _("Dashboard"); ?></a>
+                <a href="index.php?page=wlan0_info"><i class="fa fa-dashboard fa-fw"></i> <?php echo _("Wifi Client Dashboard"); ?></a>
               </li>
               <li>
                 <a href="index.php?page=wpa_conf"><i class="fa fa-signal fa-fw"></i> <?php echo _("Configure WiFi client"); ?></a>

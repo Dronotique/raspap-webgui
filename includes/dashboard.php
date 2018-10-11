@@ -77,7 +77,7 @@ function DisplayDashboard(){
   <div class="row">
       <div class="col-lg-12">
           <div class="panel panel-primary">
-            <div class="panel-heading"><i class="fa fa-dashboard fa-fw"></i> <?php echo _("Dashboard"); ?></div>
+            <div class="panel-heading"><i class="fa fa-dashboard fa-fw"></i> <?php echo _("Wifi Client Dashboard"); ?></div>
               <div class="panel-body">
                 <p><?php $status->showMessages(); ?></p>
                   <div class="row">
