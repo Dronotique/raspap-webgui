@@ -65,7 +65,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo _("Raspbian WiFi Configuration Portal"); ?></title>
+    <title><?php echo _("Alfonce Remote WiFi Configuration Portal"); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -108,7 +108,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-	  <a class="navbar-brand" href="index.php"><?php echo _("RaspAP Wifi Portal"); ?> v<?php echo RASPI_VERSION; ?></a>
+	  <a class="navbar-brand" href="index.php"><?php echo _("Alfonce Wifi Portal"); ?></a>
         </div>
         <!-- /.navbar-header -->
 
@@ -181,7 +181,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
         <div class="row">
           <div class="col-lg-12">
             <h1 class="page-header">
-              <img class="logo" src="img/raspAP-logo.png" width="45" height="45">RaspAP
+              <img class="logo" src="img/raspAP-logo.png" width="45" height="45">
             </h1>
           </div>
         </div><!-- /.row -->
@@ -268,5 +268,8 @@ foreach ($extraFooterScripts as $script) {
 }
 
 ?>
+	<div class="row">
+	<?php echo _("Created with RaspAP Wifi Portal"); ?> v<?php echo RASPI_VERSION; ?>
+	</div>
   </body>
 </html>
