@@ -41,6 +41,7 @@ function DisplayHostAPDConfig()
       foreach( $return as $line ) {
         $status->addMessage($line, 'info');
       }
+	sleep(3);
     } else {
       error_log('CSRF violation');
     }
