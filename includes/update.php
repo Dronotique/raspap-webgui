@@ -8,14 +8,16 @@ function DisplayUpdate(){
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
       exec( '(cd /var/www/html/ && sudo git pull)', $update_git );
       echo("<!--  $update_git -->");
-  } 
+  } else{
+      echo("<!--  pas de demande de MAJ GIT -->");
+  }
   
   
   ?>
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-primary">
-        <div class="panel-heading"><i class="fa fa-lock fa-fw"></i><?php echo _("Update"); ?></div>
+        <div class="panel-heading"><i class="fa fa-update fa-fw"></i><?php echo _("Update"); ?></div>
         <div class="panel-body">
           <p><?php $status->showMessages(); ?></p>
           <form role="form" action="?page=update" method="POST">
