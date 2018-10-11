@@ -268,7 +268,7 @@ foreach ($extraFooterScripts as $script) {
 }
 
 ?>
-	<div class="row">
+	<div class="col-lg-12">
 	<?php echo _("Created with RaspAP Wifi Portal"); ?> v<?php echo RASPI_VERSION; ?>
 	</div>
   </body>
