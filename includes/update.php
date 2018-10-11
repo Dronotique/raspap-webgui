@@ -11,6 +11,17 @@ function DisplayUpdate(){
       $status->addMessage($last_line, 'info');
   }
   
+  if ( isset($_POST['UpdateFirmware']) && CSRFValidate() ) {
+      $uploaddir = '/var/www/uploads/';
+      $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+      if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
+          $status->addMessage('File uploaded', 'info');
+      } else {
+          $status->addMessage('File uploaded error', 'error');
+      }
+  }
+  
+  
   
   ?>
   <div class="row">
@@ -19,8 +30,9 @@ function DisplayUpdate(){
         <div class="panel-heading"><i class="fa fa-upload fa-fw"></i><?php echo _("Update"); ?></div>
         <div class="panel-body">
           <p><?php $status->showMessages(); ?></p>
-          <form role="form" action="?page=update" method="POST">
+          <form role="form" action="?page=update" method="POST" enctype="multipart/form-data">
             <?php CSRFToken() ?>
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
             <div class="row">
                   <div class="form-group col-md-4">
             		<input type="submit" class="btn btn-outline btn-primary" name="UpdateWebUI" value="<?php echo _("Update Web UI"); ?>" />
