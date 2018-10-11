@@ -108,12 +108,14 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-	  <a class="navbar-brand" href="index.php"><img src="img/raspAP-logo64px.png" width="45" height="45"> <?php echo _("Alfonce Wifi Portal"); ?></a>
+          
+	  <a class="navbar-brand" href="index.php"><?php echo _("Alfonce Wifi Portal"); ?></a>
         </div>
         <!-- /.navbar-header -->
 
         <!-- Navigation -->
         <div class="navbar-default sidebar" role="navigation">
+        	<img src="img/raspAP-logo64px.png" width="45" height="45"> 
           <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
               <li>
