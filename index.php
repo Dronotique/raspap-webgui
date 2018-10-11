@@ -161,6 +161,11 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
                 <a href="index.php?page=data_use"><i class="fa fa-bar-chart fa-fw"></i> <?php echo _("Data usage"); ?></a>
               </li>
               <?php endif; ?>
+              <?php if ( RASPI_UPDATE_ENABLED ) : ?>
+              <li>
+                <a href="index.php?page=update"><i class="fa fa-bar-chart fa-fw"></i> <?php echo _("Update"); ?></a>
+              </li>
+              <?php endif; ?>
               <li>
                 <a href="index.php?page=system_info"><i class="fa fa-cube fa-fw"></i> <?php echo _("System"); ?></a>
               </li>
@@ -220,6 +225,9 @@ $extraFooterScripts = array();
           case "system_info":
             DisplaySystem();
             break;
+          case "update":
+              DisplayUpdate();
+              break;
           default:
             DisplayDashboard();
         }
