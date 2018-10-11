@@ -22,7 +22,7 @@ function DisplayUpdate(){
             <?php CSRFToken() ?>
             <div class="row">
                   <div class="form-group col-md-4">
-                  glglgglglglglgl
+                  totototototototo
             		<input type="submit" class="btn btn-outline btn-primary" name="UpdateWebUI" value="<?php echo _("Update Web UI"); ?>" />
             	</div>	
             </div>
