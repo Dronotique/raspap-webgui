@@ -6,7 +6,6 @@ function DisplayUpdate(){
   $status = new StatusMessages();
   
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
-      exec( 'git config --global user.email "contact@dronotique.fr"', $update_git );
       exec( '(cd /var/www/html/ && sudo git pull 2>&1)', $update_git );
       $last_line = end($update_git);
       $status->addMessage($last_line, 'info');
@@ -24,7 +23,6 @@ function DisplayUpdate(){
             <?php CSRFToken() ?>
             <div class="row">
                   <div class="form-group col-md-4">
-                  totototototototo
             		<input type="submit" class="btn btn-outline btn-primary" name="UpdateWebUI" value="<?php echo _("Update Web UI"); ?>" />
             	</div>	
             </div>
