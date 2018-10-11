@@ -101,6 +101,9 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
     <div id="wrapper">
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+       <div class="navbar-header">
+          <img src="img/raspAP-logo64px.png" width="45" height="45">
+        </div>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -115,7 +118,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
 
         <!-- Navigation -->
         <div class="navbar-default sidebar" role="navigation">
-        	<img src="img/raspAP-logo64px.png" width="45" height="45"> 
+        	 
           <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
               <li>
