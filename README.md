@@ -78,6 +78,7 @@ www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli reconfigure
 www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan1 scan_results
 www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan1 scan
 www-data ALL=(ALL) NOPASSWD:/sbin/wpa_cli -i wlan1 reconfigure
+www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/hostapddata /etc/hostapd.conf
 www-data ALL=(ALL) NOPASSWD:/bin/cp /tmp/hostapddata /etc/hostapd/hostapd.conf
 www-data ALL=(ALL) NOPASSWD:/etc/init.d/hostapd start
 www-data ALL=(ALL) NOPASSWD:/etc/init.d/hostapd stop
