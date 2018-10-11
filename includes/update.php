@@ -6,13 +6,9 @@ function DisplayUpdate(){
   $status = new StatusMessages();
   
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
-      echo("<!--  MAJ GIT -->");
       exec( '(cd /var/www/html/ && sudo git pull 2>&1)', $update_git );
-      foreach( $update_git as $line ) {
-          echo("<!--  $line -->");
-      }
-  } else{
-      echo("<!--  pas de demande de MAJ GIT -->");
+      $last_line = end($update_git);
+      $status->addMessage($last_line, 'info');
   }
   
   
