@@ -6,7 +6,8 @@ function DisplayUpdate(){
   $status = new StatusMessages();
   
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
-      exec( '(cd /var/www/html/ && sudo git pull)' );
+      exec( '(cd /var/www/html/ && sudo git pull)', $update_git );
+      echo("<!--  $update_git -->");
   } 
   
   
