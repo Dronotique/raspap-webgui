@@ -34,6 +34,7 @@ include_once( 'includes/configure_client.php' );
 include_once( 'includes/networking.php' );
 include_once( 'includes/themes.php' );
 include_once( 'includes/data_usage.php' );
+include_once( 'includes/update.php' );
 
 $output = $return = 0;
 $page = $_GET['page'];
