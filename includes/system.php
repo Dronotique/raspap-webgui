@@ -136,6 +136,7 @@ function DisplaySystem(){
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active systemtab"><a href="#system" aria-controls="system" role="tab" data-toggle="tab"><?php echo _("System"); ?></a></li>
     <li role="presentation" class="languagetab"><a href="#language" aria-controls="language" role="tab" data-toggle="tab"><?php echo _("Language"); ?></a></li>
+    <li role="presentation" class="filemanagertab"><a href="#filemanager" aria-controls="filemanager" role="tab" data-toggle="tab"><?php echo _("File manager"); ?></a></li>
     <li role="presentation" class="consoletab"><a href="#console" aria-controls="console" role="tab" data-toggle="tab"><?php echo _("Console"); ?></a></li>
   </ul>
 
@@ -185,6 +186,15 @@ function DisplaySystem(){
       <input type="submit" class="btn btn-outline btn-primary" name="SaveLanguage" value="<?php echo _("Save settings"); ?>" />
       <input type="button" class="btn btn-outline btn-primary" value="<?php echo _("Refresh"); ?>" onclick="document.location.reload(true)" />
     </div>
+	
+	<div role="tabpanel" class="tab-pane" id="filemanager">
+      <div class="row">
+        <div class="col-lg-12"> 
+          <iframe src="includes/tinyfilemanager.php" class="webconsole"></iframe>
+        </div>
+      </div>
+    </div>
+
 
     <div role="tabpanel" class="tab-pane" id="console">
       <div class="row">
