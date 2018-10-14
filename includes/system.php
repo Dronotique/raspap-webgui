@@ -190,12 +190,10 @@ function DisplaySystem(){
 	<div role="tabpanel" class="tab-pane" id="filemanager">
       <div class="row">
         <div class="col-lg-12"> 
-          <iframe src="includes/tinyfilemanager.php" class="webconsole"></iframe>
+          <iframe src="includes/tinyfilemanager.php" class="filemanager"></iframe>
         </div>
       </div>
     </div>
-
-
     <div role="tabpanel" class="tab-pane" id="console">
       <div class="row">
         <div class="col-lg-12"> 
