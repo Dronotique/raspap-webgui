@@ -79,10 +79,10 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
 ?>
                 		</td>
                 		<td>
-                			<?php echo($currentConnexions[$i][1]); ?>	
+                			<?php echo($currentConnexions[$i]['host']); ?>	
                 		</td>
                 		<td>
-                			<?php echo($currentConnexions[$i][2]); ?>
+                			<?php echo($currentConnexions[$i]['port']); ?>
                 		</td>
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form1">
