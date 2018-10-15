@@ -59,15 +59,24 @@ function DisplayConnexionConfig() {
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
+<?php 
+for($i=0; $i < sizeof($currentConnexions);$i++){
+?>
                       <tr>
                 		<td>
-                			Serial port
+<?php 
+if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
+   echo("Serial Port");
+}else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
+    echo("Web");
+}
+?>
                 		</td>
                 		<td>
-                			USB-SERIAL CH340 (COM5)
+                			<?php echo($currentConnexions[$i][1]); ?>	
                 		</td>
                 		<td>
-                			57600
+                			<?php echo($currentConnexions[$i][2]); ?>
                 		</td>
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form1">
@@ -76,24 +85,10 @@ function DisplayConnexionConfig() {
                 			</form>
                 		</td>
                 	</tr>
-                	<tr>
-                		<td>
-                			Web
-                		</td>
-                		<td>
-                			localhost
-                		</td>
-                		<td>
-                			8080
-                		</td>
-                		<td>
-                			<form method="POST" action="?page=configurator" name="conf_form2">
-      							<input type="hidden" value"2" name="post"/>
-                				<input type="submit" name="delete" label="Delete" class="col-md-6 btn btn-warning"/>
-                			</form>
-                		</td>
-                	</tr>
-                	<tr>
+<?php 
+}
+?>
+	               	<tr>
                 		<form method="POST" action="?page=configurator" name="conf_form_add">
                     		<td>
                     			<select name="type"  class="form-control">
