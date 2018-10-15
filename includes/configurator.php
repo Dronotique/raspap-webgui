@@ -1,7 +1,7 @@
 <?php 
 function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
-    $availableCnx = $xmlConfFile->children('/connexions');
+    $availableCnx = $xmlConfFile->children('connexions');
     
     echo ($availableCnx->asXML());
     
@@ -23,8 +23,8 @@ function DisplayConnexionConfig() {
     }
     echo(5);
     if(isset($_POST["delete"])){
-        $cameraList = $xmlConfFile->xpath('/cameras');
-        $serialList = $xmlConfFile->xpath('/availableSerial');
+        $cameraList = $xmlConfFile->children('cameras');
+        $serialList = $xmlConfFile->children('availableSerial');
        //On réécrit le fichier 
         $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><configurator/>");
         $root = $newXmlConf->children('/configurator');
@@ -49,7 +49,7 @@ function DisplayConnexionConfig() {
             }
         }
         
-        $newXmlConf->asXml(configuration.xml);
+        $newXmlConf->asXml(configuration2.xml);
     }
 ?>
 <div class="row">
