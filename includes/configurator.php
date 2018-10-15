@@ -2,26 +2,33 @@
 function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
     $availableCnx = $xmlConfFile->children('connexions', TRUE);
+
+    $currentCameras = array ();
+    $i=0;
+    foreach ($xmlConfFile->cameras->cameras as $camera) {
+        $currentCameras[$i] = $camera;
+        $i++;
+    }
     
-    echo ($availableCnx->asXML());
+    $currentSerial = array ();
+    $i=0;
+    foreach ($xmlConfFile->availableSerial->availableSerial as $serial) {
+        $currentSerial[$i] = $serial;
+        $i++;
+    }
     
     $currentConnexions = array ();
     $i=0;
     foreach ($xmlConfFile->connexions->connexions as $cnx) {
-        echo(1);
         if($cnx->type == "MAVLINK_SERIAL"){
-            echo(2);
             $currentConnexions[$i] = array ("type" => $cnx->type, "port" => $cnx->attributes->serial_port_com, "speed" => $cnx->attributes->serial_speed_com);
         }else if($cnx->type == "MAVLINK_UDP"){
-            echo(3);
             $currentConnexions[$i] = array ("type" => $cnx->type, "host" => $cnx->attributes->host, "port" => $cnx->attributes->port);
         }else{
-            echo(4);
             $currentConnexions[$i] = $cnx->children();
         }
         $i++;
     }
-    echo(5);
     if(isset($_POST["delete"])){
         $cameraList = $xmlConfFile->children('cameras');
         $serialList = $xmlConfFile->children('availableSerial');
@@ -96,11 +103,12 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     		</td>
                     		<td>
                     			<select name="serialPort" id="serialPort"  class="form-control">
-                  					<option value="USB-SERIAL CH340 (COM5)">[USB-SERIAL CH340 (COM5)]</option>
-                  					<option value="ELMO GMAS (COM7)">[ELMO GMAS (COM7)]</option>
-                  					<option value="USB-SERIAL CH340 (COM6)">[USB-SERIAL CH340 (COM6)]</option>
-                  					<option value="Lien série sur Bluetooth standard (COM4)">[Lien série sur Bluetooth standard (COM4)]</option>
-                  				</select>
+<?php 
+                            for($i=0; $i < sizeof($currentSerial);$i++){
+                                echo("<option value=\"" . $i . "\">" . $currentSerial[$i] . "</option>");
+                            }
+?>
+                    			</select>
                   				<input type="text" name="host" id="host"  class="form-control" />
                     		</td>
                     		<td>
