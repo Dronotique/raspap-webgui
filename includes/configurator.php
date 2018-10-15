@@ -26,7 +26,7 @@ function DisplayConnexionConfig() {
                 			57600
                 		</td>
                 		<td>
-                			<input type="submit" name="delete_1" label="Delete"/>
+                			<input type="submit" name="delete_1" label="Delete" class="col-md-6 btn btn-warning"/>
                 		</td>
                 	</tr>
                 	<tr>
@@ -40,37 +40,37 @@ function DisplayConnexionConfig() {
                 			8080
                 		</td>
                 		<td>
-                			<input type="submit" name="delete_2" label="Delete"/>
+                			<input type="submit" name="delete_2" label="Delete" class="col-md-6 btn btn-warning"/>
                 		</td>
                 	</tr>
                 	<tr>
                 		<td>
-                			<select name="type">
+                			<select name="type"  class="form-control">
               					<option value="SERIAL">Serial Port</option>
               					<option value="WEB">Web</option>
               				</select>
                 		</td>
                 		<td>
-                			<select name="serialPort">
+                			<select name="serialPort" id="serialPort"  class="form-control">
               					<option value="USB-SERIAL CH340 (COM5)">[USB-SERIAL CH340 (COM5)]</option>
               					<option value="ELMO GMAS (COM7)">[ELMO GMAS (COM7)]</option>
               					<option value="USB-SERIAL CH340 (COM6)">[USB-SERIAL CH340 (COM6)]</option>
               					<option value="Lien série sur Bluetooth standard (COM4)">[Lien série sur Bluetooth standard (COM4)]</option>
               				</select>
-              				<input type="text" name="host"/>
+              				<input type="text" name="host" id="host"  class="form-control" />
                 		</td>
                 		<td>
-                			<select name="serialSpeed">
+                			<select name="serialSpeed" id="serialSpeed"  class="form-control">
               					<option value="9600">9600</option>
               					<option value="19200">19200</option>
               					<option value="38400">38400</option>
               					<option value="57600">57600</option>
               					<option value="115200">115200</option>
               				</select>
-              				<input type="text" name="port"/>
+              				<input type="text" name="hostPort" id="hostPort"  class="form-control" />
                 		</td>
                 		<td>
-                			<input type="submit" name="add" label="Delete"/>
+                			<input type="submit" name="add" label="Delete" class="col-md-6 btn btn-info"/>
                 		</td>
                 	</tr>
         	</form>
