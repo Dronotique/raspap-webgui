@@ -68,22 +68,14 @@ function DisplayConnexionConfig() {
 <?php 
 for($i=0; $i < sizeof($currentConnexions);$i++){
 ?>
-                      <tr>
-                		<td>
+          			<tr>            
 <?php 
 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-   echo("Serial Port");
+    echo("<td>Serial Port</td><td>".$currentConnexions[$i]['port'] . "</td><td>" . $currentConnexions[$i]['speed'] . "</td></tr>");
 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
-    echo("Web");
+    echo("<td>Web</td><td>".$currentConnexions[$i]['host'] . "</td><td>" . $currentConnexions[$i]['port'] . "</td></tr>");
 }
 ?>
-                		</td>
-                		<td>
-                			<?php echo($currentConnexions[$i]['host']); ?>	
-                		</td>
-                		<td>
-                			<?php echo($currentConnexions[$i]['port']); ?>
-                		</td>
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form1">
       							<input type="hidden" value"1" name="post"/>
