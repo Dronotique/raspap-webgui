@@ -1,15 +1,15 @@
 <?php 
 function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
-    $availableCnx = $xmlConfFile->xpath('/configurator/cameras');
+    $availableCnx = $xmlConfFile->children('/configurator/cameras');
     
     $currentConnexions = array ();
     $i=0;
     foreach ($availableCnx->children() as $cnx) {
         if($cnx->xpath('type') == "MAVLINK_SERIAL"){
-            $currentConnexions[$i] = array ("type" => $cnx->xpath('type'), "port" => $cnx->xpath('attributes/serial_port_com'), "speed" => $cnx->xpath('attributes/serial_speed_com'));
+            $currentConnexions[$i] = array ("type" => $cnx->children('type'), "port" => $cnx->children('attributes/serial_port_com'), "speed" => $cnx->children('attributes/serial_speed_com'));
         }else if($cnx->xpath('type') == "MAVLINK_UDP"){
-            $currentConnexions[$i] = array ("type" => $cnx->xpath('type'), "host" => $cnx->xpath('attributes/host'), "port" => $cnx->xpath('attributes/port'));
+            $currentConnexions[$i] = array ("type" => $cnx->children('type'), "host" => $cnx->children('attributes/host'), "port" => $cnx->children('attributes/port'));
         }else{
             $currentConnexions[$i] = $cnx->children();
         }
@@ -21,7 +21,7 @@ function DisplayConnexionConfig() {
         $serialList = $xmlConfFile->xpath('/configurator/availableSerial');
        //On réécrit le fichier 
         $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><configurator/>");
-        $root = $newXmlConf->xpath('/configurator');
+        $root = $newXmlConf->children('/configurator');
         $root.addChild("cameras").addChild($cameraList);
         $root.addChild("availableSerial").addChild($serialList);
         $connexions = $root.addChild("connexions");
