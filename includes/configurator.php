@@ -7,9 +7,9 @@ function DisplayConnexionConfig() {
     
     $currentConnexions = array ();
     $i=0;
-    foreach ($availableCnx->children() as $cnx) {
+    foreach ($xmlConfFile->connexions as $cnx) {
         echo(1);
-        if($cnx->xpath('type') == "MAVLINK_SERIAL"){
+        if($cnx->type == "MAVLINK_SERIAL"){
             echo(2);
             $currentConnexions[$i] = array ("type" => $cnx->children('type'), "port" => $cnx->children('attributes/serial_port_com'), "speed" => $cnx->children('attributes/serial_speed_com'));
         }else if($cnx->xpath('type') == "MAVLINK_UDP"){
