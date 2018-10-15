@@ -3,6 +3,8 @@ function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
     $availableCnx = $xmlConfFile->children('/configurator/cameras');
     
+    echo ($availableCnx);
+    
     $currentConnexions = array ();
     $i=0;
     foreach ($availableCnx->children() as $cnx) {
