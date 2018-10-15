@@ -3,7 +3,7 @@ function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
     $availableCnx = $xmlConfFile->children('/');
     
-    echo ($xmlConfFile);
+    echo ($availableCnx);
     
     $currentConnexions = array ();
     $i=0;
