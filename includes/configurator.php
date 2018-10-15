@@ -6,16 +6,20 @@ function DisplayConnexionConfig() {
     $currentConnexions = array ();
     $i=0;
     foreach ($availableCnx->children() as $cnx) {
+        echo(1);
         if($cnx->xpath('type') == "MAVLINK_SERIAL"){
+            echo(2);
             $currentConnexions[$i] = array ("type" => $cnx->children('type'), "port" => $cnx->children('attributes/serial_port_com'), "speed" => $cnx->children('attributes/serial_speed_com'));
         }else if($cnx->xpath('type') == "MAVLINK_UDP"){
+            echo(3);
             $currentConnexions[$i] = array ("type" => $cnx->children('type'), "host" => $cnx->children('attributes/host'), "port" => $cnx->children('attributes/port'));
         }else{
+            echo(4);
             $currentConnexions[$i] = $cnx->children();
         }
         $i++;
     }
-    
+    echo(5);
     if(isset($_POST["delete"])){
         $cameraList = $xmlConfFile->xpath('/configurator/cameras');
         $serialList = $xmlConfFile->xpath('/configurator/availableSerial');
