@@ -1,7 +1,7 @@
 <?php 
 function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
-    $availableCnx = $xmlConfFile->children('/connexions');
+    $availableCnx = $xmlConfFile->children('/');
     
     echo ($xmlConfFile);
     
