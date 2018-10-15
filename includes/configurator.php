@@ -1,3 +1,6 @@
+<?php 
+function DisplayConnexionConfig() {
+?>
 <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-primary">
@@ -5,10 +8,10 @@
         <div class="panel-body" id="xonomy_editor">
       		<form method="POST" action="?page=configurator" name="conf_form">
       			<div id="connexion1">
-      				Serial port [USB-SERIAL CH340 (COM5)] 57600 <input type="submit" name="delete_1"/>
+      				Serial port [USB-SERIAL CH340 (COM5)] 57600 <input type="submit" name="delete_1" label="Delete"/>
       			</div>
       			<div id="connexion2">
-      				Web [localhost] 8080 <input type="submit" name="delete_2"/>
+      				Web [localhost] 8080 <input type="submit" name="delete_2" label="Delete"/>
       			</div>
       			<div id="new_connexion">
       				<select name="type">
@@ -40,3 +43,6 @@
       </div>
     </div>
 </div>
+<?php 
+}
+?>

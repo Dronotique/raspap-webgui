@@ -190,6 +190,9 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
 $extraFooterScripts = array();
         // handle page actions
         switch( $page ) {
+            case "configurator":
+                DisplayConnexionConfig();
+                break;
           case "wlan0_info":
             DisplayDashboard();
             break;
