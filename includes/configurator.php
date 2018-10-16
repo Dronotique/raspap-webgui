@@ -51,12 +51,16 @@ function DisplayConnexionConfig() {
             if($_POST["post"]!=$i){
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
+                $attrs = $newCnx->addChild("attributes");
+                $attrs-> addAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-                    $attrs = $newCnx->addChild("attributes", "", "xsi:type=\"connexionConfAttrSerial\"");
+                    $attrs->addAttribute("xsi:type", "connexionConfAttrSerial");
+                    
                     $attrs->addChild("serial_port_com",  $currentConnexions[$i]["port"]);
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
-                    $attrs = $newCnx->addChild("attributes", "", "xsi:type=\"connexionConfAttrWeb\"");
+                    $attrs-> addAttribute("xsi:type", "connexionConfAttrWeb");
+                    
                     $attrs->addChild("host",  $currentConnexions[$i]["host"]);
                     $attrs->addChild("port",  $currentConnexions[$i]["port"]);
                 }
@@ -92,7 +96,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
 ?>
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form1">
-      							<input type="hidden" value"1" name="post"/>
+      							<input type="hidden" value"<?php echo($i);?>" name="post"/>
                 				<input type="submit" name="deleteCnx" label="Delete" class="col-md-6 btn btn-warning"/>
                 			</form>
                 		</td>
