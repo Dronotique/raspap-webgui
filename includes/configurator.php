@@ -42,7 +42,7 @@ function DisplayConnexionConfig() {
         
         $xmlSerials = $newXmlConf->addChild("availableSerial");
         for ($i=0; $i < sizeof($currentSerial);$i++){
-            $xmlSerials->addChild("availableSerial", utf8_encode($currentSerial[$i]));
+            $xmlSerials->addChild("availableSerial", utf8_decode($currentSerial[$i]));
         }
         $connexions = $newXmlConf->addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
@@ -54,7 +54,7 @@ function DisplayConnexionConfig() {
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
                     
-                    $attrs->addChild("serial_port_com",  utf8_encode($currentConnexions[$i]["port"]));
+                    $attrs->addChild("serial_port_com",  utf8_decode($currentConnexions[$i]["port"]));
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
