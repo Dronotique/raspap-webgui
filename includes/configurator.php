@@ -47,9 +47,9 @@ function DisplayConnexionConfig() {
         echo(1);
         $connexions = $newXmlConf->addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
-            echo($_POST["id"]);
+            echo("**" . $_POST["idCnx"] . "**");
             echo(2);
-            if($_POST["id"]!=$i){
+            if($_POST["idCnx"]!=$i){
                 echo(3);
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
@@ -100,7 +100,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
 ?>
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form<?php echo($i);?>">
-      							<input type="hidden" value"<?php echo($i);?>" name="id"/>
+      							<input type="hidden" value"<?php echo($i);?>" name="idCnx"/>
                 				<input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"/>
                 			</form>
                 		</td>
