@@ -67,7 +67,7 @@ function DisplayConnexionConfig() {
             }
         }
         
-        $newXmlConf->asXml(configuration2.xml);
+        $newXmlConf->asXml("configuration2.xml");
     }
 ?>
 <div class="row">
