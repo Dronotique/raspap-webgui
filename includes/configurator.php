@@ -45,7 +45,7 @@ function DisplayConnexionConfig() {
             $xmlSerials->addChild("availableSerial", $currentSerial[$i]);
         }
 
-        $connexions = $newXmlConf.addChild("connexions");
+        $connexions = $newXmlConf->addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
             
             if($_POST["post"]!=$i){
