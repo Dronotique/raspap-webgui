@@ -47,7 +47,7 @@ function DisplayConnexionConfig() {
 
         $connexions = $newXmlConf->addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
-            
+            echo($_POST["post"]);
             if($_POST["post"]!=$i){
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
