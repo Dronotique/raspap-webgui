@@ -10,7 +10,7 @@
  * @param object $parent
  *   Element that the CDATA child should be attached too.
  */
-$add_cdata = function($name, $value, &$parent) {
+function add_cdata($name, $value, &$parent) {
     $child = $parent->addChild($name);
     
     if ($child !== NULL) {
