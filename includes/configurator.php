@@ -51,7 +51,7 @@ function DisplayConnexionConfig() {
         
         $xmlSerials = $newXmlConf->addChild("availableSerial");
         for ($i=0; $i < sizeof($currentSerial);$i++){
-            $xmlSerials->addChild("availableSerial", utf8_decode($currentSerial[$i]));
+            $xmlSerials->addChild("availableSerial", $currentSerial[$i]);
         }
         $connexions = $newXmlConf->addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
@@ -62,7 +62,7 @@ function DisplayConnexionConfig() {
                 $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
-                    $attrs->addChild("serial_port_com",  utf8_decode($currentConnexions[$i]["port"]));
+                    $attrs->addChild("serial_port_com",  $currentConnexions[$i]["port"]);
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
@@ -80,7 +80,7 @@ function DisplayConnexionConfig() {
             $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             if($_POST["type"] == "SERIAL"){
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
-                $attrs->addChild("serial_port_com",  $currentConnexions[$_POST["serialPort"]]["port"]);
+                $attrs->addChild("serial_port_com",  $currentSerial[$_POST["serialPort"]]);
                 $attrs->addChild("serial_speed_com",  $_POST["serialSpeed"]);
             }else if($_POST["type"] == "WEB"){
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
