@@ -37,21 +37,15 @@ function DisplayConnexionConfig() {
         //$root = $newXmlConf->children('/configurator');
         $xmlCameras = $newXmlConf->addChild("cameras");
         for ($i=0; $i < sizeof($currentCameras);$i++){
-            $xmlCameras.addChild($currentCameras[$i]);
-        }
-        
-        $xmlCameras = $newXmlConf->addChild("cameras");
-        for ($i=0; $i < sizeof($currentCameras);$i++){
-            $xmlCameras.addChild("cameras", $currentCameras[$i]);
+            $xmlCameras->addChild("cameras", $currentCameras[$i]);
         }
         
         $xmlSerials = $newXmlConf->addChild("availableSerial");
         for ($i=0; $i < sizeof($currentSerial);$i++){
-            $xmlSerials.addChild("availableSerial", $currentSerial[$i]);
+            $xmlSerials->addChild("availableSerial", $currentSerial[$i]);
         }
 
-        $connexions = $root.addChild("connexions");
-        
+        $connexions = $newXmlConf.addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
             
             if($_POST["post"]!=$i){
