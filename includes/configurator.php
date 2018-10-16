@@ -29,7 +29,12 @@ function DisplayConnexionConfig() {
         }
         $i++;
     }
-    if(isset($_POST["deleteCnx"])){
+    if(isset($_POST["deleteCnx"]) || isset($_POST["addCnx"])){
+        
+        if(! isset($_POST["deleteCnx"])){
+            $_POST["deleteCnx"] = "-1";
+        }
+        
         $cameraList = $xmlConfFile->children('cameras');
         $serialList = $xmlConfFile->children('availableSerial');
        //On réécrit le fichier 
@@ -64,7 +69,26 @@ function DisplayConnexionConfig() {
                 }
             }
         }
-        $newXmlConf->asXml("configuration2.xml");
+        
+        if(isset($_POST["addCnx"])){
+            $newCnx = $connexions->addChild("connexions");
+            $newCnx->addChild("type", $currentConnexions[$i]["type"]);
+            $attrs = $newCnx->addChild("attributes");
+            $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+            if($_POST["type"] == "SERIAL"){
+                $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
+ 
+                $attrs->addChild("serial_port_com",  utf8_decode($currentConnexions[$_POST["serialPort"]]["port"]));
+                $attrs->addChild("serial_speed_com",  $_POST["serialSpeed"]);
+            }else if($currentConnexions[$i]["type"] == "WEB"){
+                $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
+                
+                $attrs->addChild("host",  $_POST["host"]);
+                $attrs->addChild("port",  $_POST["hostPort"]);
+            }
+        }
+        
+        $newXmlConf->asXml("configuration.xml");
     }
 ?>
 <div class="row">
@@ -130,7 +154,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                   				<input type="text" name="hostPort" id="hostPort"  class="form-control" />
                     		</td>
                     		<td>
-                    			<input type="submit" name="add" value="Add" class="col-md-6 btn btn-info"/>
+                    			<input type="submit" name="addCnx" value="Add" class="col-md-6 btn btn-info"/>
                     		</td>
                     	</form>
                   	</tr>
