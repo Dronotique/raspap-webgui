@@ -95,7 +95,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
 }
 ?>
                 		<td>
-                			<form method="POST" action="?page=configurator" name="conf_form1">
+                			<form method="POST" action="?page=configurator" name="conf_form<?php echo($i);?>">
       							<input type="hidden" value"<?php echo($i);?>" name="id"/>
                 				<input type="submit" name="deleteCnx" label="Delete" class="col-md-6 btn btn-warning"/>
                 			</form>
