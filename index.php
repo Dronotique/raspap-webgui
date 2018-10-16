@@ -193,6 +193,9 @@ $extraFooterScripts = array();
             case "configurator":
                 DisplayConnexionConfig();
                 break;
+            case "configurator":
+                modifyConnexionConfig();
+                break;
           case "wlan0_info":
             DisplayDashboard();
             break;
