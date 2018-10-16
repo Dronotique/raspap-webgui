@@ -1,7 +1,9 @@
 <?php 
 function DisplayConnexionConfig() {
-    $xmlConfFile = simplexml_load_file("configuration.xml");
-    $availableCnx = $xmlConfFile->children('connexions', TRUE);
+    $xmlConfFileContent = readfile("configuration.xml");
+    //$xmlConfFile = simplexml_load_file("configuration.xml");
+    $xmlConfFile = new SimpleXMLElement(utf8_encode($xmlConfFileContent));
+    $availableCnx = $xmlConfFile->children('connexions');
 
     $currentCameras = array ();
     $i=0;
@@ -32,7 +34,7 @@ function DisplayConnexionConfig() {
     if(isset($_POST["deleteCnx"]) || isset($_POST["addCnx"])){
         
         if(! isset($_POST["deleteCnx"])){
-            $_POST["deleteCnx"] = "-1";
+            $_POST["idCnx"] = "-1";
         }
         
         $cameraList = $xmlConfFile->children('cameras');
