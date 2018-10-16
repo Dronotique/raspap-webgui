@@ -33,7 +33,7 @@ function DisplayConnexionConfig() {
         $cameraList = $xmlConfFile->children('cameras');
         $serialList = $xmlConfFile->children('availableSerial');
        //On réécrit le fichier 
-        $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><configurator/>");
+        $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?><configurator  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"/>");
         //$root = $newXmlConf->children('/configurator');
         $xmlCameras = $newXmlConf->addChild("cameras");
         for ($i=0; $i < sizeof($currentCameras);$i++){
@@ -52,7 +52,7 @@ function DisplayConnexionConfig() {
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
                 $attrs = $newCnx->addChild("attributes");
-                $attrs-> addAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+               // $attrs-> addAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     $attrs->addAttribute("xsi:type", "connexionConfAttrSerial");
                     
