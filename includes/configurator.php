@@ -75,14 +75,16 @@ function DisplayConnexionConfig() {
         
         if(isset($_POST["addCnx"])){
             $newCnx = $connexions->addChild("connexions");
-            $newCnx->addChild("type", $currentSerial[$i]);
+            
             $attrs = $newCnx->addChild("attributes");
             $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             if($_POST["type"] == "SERIAL"){
+                $newCnx->addChild("type", "MAVLINK_SERIAL");
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
                 $attrs->addChild("serial_port_com",  $currentSerial[$_POST["serialPort"]]);
                 $attrs->addChild("serial_speed_com",  $_POST["serialSpeed"]);
             }else if($_POST["type"] == "WEB"){
+                $newCnx->addChild("type", "MAVLINK_UDP");
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
                 
                 $attrs->addChild("host",  $_POST["host"]);
