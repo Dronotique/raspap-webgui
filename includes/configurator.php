@@ -1,8 +1,31 @@
 <?php 
+
+/**
+ * Adds a CDATA property to an XML document.
+ *
+ * @param string $name
+ *   Name of property that should contain CDATA.
+ * @param string $value
+ *   Value that should be inserted into a CDATA child.
+ * @param object $parent
+ *   Element that the CDATA child should be attached too.
+ */
+$add_cdata = function($name, $value, &$parent) {
+    $child = $parent->addChild($name);
+    
+    if ($child !== NULL) {
+        $child_node = dom_import_simplexml($child);
+        $child_owner = $child_node->ownerDocument;
+        $child_node->appendChild($child_owner->createCDATASection($value));
+    }
+    
+    return $child;
+};
+
 function DisplayConnexionConfig() {
-    $xmlConfFileContent = readfile("configuration.xml");
-    //$xmlConfFile = simplexml_load_file("configuration.xml");
-    $xmlConfFile = new SimpleXMLElement(utf8_encode($xmlConfFileContent));
+    //$xmlConfFileContent = readfile("configuration.xml");
+    //$xmlConfFile = new SimpleXMLElement(utf8_encode($xmlConfFileContent));
+    $xmlConfFile = simplexml_load_file("configuration.xml");
     $availableCnx = $xmlConfFile->children('connexions');
 
     $currentCameras = array ();
@@ -60,8 +83,8 @@ function DisplayConnexionConfig() {
                 $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
-                    
-                    $attrs->addChild("serial_port_com",  utf8_decode($currentConnexions[$i]["port"]));
+                    $add_cdata("serial_port_com", $currentConnexions[$i]["port"], $attrs);
+                    //$attrs->addChild("serial_port_com",  utf8_decode($currentConnexions[$i]["port"]));
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
@@ -79,8 +102,8 @@ function DisplayConnexionConfig() {
             $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             if($_POST["type"] == "SERIAL"){
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
- 
-                $attrs->addChild("serial_port_com",  utf8_decode($currentConnexions[$_POST["serialPort"]]["port"]));
+                $add_cdata("serial_port_com", $currentConnexions[$_POST["serialPort"]]["port"], $attrs);
+                //$attrs->addChild("serial_port_com",  $currentConnexions[$_POST["serialPort"]]["port"]);
                 $attrs->addChild("serial_speed_com",  $_POST["serialSpeed"]);
             }else if($currentConnexions[$i]["type"] == "WEB"){
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
