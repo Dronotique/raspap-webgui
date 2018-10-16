@@ -167,9 +167,9 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
 	               	<tr>
                 		<form method="POST" action="?page=configurator_modif" name="conf_form_add">
                     		<td>
-                    			<select name="type"  class="form-control">
-                  					<option value="SERIAL">Serial Port</option>
-                  					<option value="WEB">Web</option>
+                    			<select name="type"  class="form-control" onchange="toogleForm();">
+                  					<option id="serialOpt" value="SERIAL" on>Serial Port</option>
+                  					<option id="webOpt" value="WEB">Web</option>
                   				</select>
                     		</td>
                     		<td>
@@ -190,11 +190,27 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                   					<option value="57600">57600</option>
                   					<option value="115200">115200</option>
                   				</select>
-                  				<input type="text" name="hostPort" id="hostPort"  class="form-control" />
+                  				<input type="text" name="hostPort" id="hostPort"  class="form-control"/>
                     		</td>
                     		<td>
                     			<input type="submit" name="addCnx" value="Add" class="col-md-6 btn btn-info"/>
                     		</td>
+                    		<script>
+                        		function toogleForm(){
+                        			if(document.getElementById('serialOpt').selected = 'selected'){
+                        				document.getElementById("host").style.dysplay='none';
+                            			document.getElementById("hostPort").style.dysplay='none';
+                            			document.getElementById("serialSpeed").style.dysplay='block';
+                            			document.getElementById("serialSpeed").style.dysplay='block';
+                        			}else{
+                        				document.getElementById("host").style.dysplay='none';
+                            			document.getElementById("hostPort").style.dysplay='none';
+                            			document.getElementById("serialSpeed").style.dysplay='block';
+                            			document.getElementById("serialSpeed").style.dysplay='block';
+                        			}
+                    			}
+                        		toogleForm();
+                    		</script> 
                     	</form>
                   	</tr>
         	</table>
