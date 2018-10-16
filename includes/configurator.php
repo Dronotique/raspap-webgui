@@ -44,25 +44,19 @@ function DisplayConnexionConfig() {
         for ($i=0; $i < sizeof($currentSerial);$i++){
             $xmlSerials->addChild("availableSerial", $currentSerial[$i]);
         }
-        echo(1);
         $connexions = $newXmlConf->addChild("connexions");
         for($i=0; $i < sizeof($currentConnexions);$i++){
-            echo("**" . $_POST["idCnx"] . "**");
-            echo(2);
             if($_POST["idCnx"]!=$i){
-                echo(3);
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
                 $attrs = $newCnx->addChild("attributes");
                 $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-                    echo(4);
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
                     
                     $attrs->addChild("serial_port_com",  $currentConnexions[$i]["port"]);
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
-                    echo(5);
                     $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
                     
                     $attrs->addChild("host",  $currentConnexions[$i]["host"]);
@@ -70,7 +64,6 @@ function DisplayConnexionConfig() {
                 }
             }
         }
-        echo(6);
         $newXmlConf->asXml("configuration2.xml");
     }
 ?>
@@ -100,7 +93,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
 ?>
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form<?php echo($i);?>">
-      							<input type="hidden" value"<?php echo($i);?>" name="idCnx"/>
+      							<input type="hidden" value="<?php echo($i);?>" name="idCnx"/>
                 				<input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"/>
                 			</form>
                 		</td>
