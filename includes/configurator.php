@@ -97,7 +97,7 @@ function DisplayConnexionConfig() {
         
         if(isset($_POST["addCnx"])){
             $newCnx = $connexions->addChild("connexions");
-            $newCnx->addChild("type", $currentConnexions[$i]["type"]);
+            $newCnx->addChild("type", $currentSerial[$i]);
             $attrs = $newCnx->addChild("attributes");
             $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
             if($_POST["type"] == "SERIAL"){
@@ -105,7 +105,7 @@ function DisplayConnexionConfig() {
                 add_cdata("serial_port_com", $currentConnexions[$_POST["serialPort"]]["port"], $attrs);
                 //$attrs->addChild("serial_port_com",  $currentConnexions[$_POST["serialPort"]]["port"]);
                 $attrs->addChild("serial_speed_com",  $_POST["serialSpeed"]);
-            }else if($currentConnexions[$i]["type"] == "WEB"){
+            }else if($_POST["type"] == "WEB"){
                 $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
                 
                 $attrs->addChild("host",  $_POST["host"]);
