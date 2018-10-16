@@ -52,14 +52,14 @@ function DisplayConnexionConfig() {
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
                 $attrs = $newCnx->addChild("attributes");
-                $attrs-> addAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "xmlns");
+                $attrs-> addAttribute("xmlns:xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-                    $attrs->addAttribute("type", "connexionConfAttrSerial", "xsi");
+                    $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrSerial");
                     
                     $attrs->addChild("serial_port_com",  $currentConnexions[$i]["port"]);
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
-                    $attrs->addAttribute("type", "connexionConfAttrWeb", "xsi");
+                    $attrs->addAttribute("xsi:xsi:type", "connexionConfAttrWeb");
                     
                     $attrs->addChild("host",  $currentConnexions[$i]["host"]);
                     $attrs->addChild("port",  $currentConnexions[$i]["port"]);
