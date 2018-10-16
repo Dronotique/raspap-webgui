@@ -200,13 +200,13 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                         			if(document.getElementById('serialOpt').selected = 'selected'){
                         				document.getElementById("host").style.dysplay='none';
                             			document.getElementById("hostPort").style.dysplay='none';
-                            			document.getElementById("serialSpeed").style.dysplay='block';
+                            			document.getElementById("serialPort").style.dysplay='block';
                             			document.getElementById("serialSpeed").style.dysplay='block';
                         			}else{
-                        				document.getElementById("host").style.dysplay='none';
-                            			document.getElementById("hostPort").style.dysplay='none';
-                            			document.getElementById("serialSpeed").style.dysplay='block';
-                            			document.getElementById("serialSpeed").style.dysplay='block';
+                        				document.getElementById("host").style.dysplay='block';
+                            			document.getElementById("hostPort").style.dysplay='block';
+                            			document.getElementById("serialPort").style.dysplay='none';
+                            			document.getElementById("serialSpeed").style.dysplay='none';
                         			}
                     			}
                         		toogleForm();
