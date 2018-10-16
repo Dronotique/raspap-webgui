@@ -33,7 +33,7 @@ function DisplayConnexionConfig() {
         $cameraList = $xmlConfFile->children('cameras');
         $serialList = $xmlConfFile->children('availableSerial');
        //On réécrit le fichier 
-        $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?><configurator  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"/>");
+        $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?><configurator/>"); //xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
         //$root = $newXmlConf->children('/configurator');
         $xmlCameras = $newXmlConf->addChild("cameras");
         for ($i=0; $i < sizeof($currentCameras);$i++){
@@ -52,14 +52,14 @@ function DisplayConnexionConfig() {
                 $newCnx = $connexions->addChild("connexions");
                 $newCnx->addChild("type", $currentConnexions[$i]["type"]);
                 $attrs = $newCnx->addChild("attributes");
-               // $attrs-> addAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+                $attrs-> addAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "xmlns");
                 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-                    $attrs->addAttribute("xsi:type", "connexionConfAttrSerial");
+                    $attrs->addAttribute("type", "connexionConfAttrSerial", "xsi");
                     
                     $attrs->addChild("serial_port_com",  $currentConnexions[$i]["port"]);
                     $attrs->addChild("serial_speed_com",  $currentConnexions[$i]["speed"]);
                 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
-                    $attrs-> addAttribute("xsi:type", "connexionConfAttrWeb");
+                    $attrs-> addAttribute("type", "connexionConfAttrWeb", "xsi");
                     
                     $attrs->addChild("host",  $currentConnexions[$i]["host"]);
                     $attrs->addChild("port",  $currentConnexions[$i]["port"]);
