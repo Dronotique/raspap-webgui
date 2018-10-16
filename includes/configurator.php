@@ -29,14 +29,27 @@ function DisplayConnexionConfig() {
         }
         $i++;
     }
-    if(isset($_POST["delete"])){
+    if(isset($_POST["deleteCnx"])){
         $cameraList = $xmlConfFile->children('cameras');
         $serialList = $xmlConfFile->children('availableSerial');
        //On réécrit le fichier 
         $newXmlConf = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><configurator/>");
-        $root = $newXmlConf->children('/configurator');
-        $root.addChild("cameras").addChild($cameraList);
-        $root.addChild("availableSerial").addChild($serialList);
+        //$root = $newXmlConf->children('/configurator');
+        $xmlCameras = $newXmlConf->addChild("cameras");
+        for ($i=0; $i < sizeof($currentCameras);$i++){
+            $xmlCameras.addChild($currentCameras[$i]);
+        }
+        
+        $xmlCameras = $newXmlConf->addChild("cameras");
+        for ($i=0; $i < sizeof($currentCameras);$i++){
+            $xmlCameras.addChild("cameras", $currentCameras[$i]);
+        }
+        
+        $xmlSerials = $newXmlConf->addChild("availableSerial");
+        for ($i=0; $i < sizeof($currentSerial);$i++){
+            $xmlSerials.addChild("availableSerial", $currentSerial[$i]);
+        }
+
         $connexions = $root.addChild("connexions");
         
         for($i=0; $i < sizeof($currentConnexions);$i++){
@@ -86,7 +99,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                 		<td>
                 			<form method="POST" action="?page=configurator" name="conf_form1">
       							<input type="hidden" value"1" name="post"/>
-                				<input type="submit" name="delete" label="Delete" class="col-md-6 btn btn-warning"/>
+                				<input type="submit" name="deleteCnx" label="Delete" class="col-md-6 btn btn-warning"/>
                 			</form>
                 		</td>
                 	</tr>
