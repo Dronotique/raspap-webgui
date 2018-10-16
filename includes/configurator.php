@@ -197,7 +197,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     		</td>
                     	</form>
                   	</tr>
-        	</form>
+        	</table>
         </div>
       </div>
     </div>
