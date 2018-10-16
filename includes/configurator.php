@@ -1,15 +1,6 @@
 <?php 
 
-/**
- * Adds a CDATA property to an XML document.
- *
- * @param string $name
- *   Name of property that should contain CDATA.
- * @param string $value
- *   Value that should be inserted into a CDATA child.
- * @param object $parent
- *   Element that the CDATA child should be attached too.
- */
+
 $add_cdata = function($name, $value, &$parent) {
     $child = $parent->addChild($name);
     
