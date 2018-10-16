@@ -173,40 +173,40 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                   				</select>
                     		</td>
                     		<td>
-                    			<select name="serialPort" id="serialPort"  class="form-control">
+                    			<select name="serialPort" id="serialPortAdd"  class="form-control">
 <?php 
                             for($i=0; $i < sizeof($currentSerial);$i++){
                                 echo("<option value=\"" . $i . "\">" . $currentSerial[$i] . "</option>");
                             }
 ?>
                     			</select>
-                  				<input type="text" name="host" id="host"  class="form-control" />
+                  				<input type="text" name="host" id="hostAdd"  class="form-control" />
                     		</td>
                     		<td>
-                    			<select name="serialSpeed" id="serialSpeed"  class="form-control">
+                    			<select name="serialSpeed" id="serialSpeedAdd"  class="form-control">
                   					<option value="9600">9600</option>
                   					<option value="19200">19200</option>
                   					<option value="38400">38400</option>
                   					<option value="57600">57600</option>
                   					<option value="115200">115200</option>
                   				</select>
-                  				<input type="text" name="hostPort" id="hostPort"  class="form-control"/>
+                  				<input type="text" name="hostPort" id="hostPortAdd"  class="form-control"/>
                     		</td>
                     		<td>
                     			<input type="submit" name="addCnx" value="Add" class="col-md-6 btn btn-info"/>
                     		</td>
                     		<script>
                         		function toogleForm(){
-                        			if(document.getElementById('serialOpt').selected = 'selected'){
-                        				document.getElementById("host").style.dysplay='none';
-                            			document.getElementById("hostPort").style.dysplay='none';
-                            			document.getElementById("serialPort").style.dysplay='block';
-                            			document.getElementById("serialSpeed").style.dysplay='block';
+                        			if(document.getElementById('serialOpt').selected == 'selected'){
+                        				document.getElementById("hostAdd").style.dysplay='none';
+                            			document.getElementById("hostPortAdd").style.dysplay='none';
+                            			document.getElementById("serialPortAdd").style.dysplay='block';
+                            			document.getElementById("serialSpeedAdd").style.dysplay='block';
                         			}else{
-                        				document.getElementById("host").style.dysplay='block';
-                            			document.getElementById("hostPort").style.dysplay='block';
-                            			document.getElementById("serialPort").style.dysplay='none';
-                            			document.getElementById("serialSpeed").style.dysplay='none';
+                        				document.getElementById("hostAdd").style.dysplay='block';
+                            			document.getElementById("hostPortAdd").style.dysplay='block';
+                            			document.getElementById("serialPortAdd").style.dysplay='none';
+                            			document.getElementById("serialSpeedAdd").style.dysplay='none';
                         			}
                     			}
                         		toogleForm();
