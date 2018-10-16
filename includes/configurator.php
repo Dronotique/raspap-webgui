@@ -86,7 +86,7 @@ for($i=0; $i < sizeof($currentConnexions);$i++){
           			<tr>            
 <?php 
 if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-    echo("<td>Serial Port</td><td>".$currentConnexions[$i]['port'] . "</td><td>" . $currentConnexions[$i]['speed'] . "</td>");
+    echo("<td>Serial Port</td><td>".utf8_encode($currentConnexions[$i]['port']) . "</td><td>" . $currentConnexions[$i]['speed'] . "</td>");
 }else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
     echo("<td>Web</td><td>".$currentConnexions[$i]['host'] . "</td><td>" . $currentConnexions[$i]['port'] . "</td>");
 }
@@ -113,7 +113,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     			<select name="serialPort" id="serialPort"  class="form-control">
 <?php 
                             for($i=0; $i < sizeof($currentSerial);$i++){
-                                echo("<option value=\"" . $i . "\">" . $currentSerial[$i] . "</option>");
+                                echo("<option value=\"" . $i . "\">" . utf8_encode ($currentSerial[$i]) . "</option>");
                             }
 ?>
                     			</select>
