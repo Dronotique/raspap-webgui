@@ -60,7 +60,9 @@ function DisplayWPAConfig(){
         if (preg_match('/delete(\d+)/', $post, $post_match)) {
           unset($tmp_networks[$_POST['ssid' . $post_match[1]]]);
           //gestion Networkmanager
-          exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
+          exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]],  $resultDelCxn);
+          echo( "nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
+          echo( $resultDelCxn);
         } elseif (preg_match('/update(\d+)/', $post, $post_match)) {
           // NB, at the moment, the value of protocol from the form may
           // contain HTML line breaks
@@ -73,9 +75,12 @@ function DisplayWPAConfig(){
             $tmp_networks[$_POST['ssid' . $post_match[1]]]['priority'] = $_POST['priority' . $post_match[1]];
           }
           //Gestion network manager on supprime et on recré²
-          exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
-          exec("nmcli connection wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
-          
+          exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]],  $resultDelCxn);
+          echo( "nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
+          echo( $resultDelCxn);
+          exec("nmcli connection wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"", $resultDelCxn);
+          echo("nmcli connection wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
+          echo( $resultDelCxn);
         }
       }
 
