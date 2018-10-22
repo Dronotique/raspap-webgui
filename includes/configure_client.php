@@ -82,8 +82,8 @@ function DisplayWPAConfig(){
           foreach($resultDelCxn as $line) {
               echo( $line . "\n");
           }
-          exec("nmcli connection wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"", $resultDelCxn);
-          echo("nmcli connection wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
+          exec("nmcli device wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"", $resultDelCxn);
+          echo("nmcli device wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
           foreach($resultDelCxn as $line) {
               echo( $line . "\n");
           }
