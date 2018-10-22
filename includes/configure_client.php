@@ -74,7 +74,7 @@ function DisplayWPAConfig(){
           }
           //Gestion network manager on supprime et on recré²
           exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
-          exec("nmcli connection wifi connect " . $_POST['ssid' . $post_match[1]] . " password " .  $_POST['passphrase' . $post_match[1]]);
+          exec("nmcli connection wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
           
         }
       }

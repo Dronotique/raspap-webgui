@@ -96,7 +96,7 @@ www-data ALL=(ALL) NOPASSWD:/sbin/ip -s a f label wlan1
 www-data ALL=(ALL) NOPASSWD:/bin/cp /etc/raspap/networking/dhcpcd.conf /etc/dhcpcd.conf
 www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/enablelog.sh
 www-data ALL=(ALL) NOPASSWD:/etc/raspap/hostapd/disablelog.sh
-www-data ALL=(ALL) NOPASSWD:/usr/bin/nmcli delete *
+www-data ALL=(ALL) NOPASSWD:/usr/bin/nmcli connection delete *
 www-data ALL=(ALL) NOPASSWD:/usr/bin/nmcli device wifi connect *
 ```
 
