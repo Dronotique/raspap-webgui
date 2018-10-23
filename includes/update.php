@@ -11,6 +11,23 @@ function DisplayUpdate(){
       $status->addMessage($last_line, 'info');
   }
   
+  
+  if ( isset($_POST['UpdateConf']) && CSRFValidate() ) {
+      if($_FILES['UpdateConfFile']['error'] != ""){
+          $status->addMessage($_FILES['UpdateConfFile']['error'] , 'danger');
+      }else{
+          //error_reporting(-1);
+          $uploaddir = '/var/www/uploads/';
+          $uploadfile = $uploaddir . basename($_FILES['UpdateConfFile']['name']);
+          if (move_uploaded_file($_FILES['UpdateConfFile']['tmp_name'], $uploadfile)) {
+              $status->addMessage('File uploaded - You need to restart the module', 'info');
+          } else {
+              $status->addMessage('File uploaded error', 'danger');
+          }
+      }
+  }
+  
+  
   if ( isset($_POST['UpdateFirmware']) && CSRFValidate() ) {
       if($_FILES['UpdateFirmware']['error'] != ""){
           $status->addMessage($_FILES['UpdateFirmware']['error'] , 'danger');
@@ -41,6 +58,13 @@ function DisplayUpdate(){
             <div class="row">
                   <div class="form-group col-md-4">
             		<input type="submit" class="btn btn-outline btn-primary" name="UpdateWebUI" value="<?php echo _("Update Web UI"); ?>" />
+            	</div>	
+            </div>
+            <div class="row">
+                  <div class="form-group col-md-4">
+                  	<label for="updatefirmwarefile"><?php echo _("Configuration file"); ?></label>
+                    <input type="file"  class="form-control" id="updatefirmwarefile" name="UpdateConfFile">
+            		<input type="submit" class="btn btn-outline btn-primary" name="UpdateConf" value="<?php echo _("Update Configuration Files"); ?>" />
             	</div>	
             </div>
             <div class="row">
