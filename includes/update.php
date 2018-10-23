@@ -8,7 +8,7 @@ function DisplayUpdate(){
   if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
       exec( '(cd /var/www/html/ && sudo git pull 2>&1)', $update_git );
       $last_line = end($update_git);
-      $status->addMessage($last_line, 'info');
+      $status->addMessage($last_line, 'info'); 
   }
   
   
