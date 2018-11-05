@@ -198,7 +198,7 @@ function DisplayConnexionConfig() {
                         <th></th>
                       </tr>
 <?php 
-                      foreach($currentCameras as $camera){
+                      foreach($currentCameras as $camera){ 
 ?>
 						<tr>
 <?php 
