@@ -200,14 +200,14 @@ function DisplayConnexionConfig() {
 <?php 
                             echo("<td>".$camera['type'] . "</td><td><ul>");
                             foreach($camera['attributes'] as $attribute){
-                                echo("<li>" . key($attribute) . " : " . $attribute . "</li>");
+                                echo("<li>" . key($camera['attributes']) . " : " . $attribute . "</li>");
                             }
                             echo("</ul></td><td><ul>");
                             foreach($camera['liveviews'] as $liveview){
-                                echo("<li>" . liveview["type"] . " : " . $attribute);
+                                echo("<li>" . $liveview["type"]);
                                 
                                 foreach(liveview["attributes"] as $attribute){
-                                    echo(key($attribute) . " : " . $attribute );
+                                    echo(key(liveview["attributes"]) . " : " . $attribute );
                                 }
                                 echo( "</li>");
                             }
