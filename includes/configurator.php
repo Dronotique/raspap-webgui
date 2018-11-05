@@ -207,8 +207,8 @@ function DisplayConnexionConfig() {
                             foreach($camera['liveviews'] as $liveview){
                                 echo("<li>" . $liveview["type"]);
                                 
-                                foreach(liveview["attributes"] as $attribute){
-                                    echo(key(liveview["attributes"]) . " : " . $attribute );
+                                foreach($liveview["attributes"] as $attribute){
+                                    echo(key($liveview["attributes"]) . " : " . $attribute );
                                 }
                                 echo( "</li>");
                             }
