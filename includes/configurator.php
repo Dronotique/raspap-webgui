@@ -184,9 +184,51 @@ function DisplayConnexionConfig() {
 <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-primary">
-        <div class="panel-heading"><i class="fa fa-lock fa-fw"></i><?php echo _("Configure Connexions"); ?></div>
+        <div class="panel-heading"><i class="fa fa-lock fa-fw"></i><?php echo _("Configure Cameras and Connexions"); ?></div>
         <div class="panel-body" id="xonomy_editor">
+        		<table class="table table-responsive table-striped">
+        			   <tr>
+                        <th colspan="5"><?php echo _("Cameras"); ?></th>
+                      </tr>
+                      <tr>
+                        <th><?php echo _("Type"); ?></th>
+                        <th><?php echo _("Value1"); ?></th>
+                        <th><?php echo _("Value2"); ?></th>
+                        <th><?php echo _(""); ?></th>
+                        <th></th>
+                      </tr>
+<?php 
+                      foreach($currentCameras as $camera){
+?>
+						<tr>
+<?php 
+                            echo("<td>".$camera['type'] . "</td><td><ul>");
+                            foreach($camera['attributes'] as $attribute){
+                                echo("<li>" . key($attribute) . " : " . $attribute . "</li>");
+                            }
+                            echo("</ul></td><td><ul>");
+                            foreach($camera['liveviews'] as $liveview){
+                                echo("<li>" . liveview["type"] . " : " . $attribute);
+                                
+                                foreach(liveview["attributes"] as $attribute){
+                                    echo(key($attribute) . " : " . $attribute );
+                                }
+                                echo( "</li>");
+                                
+                                
+                            }
+                            
+?>
+						</tr>
+<?php 
+                      }
+?>
+                </table>
+        
       			<table class="table table-responsive table-striped">
+      				<tr>
+                        <th colspan="5"><?php echo _("Connexions"); ?></th>
+                      </tr>
                       <tr>
                         <th><?php echo _("Type"); ?></th>
                         <th><?php echo _("Value1"); ?></th>
