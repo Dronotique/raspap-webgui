@@ -6,13 +6,62 @@ function modifyConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
     $availableCnx = $xmlConfFile->children('connexions');
     
-    $currentCameras = array ();
+    
+    //Camera type available
+    $availabeCameras = array ();
     $i=0;
-    foreach ($xmlConfFile->cameras->cameras as $camera) {
-        $currentCameras[$i] = $camera;
+    foreach ($xmlConfFile->availableCameras->availableCameras as $camera) {
+        $availabeCameras[$i] = $camera;
         $i++;
     }
     
+    //List of camera configured
+    $currentCameras = array ();
+    $i=0;
+    foreach ($xmlConfFile->cameras->cameras as $camera) {
+        $cameraconf = array();
+        $cameraAttributes = array();
+        $cameraLiveviews = array();
+        
+        $cameraconf["type"] = $camera->type;
+        if($camera->attributes->index){
+            $cameraAttributes["index"] = $camera->attributes->index;
+        }
+        
+        if($camera->attributes->url){
+            $cameraAttributes["index"] = $camera->attributes->url;
+        }
+        $cameraconf["attributes"] = $cameraAttributes;
+        $j=0;
+        foreach ($camera->liveviews->liveviews as $liveview) {
+            $liveviewConf = array();
+            $liveviewConf["type"] = $liveview->type;
+            $liveviewAttributes = array();
+            if($liveview->attributes->port){
+                $liveviewAttributes["port"] = $liveview->attributes->port;
+            }
+            $liveviewConf["attributes"] = $liveviewAttributes;
+            
+            $filersConf = array();
+            $h = 0;
+            foreach ($liveview->filters->filters as $filter) {
+                $filersConf[$h] = $filter->type;
+                $h++;
+            }
+            $liveviewConf["filters"] = $filersConf;
+            
+            $cameraLiveviews[$j] = $liveviewConf;
+            $j++;
+        }
+        
+        $cameraconf["liveviews"] = $cameraLiveviews;
+        
+        $currentCameras[$i] = $cameraconf;
+        $i++;
+    }
+    
+    
+    //Serial port available
     $currentSerial = array ();
     $i=0;
     foreach ($xmlConfFile->availableSerial->availableSerial as $serial) {
@@ -20,6 +69,8 @@ function modifyConnexionConfig() {
         $i++;
     }
     
+    
+    //List of connexions configured
     $currentConnexions = array ();
     $i=0;
     foreach ($xmlConfFile->connexions->connexions as $cnx) {
