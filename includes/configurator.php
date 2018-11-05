@@ -7,58 +7,6 @@ function modifyConnexionConfig() {
     $availableCnx = $xmlConfFile->children('connexions');
     
     
-    //Camera type available
-    $availabeCameras = array ();
-    $i=0;
-    foreach ($xmlConfFile->availableCameras->availableCameras as $camera) {
-        $availabeCameras[$i] = $camera;
-        $i++;
-    }
-    
-    //List of camera configured
-    $currentCameras = array ();
-    $i=0;
-    foreach ($xmlConfFile->cameras->cameras as $camera) {
-        $cameraconf = array();
-        $cameraAttributes = array();
-        $cameraLiveviews = array();
-        
-        $cameraconf["type"] = $camera->type;
-        if($camera->attributes->index){
-            $cameraAttributes["index"] = $camera->attributes->index;
-        }
-        
-        if($camera->attributes->url){
-            $cameraAttributes["index"] = $camera->attributes->url;
-        }
-        $cameraconf["attributes"] = $cameraAttributes;
-        $j=0;
-        foreach ($camera->liveviews->liveviews as $liveview) {
-            $liveviewConf = array();
-            $liveviewConf["type"] = $liveview->type;
-            $liveviewAttributes = array();
-            if($liveview->attributes->port){
-                $liveviewAttributes["port"] = $liveview->attributes->port;
-            }
-            $liveviewConf["attributes"] = $liveviewAttributes;
-            
-            $filersConf = array();
-            $h = 0;
-            foreach ($liveview->filters->filters as $filter) {
-                $filersConf[$h] = $filter->type;
-                $h++;
-            }
-            $liveviewConf["filters"] = $filersConf;
-            
-            $cameraLiveviews[$j] = $liveviewConf;
-            $j++;
-        }
-        
-        $cameraconf["liveviews"] = $cameraLiveviews;
-        
-        $currentCameras[$i] = $cameraconf;
-        $i++;
-    }
     
     
     //Serial port available
@@ -154,13 +102,61 @@ function DisplayConnexionConfig() {
     $xmlConfFile = simplexml_load_file("configuration.xml");
     $availableCnx = $xmlConfFile->children('connexions');
 
-    $currentCameras = array ();
+    
+    //Camera type available
+    $availabeCameras = array ();
     $i=0;
-    foreach ($xmlConfFile->cameras->cameras as $camera) {
-        $currentCameras[$i] = $camera;
+    foreach ($xmlConfFile->availableCameras->availableCameras as $camera) {
+        $availabeCameras[$i] = $camera;
         $i++;
     }
     
+    //List of camera configured
+    $currentCameras = array ();
+    $i=0;
+    foreach ($xmlConfFile->cameras->cameras as $camera) {
+        $cameraconf = array();
+        $cameraAttributes = array();
+        $cameraLiveviews = array();
+        
+        $cameraconf["type"] = $camera->type;
+        if($camera->attributes->index){
+            $cameraAttributes["index"] = $camera->attributes->index;
+        }
+        
+        if($camera->attributes->url){
+            $cameraAttributes["index"] = $camera->attributes->url;
+        }
+        $cameraconf["attributes"] = $cameraAttributes;
+        $j=0;
+        foreach ($camera->liveviews->liveviews as $liveview) {
+            $liveviewConf = array();
+            $liveviewConf["type"] = $liveview->type;
+            $liveviewAttributes = array();
+            if($liveview->attributes->port){
+                $liveviewAttributes["port"] = $liveview->attributes->port;
+            }
+            $liveviewConf["attributes"] = $liveviewAttributes;
+            
+            $filersConf = array();
+            $h = 0;
+            foreach ($liveview->filters->filters as $filter) {
+                $filersConf[$h] = $filter->type;
+                $h++;
+            }
+            $liveviewConf["filters"] = $filersConf;
+            
+            $cameraLiveviews[$j] = $liveviewConf;
+            $j++;
+        }
+        
+        $cameraconf["liveviews"] = $cameraLiveviews;
+        
+        $currentCameras[$i] = $cameraconf;
+        $i++;
+    }
+    
+   
     $currentSerial = array ();
     $i=0;
     foreach ($xmlConfFile->availableSerial->availableSerial as $serial) {
@@ -214,12 +210,21 @@ function DisplayConnexionConfig() {
                                     echo(key($attribute) . " : " . $attribute );
                                 }
                                 echo( "</li>");
-                                
-                                
                             }
-                            
+                            echo( "</ul></td>");
 ?>
 						</tr>
+						<tr>
+							<td>
+        						<select name="newCameraType" id="newCameraType"  class="form-control">
+        <?php 
+                                for($i=0; $i < sizeof($availabeCameras);$i++){
+                                       echo("<option value=\"" . $i . "\">" . $availabeCameras[$i] . "</option>");
+                                }
+        ?>
+                    			</select>
+                    		</td>
+        				</tr>
 <?php 
                       }
 ?>
