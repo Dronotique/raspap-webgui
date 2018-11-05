@@ -133,8 +133,9 @@ function DisplayConnexionConfig() {
             $liveviewConf = array();
             $liveviewConf["type"] = $liveview->type;
             $liveviewAttributes = array();
-            if($liveview->attributes->port){
-                $liveviewAttributes["port"] = $liveview->attributes->port;
+            
+            foreach($liveview->attributes->child() as $attribute){
+                $liveviewAttributes[$attribute->getName()] = $attribute;
             }
             $liveviewConf["attributes"] = $liveviewAttributes;
             
