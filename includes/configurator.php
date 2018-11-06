@@ -195,6 +195,7 @@ function DisplayConnexionConfig() {
                         <th></th>
                       </tr>
 <?php 
+                        $j=0;
                       foreach($currentCameras as $camera){ 
 ?>
 						<tr>
@@ -205,15 +206,20 @@ function DisplayConnexionConfig() {
                             }
                             echo(")</td><td><ul>");
                             foreach($camera['liveviews'] as $liveview){
-                                echo("<li>" . $liveview["type"]);
+                                echo("<li>" . $liveview["type"] . "(");
                                 
                                 foreach($liveview["attributes"] as $attribute){
                                     echo(key($liveview["attributes"]) . " : " . $attribute );
                                 }
-                                echo( "</li>");
+                                echo( ")</li>");
                             }
-                            echo( "</ul></td>");
+                            echo( "</ul>");
 ?>
+                            	<select name="newLiveView<?php echo($j);?>" id="newLiveView"  class="form-control">
+                            		<option value="VIDEO_OUT">VIDEO_OUT</option>
+                            		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
+                    			</select>
+							</td>
 						</tr>
 						<tr>
 							<td>
