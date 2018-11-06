@@ -211,6 +211,10 @@ function DisplayConnexionConfig() {
                                 foreach($liveview["attributes"] as $attribute){
                                     echo(key($liveview["attributes"]) . " : " . $attribute );
                                 }
+                                
+                                foreach($liveview["filters"] as $filter){
+                                    echo( $filter );
+                                }
                                 echo( ")</li>");
                             }
                             echo( "</ul>");
