@@ -221,15 +221,15 @@ function DisplayConnexionConfig() {
                             }
                             echo( "</ul>");
 ?>
-								<div class="panel" id="newLiveview<?php echo($j);?>" style="display:none">
-                                	<select name="newLiveView<?php echo($j);?>" id="newLiveView"  class="form-control">
+								<div class="panel" id="newLiveviewPanel<?php echo($j);?>" style="display:none">
+                                	<select name="newLiveView<?php echo($j);?>" id="newLiveView<?php echo($j);?>"  class="form-control">
                                 		<option value="VIDEO_OUT">VIDEO_OUT</option>
                                 		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
                         			</select>
                     			</div>
 							</td>
 							<td>
-								<input type="button" name="addLiveview<?php echo($j);?>" value="Add Liveview" class="btn btn-info"/> 
+								<input type="button" name="addLiveview<?php echo($j);?>" value="Add Liveview" class="btn btn-info" onClick="document.getElementById("newLiveviewPanel<?php echo($j);?>").style.display='block';"/> 
 								<br/>
                     			<input type="submit" name="delCamera<?php echo($j);?>" value="Delete camera" class="btn btn-warning"/>
                     		</td>
@@ -259,7 +259,7 @@ function DisplayConnexionConfig() {
         
       			<table class="table table-responsive table-striped">
       				<tr>
-                        <th colspan="5"><?php echo _("Connexions"); ?></th>
+                        <th colspan="5"><?php echo _("Output Connections"); ?></th>
                       </tr>
                       <tr>
                         <th><?php echo _("Type"); ?></th>
