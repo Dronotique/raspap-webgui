@@ -189,8 +189,8 @@ function DisplayConnexionConfig() {
                       </tr>
                       <tr>
                         <th><?php echo _("Type"); ?></th>
-                        <th><?php echo _("Value1"); ?></th>
-                        <th><?php echo _("Value2"); ?></th>
+                        <th><?php echo _("Attributes"); ?></th>
+                        <th><?php echo _("Delete"); ?></th>
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
@@ -254,8 +254,8 @@ function DisplayConnexionConfig() {
                       </tr>
                       <tr>
                         <th><?php echo _("Type"); ?></th>
-                        <th><?php echo _("Value1"); ?></th>
-                        <th><?php echo _("Value2"); ?></th>
+                        <th><?php echo _("Host/Serial Port"); ?></th>
+                        <th><?php echo _("Host Port/Serial Speed"); ?></th>
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
