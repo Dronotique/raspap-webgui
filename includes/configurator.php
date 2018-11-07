@@ -202,7 +202,7 @@ function DisplayConnexionConfig() {
 <?php 
                             echo("<td>".$camera['type'] . " (");
                             foreach($camera['attributes'] as $attribute){
-                                echo("(" . key($camera['attributes']) . " : " . $attribute );
+                                echo(key($camera['attributes']) . " : " . $attribute );
                             }
                             echo(")</td><td><ul>");
                             $h = 0;
