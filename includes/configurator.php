@@ -221,7 +221,7 @@ function DisplayConnexionConfig() {
                             }
                             echo( "</ul>");
 ?>
-								<div class="panel" id="newLiveviewPanel<?php echo($j);?>" style="display:none">
+								<div class="modal" id="newLiveviewPanel<?php echo($j);?>">
                                 	<select name="newLiveView<?php echo($j);?>" id="newLiveView<?php echo($j);?>"  class="form-control">
                                 		<option value="VIDEO_OUT">VIDEO_OUT</option>
                                 		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
