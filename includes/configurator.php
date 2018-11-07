@@ -223,10 +223,15 @@ function DisplayConnexionConfig() {
                             		<option value="VIDEO_OUT">VIDEO_OUT</option>
                             		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
                     			</select>
+                    			<input type="button" name="addLiveview<?php echo($j);?>" value="+" class="btn btn-info"/> 
 							</td>
+							<td>
+                    			<input type="button" name="delCamera" value="Delete camera" class="btn btn-warning"/>
+                    		</td>
 						</tr>
 						<tr>
 							<td>
+								Add new camera : 
         						<select name="newCameraType" id="newCameraType"  class="form-control">
         <?php 
                                 for($i=0; $i < sizeof($availabeCameras);$i++){
@@ -234,7 +239,9 @@ function DisplayConnexionConfig() {
                                 }
         ?>
                     			</select>
+                    			<input type="button" name="addCamera" value="+" class="btn btn-info"/> 
                     		</td>
+                    		
         				</tr>
 <?php 
                       }
