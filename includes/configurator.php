@@ -231,8 +231,10 @@ function DisplayConnexionConfig() {
                     		</td>
 						</tr>
 						<tr>
-							<td colspan ="3">
-								Add new camera : 
+							<td>
+								Add new camera :
+							</td>
+							<td> 
         						<select name="newCameraType" id="newCameraType"  class="form-control">
         <?php 
                                 for($i=0; $i < sizeof($availabeCameras);$i++){
@@ -240,6 +242,8 @@ function DisplayConnexionConfig() {
                                 }
         ?>
                     			</select>
+                    		</td>
+							<td>
                     			<input type="submit" name="addCamera" value="+" class="btn btn-info"/> 
                     		</td>
                     		
