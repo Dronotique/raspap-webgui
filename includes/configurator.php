@@ -215,7 +215,7 @@ function DisplayConnexionConfig() {
                                 foreach($liveview["filters"] as $filter){
                                     echo( $filter . ", ");
                                 }
-                                echo( "<input type=\"button\" name=\"addFilter\" value=\"+\" class=\"col-md-6 btn btn-warning\"/> </li>");
+                                echo( "<input type=\"button\" name=\"addFilter\" value=\"+\" class=\"btn btn-info\"/> </li>");
                             }
                             echo( "</ul>");
 ?>
