@@ -190,7 +190,7 @@ function DisplayConnexionConfig() {
                       <tr>
                         <th><?php echo _("Type"); ?></th>
                         <th><?php echo _("Attributes"); ?></th>
-                        <th><?php echo _("Delete"); ?></th>
+                        <th><?php echo _("Action"); ?></th>
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
@@ -226,7 +226,7 @@ function DisplayConnexionConfig() {
                     			
 							</td>
 							<td>
-								<input type="button" name="addLiveview<?php echo($j);?>" value="+" class="btn btn-info"/> 
+								<input type="button" name="addLiveview<?php echo($j);?>" value="Add filter" class="btn btn-info"/> 
                     			<input type="submit" name="delCamera<?php echo($j);?>" value="Delete camera" class="btn btn-warning"/>
                     		</td>
 						</tr>
