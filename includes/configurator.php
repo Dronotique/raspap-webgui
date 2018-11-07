@@ -205,6 +205,7 @@ function DisplayConnexionConfig() {
                                 echo("(" . key($camera['attributes']) . " : " . $attribute );
                             }
                             echo(")</td><td><ul>");
+                            $h = 0;
                             foreach($camera['liveviews'] as $liveview){
                                 echo("<li>" . $liveview["type"] . "(");
                                 
@@ -215,42 +216,45 @@ function DisplayConnexionConfig() {
                                 foreach($liveview["filters"] as $filter){
                                     echo( $filter . ", ");
                                 }
-                                echo( "<input type=\"button\" name=\"delLiveview\" value=\"+\" class=\"btn btn-info\"/> </li>");
+                                echo( "<input type=\"button\" name=\"delLiveview" . $j . "_" . $h . "\" value=\"-\" class=\"btn btn-info\"/> </li>");
+                                $h++;
                             }
                             echo( "</ul>");
 ?>
-                            	<select name="newLiveView<?php echo($j);?>" id="newLiveView"  class="form-control">
-                            		<option value="VIDEO_OUT">VIDEO_OUT</option>
-                            		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
-                    			</select>
-                    			
+								<div class="panel" id="newLiveview<?php echo($j);?>" style="display:none">
+                                	<select name="newLiveView<?php echo($j);?>" id="newLiveView"  class="form-control">
+                                		<option value="VIDEO_OUT">VIDEO_OUT</option>
+                                		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
+                        			</select>
+                    			</div>
 							</td>
 							<td>
-								<input type="button" name="addLiveview<?php echo($j);?>" value="Add filter" class="btn btn-info"/> 
+								<input type="button" name="addLiveview<?php echo($j);?>" value="Add Liveview" class="btn btn-info"/> 
+								<br/>
                     			<input type="submit" name="delCamera<?php echo($j);?>" value="Delete camera" class="btn btn-warning"/>
                     		</td>
 						</tr>
-						<tr>
-							<td>
-								Add new camera :
-							</td>
-							<td> 
-        						<select name="newCameraType" id="newCameraType"  class="form-control">
-        <?php 
-                                for($i=0; $i < sizeof($availabeCameras);$i++){
-                                       echo("<option value=\"" . $i . "\">" . $availabeCameras[$i] . "</option>");
-                                }
-        ?>
-                    			</select>
-                    		</td>
-							<td>
-                    			<input type="submit" name="addCamera" value="+" class="btn btn-info"/> 
-                    		</td>
-                    		
-        				</tr>
 <?php 
                       }
 ?>
+                      <tr>
+                          <td>
+        	                  Add new camera :
+                          </td>
+                          <td>
+            	              <select name="newCamera" id="newCamera"  class="form-control">
+                	          <?php
+                              for($i=0; $i < sizeof($availabeCameras);$i++){
+                                  echo("<option value=\"" . $i . "\">" . $availabeCameras[$i] . "</option>");
+                              }
+                              ?>
+                        	</select>
+                    	</td>
+						<td>
+                   			<input type="submit" name="addCamera" value="+" class="btn btn-info"/> 
+                   		</td>
+                    		
+        			</tr>
                 </table>
         
       			<table class="table table-responsive table-striped">
