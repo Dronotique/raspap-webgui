@@ -229,7 +229,7 @@ function DisplayConnexionConfig() {
                     			</div>
 							</td>
 							<td>
-								<input type="button" name="addLiveview<?php echo($j);?>" value="Add Liveview" class="btn btn-info" onClick="document.getElementById("newLiveviewPanel<?php echo($j);?>").style.display='block';"/> 
+								<input type="button" name="addLiveview<?php echo($j);?>" value="Add Liveview" class="btn btn-info" onClick="document.getElementById('newLiveviewPanel<?php echo($j);?>').style.display='block';"/> 
 								<br/>
                     			<input type="submit" name="delCamera<?php echo($j);?>" value="Delete camera" class="btn btn-warning"/>
                     		</td>
