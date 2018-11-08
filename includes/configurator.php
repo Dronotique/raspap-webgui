@@ -235,6 +235,8 @@ function DisplayConnexionConfig() {
                     		</td>
 						</tr>
 <?php 
+
+                        $j++;
                       }
 ?>
                       <tr>
