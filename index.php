@@ -36,6 +36,7 @@ include_once( 'includes/themes.php' );
 include_once( 'includes/data_usage.php' );
 include_once( 'includes/update.php' );
 include_once( 'includes/configurator.php' );
+include_once( 'includes/configurator_json.php' );
 
 $output = $return = 0;
 $page = $_GET['page'];
@@ -126,6 +127,9 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
                 <a href="index.php?page=configurator"><i class="fa fa-cogs fa-fw"></i> <?php echo _("Configurator"); ?></a>
               </li>
               <li>
+                <a href="index.php?page=configurator_json"><i class="fa fa-cogs fa-fw"></i> <?php echo _("Configurator JSON"); ?></a>
+              </li>
+              <li>
                 <a href="index.php?page=wlan0_info"><i class="fa fa-dashboard fa-fw"></i> <?php echo _("Wifi Client Dashboard"); ?></a>
               </li>
               <li>
@@ -195,6 +199,9 @@ $extraFooterScripts = array();
                 break;
             case "configurator_modif":
                 modifyConnexionConfig();
+                break;
+            case "configurator_json":
+                DisplayConnexionConfigJson();
                 break;
           case "wlan0_info":
             DisplayDashboard();
