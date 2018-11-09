@@ -12,7 +12,6 @@ var confJson = $.getJSON( confAPI, function() {
   .always(function() {
     console.log( "complete" );
   });
-}
 </script>
 
 
