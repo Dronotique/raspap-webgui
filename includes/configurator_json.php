@@ -1,3 +1,21 @@
+<script>
+var confAPI = "http://localhost:8079/?jsoncallback=?";
+var confJson = $.getJSON( confAPI, function() {
+  console.log( "success" );
+	})
+  .done(function() {
+    console.log( "second success" );
+  })
+  .fail(function() {
+    console.log( "error" );
+  })
+  .always(function() {
+    console.log( "complete" );
+  });
+}
+</script>
+
+
 <?php 
 
 function DisplayConnexionConfigJson() {
@@ -82,22 +100,7 @@ function DisplayConnexionConfigJson() {
         $i++;
     }
 ?>
-<script>
-var confAPI = "http://localhost:8079/?jsoncallback=?";
-var confJson = $.getJSON( confAPI, function() {
-  console.log( "success" );
-	})
-  .done(function() {
-    console.log( "second success" );
-  })
-  .fail(function() {
-    console.log( "error" );
-  })
-  .always(function() {
-    console.log( "complete" );
-  });
-}
-</script>
+
 <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-primary">
