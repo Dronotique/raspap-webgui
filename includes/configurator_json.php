@@ -1,4 +1,4 @@
-<script src="vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
 <script>
 var confAPI = "http://localhost:8079/?jsoncallback=?";
 var confJson = $.getJSON( confAPI, function() {
