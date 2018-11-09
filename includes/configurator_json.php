@@ -1,6 +1,6 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
-var confAPI = "http://localhost:8079/?jsoncallback=?";
+var confAPI = "http://" + window.location.hostname + ":8079/?jsoncallback=?";
 var confJson = $.getJSON( confAPI, function() {
   console.log( "success" );
 	})
