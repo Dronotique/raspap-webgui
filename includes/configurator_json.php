@@ -129,17 +129,24 @@ function DisplayConnexionConfigJson() {
 				markup += jSonLiveview.filters[j].type;
 			}
 		}
-		markup += '<input type="button" onclick="delLiveview(' + indexCamera + ', ' + indexLiveview +');" value="-" class="btn btn-info"></li>';
+		markup += '<input type="button" onclick="delLiveview(' + indexCamera + ', ' + indexLiveview +');" value="-" class="btn btn-warning"></li>';
 
 		return markup;
 	}
 
 	function delLiveview(camera, liveview){
 		if(confJson.cameras.length > camera){
-			confJson.connexions.splice(index, 1);
-		}
+			if(confJson.cameras[camera].liveviews.length > liveview){
+				confJson.cameras[camera].liveviews.splice(liveview, 1);
 
-		 $("#cnxRow" + index).remove();
+				$("#table_camera").empty();
+				 $("#table_camera").html(originalCameraTab);
+
+				 for (var i = 0; i < confJson.cameras.length; i++) {
+					addCameraToHtml(i, confJson.cameras[i]);
+				}
+			}
+		}
 	}
 	
 	function addFilterToHtml(jSonFilter){
@@ -167,13 +174,12 @@ function DisplayConnexionConfigJson() {
 	function delConnexion(index){
 		if(confJson.connexions.length > index){
 			confJson.connexions.splice(index, 1);
-		}
+			$("#tableconnexion").empty();
+			 $("#tableconnexion").html(originalConnexionTab);
 
-		 $("#tableconnexion").empty();
-		 $("#tableconnexion").html(originalConnexionTab);
-
-		 for (var i = 0; i < confJson.connexions.length; i++) {
-			addConnexionToHtml(i, confJson.connexions[i]);
+			 for (var i = 0; i < confJson.connexions.length; i++) {
+				addConnexionToHtml(i, confJson.connexions[i]);
+			}
 		}
 	}
 
