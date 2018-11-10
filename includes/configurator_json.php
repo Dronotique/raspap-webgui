@@ -82,7 +82,6 @@ function DisplayConnexionConfigJson() {
       </div>
     </div>
 </div>
-<script src="../vendor/jquery/jquery.min.js"></script>
 <script>
 
     function addCamera(){
@@ -256,43 +255,47 @@ function DisplayConnexionConfigJson() {
 		
 	}
 	
-	var confAPI = "/proxy.php";
-	var confJsonPath = "http://localhost:8079/";
-	var confJson ={};
-	$.getJSON( confAPI, {csurl: confJsonPath},function() {
-	  console.log( "success" );
-		})
-	  .done(function(data) {
-		confJson = data;  
-	    console.log( "second success" );
-	    for (var i = 0; i < confJson.cameras.length; i++) {
-			addCameraToHtml(i, confJson.cameras[i]);
-		}
-
-
-		for (var i = 0; i < confJson.connexions.length; i++) {
-			addConnexionToHtml(i, confJson.connexions[i]);
-		}
-
-		for (var i = 0; i < confJson.availableCameras.length; i++) {
-			var option = new Option(confJson.availableCameras[i], confJson.availableCameras[i]);
-			$("#newCamera").append(option); 
-		}
-
-		for (var i = 0; i < confJson.availableSerial.length; i++) {
-			var option = new Option(confJson.availableSerial[i], confJson.availableSerial[i]);
-			$("#serialPortAdd").append(option); 
-		}
-	  })
-	  .fail(function(jqXHR, textStatus, errorThrown) {
-	        console.log("error " + textStatus);
-	        console.log("error thrown" + errorThrown);
-	        console.log("incoming Text " + jqXHR.responseText);
-	  })
-	  .always(function() {
-	    console.log( "complete" );
-	  });
-
+	$( document ).ready(function() {
+		var confAPI = "/proxy.php";
+		var confJsonPath = "http://localhost:8079/";
+		var confJson ={};
+    	$.getJSON( confAPI, {csurl: confJsonPath},function() {
+    	  console.log( "success" );
+    		})
+    	  .done(function(data) {
+    		confJson = data;  
+    	    console.log( "second success" );
+    	    for (var i = 0; i < confJson.cameras.length; i++) {
+    			addCameraToHtml(i, confJson.cameras[i]);
+    		}
+    
+    
+    		for (var i = 0; i < confJson.connexions.length; i++) {
+    			addConnexionToHtml(i, confJson.connexions[i]);
+    		}
+    
+    		for (var i = 0; i < confJson.availableCameras.length; i++) {
+    			var option = new Option(confJson.availableCameras[i], confJson.availableCameras[i]);
+    			$("#newCamera").append(option); 
+    		}
+    
+    		for (var i = 0; i < confJson.availableSerial.length; i++) {
+    			var option = new Option(confJson.availableSerial[i], confJson.availableSerial[i]);
+    			$("#serialPortAdd").append(option); 
+    		}
+    	  })
+    	  .fail(function(jqXHR, textStatus, errorThrown) {
+    	        console.log("error " + textStatus);
+    	        console.log("error thrown" + errorThrown);
+    	        console.log("incoming Text " + jqXHR.responseText);
+    	  })
+    	  .always(function() {
+    	    console.log( "complete" );
+    	  });
+    
+    	toogleFormConnexion();
+    	
+	};
 
 	var originalCameraTab = $("#table_camera").html();
 	var originalConnexionTab = $("#tableconnexion").html();
@@ -312,7 +315,7 @@ function DisplayConnexionConfigJson() {
 			document.getElementById("serialSpeedAdd").style.display='none';
 		}
 	}
-	toogleFormConnexion();
+	
 </script>
 <link rel="stylesheet" href="/vendor/jquery-ui/jquery-ui.css"/>
 <script src="/vendor/jquery-ui/jquery-ui.js"/>
