@@ -75,9 +75,6 @@ function DisplayConnexionConfigJson() {
                     		<td>
                     			<input type="submit" name="addCnx" value="Add" class="col-md-6 btn btn-info"/>
                     		</td>
-                    		<script>
-                        		
-                    		</script> 
                     	</form>
                   	</tr>
         	</table>
@@ -132,7 +129,7 @@ function DisplayConnexionConfigJson() {
 			+ '"><input type="hidden" value="' + index
 			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>';
 		
-		document.getElementById("tableconnexion").append(markup);
+		document.getElementById("tableconnexion").append($(markup));
 	}
 
 	function delConnexion(connexion){
