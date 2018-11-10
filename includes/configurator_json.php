@@ -85,7 +85,6 @@ function DisplayConnexionConfigJson() {
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
 
-
     function addCamera(){
     	var cameraType = document.getElementById("newCamera").value;
     	var jsonCam = "";

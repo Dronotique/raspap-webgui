@@ -267,6 +267,8 @@ $extraFooterScripts = array();
 
     <!-- Custom RaspAP JS -->
     <script src="js/custom.js"></script>
+    
+    <script type="text/javascript">$.noConflict();</script>
 
 <?php
 // Load non default JS/ECMAScript in footer.
