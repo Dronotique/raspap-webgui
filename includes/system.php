@@ -42,7 +42,7 @@ function RPiVersion() {
   if (array_key_exists($rev, $revisions)) {
     return $revisions[$rev];
   } else {
-      return 'Unknown version ' + $cpuinfo_array;
+      return 'Unknown version ' . $cpuinfo_array;
   }
 }
 
