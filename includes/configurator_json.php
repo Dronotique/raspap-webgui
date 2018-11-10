@@ -141,10 +141,12 @@ function DisplayConnexionConfigJson() {
 
 	var confAPI = "/proxy.php?callback=?";
 	var confJsonPath = "http://localhost:8079/";
-	var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
+	var confJson ="";
+	$.getJSON( confAPI, {csurl: confJsonPath},function() {
 	  console.log( "success" );
 		})
-	  .done(function() {
+	  .done(function(data) {
+		confJson = data;  
 	    console.log( "second success" );
 	  })
 	  .fail(function(jqXHR, textStatus, errorThrown) {
@@ -155,6 +157,7 @@ function DisplayConnexionConfigJson() {
 	  .always(function() {
 	    console.log( "complete" );
 	  });
+	  
 	
 	for (var i = 0; i < confJson.cameras.length; i++) {
 		addCameraToHtml(confJson.cameras[i]);
