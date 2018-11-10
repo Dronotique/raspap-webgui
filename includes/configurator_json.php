@@ -1,7 +1,7 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-    if (options.url.match('/^http?:/')) {
+    if (options.url.match('/^https?:/')) {
         options.headers['X-Proxy-URL'] = options.url;
         options.url = '/includes/proxy.php';
     }
