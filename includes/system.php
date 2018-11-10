@@ -138,6 +138,7 @@ function DisplaySystem(){
     <li role="presentation" class="languagetab"><a href="#language" aria-controls="language" role="tab" data-toggle="tab"><?php echo _("Language"); ?></a></li>
     <li role="presentation" class="filemanagertab"><a href="#filemanager" aria-controls="filemanager" role="tab" data-toggle="tab"><?php echo _("File manager"); ?></a></li>
     <li role="presentation" class="consoletab"><a href="#console" aria-controls="console" role="tab" data-toggle="tab"><?php echo _("Console"); ?></a></li>
+    <li role="presentation" class="filemanagertab"><a href="#serverinfo" aria-controls="serverinfo" role="tab" data-toggle="tab"><?php echo _("Server Info"); ?></a></li>
   </ul>
 
   <div class="systemtabcontent tab-content">
