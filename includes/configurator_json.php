@@ -129,13 +129,17 @@ function DisplayConnexionConfigJson() {
 				markup += jSonLiveview.filters[j].type;
 			}
 		}
-		markup += '<input type="button" name="delLiveview' + indexCamera + '_' + indexLiveview +'" value="-" class="btn btn-info"></li>';
+		markup += '<input type="button" onclick="delLiveview(' + indexCamera + ', ' + indexLiveview +');" value="-" class="btn btn-info"></li>';
 
 		return markup;
 	}
 
 	function delLiveview(camera, liveview){
+		if(confJson.cameras.length > camera){
+			confJson.connexions.splice(index, 1);
+		}
 
+		 $("#cnxRow" + index).remove();
 	}
 	
 	function addFilterToHtml(jSonFilter){
@@ -165,7 +169,12 @@ function DisplayConnexionConfigJson() {
 			confJson.connexions.splice(index, 1);
 		}
 
-		 $("#cnxRow" + index).remove();
+		 $("#tableconnexion").empty();
+		 $("#tableconnexion").html(originalConnexionTab);
+
+		 for (var i = 0; i < confJson.cameras.length; i++) {
+			addConnexionToHtml(i, confJson.connexions[i]);
+		}
 	}
 
 
@@ -228,6 +237,9 @@ function DisplayConnexionConfigJson() {
 	    console.log( "complete" );
 	  });
 
+
+	var originalCameraTab = $("#table_camera").html();
+	var originalConnexionTab = $("#tableconnexion").html();
 
 	function toogleFormConnexion(){
 		if(document.getElementById('serialOpt').selected == 'selected'){
