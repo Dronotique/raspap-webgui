@@ -105,13 +105,22 @@ function DisplayConnexionConfigJson() {
     			+ '<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">'
     			+ '<option value="VIDEO_OUT">VIDEO_OUT</option><option value="HTTP_MJPEG">HTTP_MJPEG</option></select></div></td>'
 				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="document.getElementById(\'newLiveviewPanel' + index + '\').style.display=\'block\';"><br>'
-				+ '<input type="submit" name="delCamera' + index + '" value="Delete camera" class="btn btn-warning"></td></tr>';
+				+ '<input type="button" name="delCamera' + index + '" onclick="delCamera(' + index + ')" value="Delete camera" class="btn btn-warning"></td></tr>';
 
 		$("#table_camera").append(markup);
 	}
 
 	function delCamera(camera){
+		if(confJson.cameras.length > camera){
+			confJson.cameras.splice(camera, 1);
 
+			$("#table_camera").empty();
+			 $("#table_camera").html(originalCameraTab);
+
+			 for (var i = 0; i < confJson.cameras.length; i++) {
+				addCameraToHtml(i, confJson.cameras[i]);
+			}
+		}
 	}
 
 
