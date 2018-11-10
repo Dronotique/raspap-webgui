@@ -1,5 +1,12 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
+$.ajaxPrefilter(function( options ) {
+  if ( options.crossDomain ) {
+    options.url = "/includes/proxy.php" + encodeURIComponent( options.url );
+    options.crossDomain = false;
+  }
+});
+
 //var confAPI = "/includes/proxy.php";
 var confAPI = "http://" + window.location.hostname + ":8079/?callback=?&jsoncallback=?";
 var confJson = $.getJSON( confAPI, function() {
