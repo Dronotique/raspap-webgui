@@ -129,7 +129,7 @@ function DisplayConnexionConfigJson() {
 			+ '"><input type="hidden" value="' + index
 			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>';
 		
-		$("tableconnexion").append(markup);
+		$("tableconnexion").append($(markup));
 	}
 
 	function delConnexion(connexion){
