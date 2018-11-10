@@ -156,12 +156,12 @@ function DisplayConnexionConfigJson() {
 	  });
 	
 	for (var i = 0; i < confJson.cameras.length; i++) {
-		addCameraToHtml(confJson.cameras[i]));
+		addCameraToHtml(confJson.cameras[i]);
 	}
 
 
 	for (var i = 0; i < confJson.cameras.length; i++) {
-		addConnexionToHtml(i, confJson.connexions[i]));
+		addConnexionToHtml(i, confJson.connexions[i]);
 	}
 
 	for (var i = 0; i < confJson.availableCameras.length; i++) {
