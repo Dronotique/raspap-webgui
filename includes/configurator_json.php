@@ -1,13 +1,7 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
-/*$.ajaxPrefilter(function( options ) {
-  if ( options.crossDomain ) {
-    options.url = "/includes/proxy.php" + encodeURIComponent( options.url );
-    options.crossDomain = false;
-  }
-});*/
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-    if (options.url.match(/^https?:/)) {
+    if (options.url.match('/^http?:/')) {
         options.headers['X-Proxy-URL'] = options.url;
         options.url = '/includes/proxy.php';
     }
