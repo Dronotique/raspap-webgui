@@ -156,12 +156,12 @@ function DisplayConnexionConfigJson() {
 
 		for (var i = 0; i < confJson.availableCameras.length; i++) {
 			var option = new Option(confJson.availableCameras[i], confJson.availableCameras[i]);
-			document.getElementById("newCamera").append($(option)); 
+			$("newCamera").append($(option)); 
 		}
 
 		for (var i = 0; i < confJson.availableSerial.length; i++) {
 			var option = new Option(confJson.availableSerial[i], confJson.availableSerial[i]);
-			document.getElementById("serialPortAdd").append($(option)); 
+			$("serialPortAdd").append($(option)); 
 		}
 	  })
 	  .fail(function(jqXHR, textStatus, errorThrown) {
