@@ -99,7 +99,7 @@ function DisplayConnexionConfigJson() {
 
 		markup += '</td><td><ul>'
 		for(var i=0; i < jsonCamera.liveviews.length; i++){
-			addLiveviewToHtml(jsonCamera.liveviews(i));
+			addLiveviewToHtml(jsonCamera.liveviews[i]);
 		}
 		markup += '</ul><div class="modal" id="newLiveviewPanel' + index + '">'
     			+ '<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">'
