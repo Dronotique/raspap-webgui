@@ -155,7 +155,7 @@ function DisplayConnexionConfigJson() {
 			+ '</td><td>'
 			+ jSonConnexion.attributes.port;
 		}
-		markup += '</td><td><input type="button" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning" onclick="delConnexion(index)"></td></tr>';
+		markup += '</td><td><input type="button" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning" onclick="delConnexion(' + index + ')"></td></tr>';
 		
 		$("#tableconnexion").append(markup);
 	}
