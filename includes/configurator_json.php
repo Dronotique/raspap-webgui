@@ -243,7 +243,7 @@ function DisplayConnexionConfigJson() {
 
 	function toogleFormConnexion(){
 		
-		if($("#typeNewCnx").find(':selected').val() == "SERIAL")){
+		if($("#typeNewCnx").find(':selected').val() == "SERIAL"){
 			document.getElementById("hostAdd").style.display='none';
 			document.getElementById("hostPortAdd").style.display='none';
 			document.getElementById("serialPortAdd").style.display='block';
