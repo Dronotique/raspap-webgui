@@ -73,7 +73,7 @@ function DisplayConnexionConfigJson() {
                   				<input type="text" name="hostPort" id="hostPortAdd"  class="form-control"/>
                     		</td>
                     		<td>
-                    			<input type="submit" name="addCnx" value="Add" class="col-md-6 btn btn-info"/>
+                    			<input type="button" name="addCnx" onclick="" value="+" class="col-md-6 btn btn-info"/>
                     		</td>
                     	</form>
                   	</tr>
@@ -170,6 +170,26 @@ function DisplayConnexionConfigJson() {
 		}
 
 		 $("#tableconnexion").empty();
+		 $("#tableconnexion").html(originalConnexionTab);
+
+		 for (var i = 0; i < confJson.connexions.length; i++) {
+			addConnexionToHtml(i, confJson.connexions[i]);
+		}
+	}
+
+	function addCnx(){
+		if($("#typeNewCnx").find(':selected').val() == "SERIAL"){
+			var serialPort = document.getElementById("serialPortAdd").value;
+			var serialSpeed = document.getElementById("serialSpeedAdd").value;
+			var newSerialCnx = {"type":"MAVLINK_SERIAL","attributes":{"class":"ConnexionConfAttrSerial","speed":serialSpeed,"port":serialPort};
+			confJson.connexions.push(newSerialCnx);
+		}else{
+			var host = document.getElementById("hostAdd").value;
+			var hostPort = document.getElementById("hostPortAdd").value;
+			var newWebCnx = {"type":"MAVLINK_UDP","attributes":{"class":"ConnexionConfAttrWeb","host":host,"port":hostPort};
+			confJson.connexions.push(newWebCnx);
+		}
+		$("#tableconnexion").empty();
 		 $("#tableconnexion").html(originalConnexionTab);
 
 		 for (var i = 0; i < confJson.connexions.length; i++) {
