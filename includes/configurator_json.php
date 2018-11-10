@@ -1,7 +1,8 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
-var confAPI = "/includes/proxy.php";
-var confJsonPath = "http://" + window.location.hostname + ":8079/?jsoncallback=?";
+//var confAPI = "/includes/proxy.php";
+var confJsonPath = "http://" + window.location.hostname + ":8079/?callback=?";
+var confAPI = confJsonPath;
 var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
   console.log( "success" );
 	})
