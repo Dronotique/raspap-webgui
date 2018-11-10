@@ -3,14 +3,14 @@
 var confAPI = "/includes/proxy.php";
 var confJsonPath = "http://" + window.location.hostname + ":8079/?jsoncallback=?";
 var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
-	
   console.log( "success" );
 	})
   .done(function() {
     console.log( "second success" );
   })
-  .fail(function() {
-    console.log( "error" );
+  .error(function(jqXHR, textStatus, errorThrown) {
+        console.log("error " + textStatus);
+        console.log("incoming Text " + jqXHR.responseText);
   })
   .always(function() {
     console.log( "complete" );
