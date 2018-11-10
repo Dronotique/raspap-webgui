@@ -73,7 +73,7 @@ function DisplayConnexionConfigJson() {
                   				<input type="text" name="hostPort" id="hostPortAdd"  class="form-control"/>
                     		</td>
                     		<td>
-                    			<input type="button" name="addCnx" onclick="" value="+" class="col-md-6 btn btn-info"/>
+                    			<input type="button" name="addCnx" onclick="addCnx();" value="+" class="col-md-6 btn btn-info"/>
                     		</td>
                     	</form>
                   	</tr>
