@@ -126,7 +126,7 @@ function DisplayConnexionConfigJson() {
 			markup += addLiveviewToHtml(index, i, jsonCamera.liveviews[i]);
 		}
 		markup += '</ul></td>'
-				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="document.getElementById(\'newLiveviewPanel' + index + '\').style.display=\'block\';"><br>'
+				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="currentCameraSelected=' + index + ';$( "#newLiveView" ).dialog();"><br>'
 				+ '<input type="button" name="delCamera' + index + '" onclick="delCamera(' + index + ')" value="Delete camera" class="btn btn-warning"></td></tr>';
 
 		$("#table_camera").append(markup);
@@ -297,7 +297,8 @@ function DisplayConnexionConfigJson() {
 
 	var originalCameraTab = $("#table_camera").html();
 	var originalConnexionTab = $("#tableconnexion").html();
-
+	var currentCameraSelected = 0;
+	
 	function toogleFormConnexion(){
 		
 		if($("#typeNewCnx").find(':selected').val() == "SERIAL"){
@@ -314,9 +315,12 @@ function DisplayConnexionConfigJson() {
 	}
 	toogleFormConnexion();
 	
+	
 </script>
-<div class="modal" id="newLiveviewPanel' + index + '">
-	<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<div class="modal" id="newLiveviewPanel" title="Add new liveview">
+	<select name="newLiveView" id="newLiveView" class="form-control">
     	<option value="VIDEO_OUT">VIDEO_OUT</option>
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select>
