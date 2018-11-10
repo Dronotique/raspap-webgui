@@ -295,7 +295,7 @@ function DisplayConnexionConfigJson() {
     
     	toogleFormConnexion();
     	
-	};
+	});
 
 	var originalCameraTab = $("#table_camera").html();
 	var originalConnexionTab = $("#tableconnexion").html();
