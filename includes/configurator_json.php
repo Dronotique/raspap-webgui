@@ -117,7 +117,7 @@ function DisplayConnexionConfigJson() {
 
 	
 	function addLiveviewToHtml(jSonLiveview){
-		var markup += '<li>' + jSonLiveview.type;
+		var markup = '<li>' + jSonLiveview.type;
 		markup += printAttributes(jSonLiveview.attributes);
 
 		if(jSonLiveview.filters.length > 0){
