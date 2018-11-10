@@ -317,8 +317,6 @@ function DisplayConnexionConfigJson() {
 	}
 	
 </script>
-<link rel="stylesheet" href="/vendor/jquery-ui/jquery-ui.css"/>
-<script src="/vendor/jquery-ui/jquery-ui.js"/>
 <div class="modal" id="newLiveviewPanel" title="Add new liveview">
 	<select name="newLiveView" id="newLiveView" class="form-control">
     	<option value="VIDEO_OUT">VIDEO_OUT</option>

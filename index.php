@@ -89,6 +89,8 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
 
     <!-- Custom CSS -->
     <link href="<?php echo $theme_url; ?>" title="main" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/vendor/jquery-ui/jquery-ui.css"/>
 
     <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -268,8 +270,11 @@ $extraFooterScripts = array();
     <!-- Custom RaspAP JS -->
     <script src="js/custom.js"></script>
     
-    <script type="text/javascript">$.noConflict();</script>
+    <script type="text/javascript">//$.noConflict();</script>
+    
 
+	<script src="/vendor/jquery-ui/jquery-ui.js"/>
+	
 <?php
 // Load non default JS/ECMAScript in footer.
 foreach ($extraFooterScripts as $script) {
