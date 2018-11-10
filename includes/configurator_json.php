@@ -1,15 +1,9 @@
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script>
-$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-    if (options.url.match('/^https?:/')) {
-        options.headers['X-Proxy-URL'] = options.url;
-        options.url = '/includes/proxy.php';
-    }
-});
-
-//var confAPI = "/includes/proxy.php";
-var confAPI = "http://" + window.location.hostname + ":8079/?jsoncallback=?";
-var confJson = $.getJSON( confAPI, function() {
+var confAPI = "/includes/proxy.php";
+var confJsonPath = "http://" + window.location.hostname + ":8079/?jsoncallback=?";
+var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
+	
   console.log( "success" );
 	})
   .done(function() {
