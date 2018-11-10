@@ -191,7 +191,7 @@ function DisplayConnexionConfigJson() {
 			document.getElementById("serialSpeedAdd").style.display='none';
 		}
 	}
-	toogleForm();
+	toogleFormConnexion();
 	
 </script>
 <?php 
