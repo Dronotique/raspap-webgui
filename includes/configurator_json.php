@@ -153,7 +153,16 @@ function DisplayConnexionConfigJson() {
 	  })
 	  .always(function() {
 	    console.log( "complete" );
-	  });
+	  })
+	  .complete(function (xhr, status) {
+            if (status === 'error' || !xhr.responseText) {
+                handleError();
+            }
+            else {
+                var data = xhr.responseText;
+                //...
+            }
+        });
 	
 	for (var i = 0; i < confJson.cameras.length; i++) {
 		addCameraToHtml(confJson.cameras[i]);
