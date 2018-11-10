@@ -107,7 +107,7 @@ function DisplayConnexionConfigJson() {
 				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="document.getElementById(\'newLiveviewPanel' + index + '\').style.display=\'block\';"><br>'
 				+ '<input type="submit" name="delCamera' + index + '" value="Delete camera" class="btn btn-warning"></td></tr>';
 
-		$("#tableconnexion").append(markup);
+		$("#table_camera").append(markup);
 	}
 
 	function delCamera(camera){
