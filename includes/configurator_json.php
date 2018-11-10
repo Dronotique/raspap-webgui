@@ -149,20 +149,12 @@ function DisplayConnexionConfigJson() {
 	  })
 	  .fail(function(jqXHR, textStatus, errorThrown) {
 	        console.log("error " + textStatus);
+	        console.log("error thrown" + errorThrown);
 	        console.log("incoming Text " + jqXHR.responseText);
 	  })
 	  .always(function() {
 	    console.log( "complete" );
-	  })
-	  .complete(function (xhr, status) {
-            if (status === 'error' || !xhr.responseText) {
-                handleError();
-            }
-            else {
-                var data = xhr.responseText;
-                //...
-            }
-        });
+	  });
 	
 	for (var i = 0; i < confJson.cameras.length; i++) {
 		addCameraToHtml(confJson.cameras[i]);
