@@ -52,7 +52,7 @@ function DisplayConnexionConfigJson() {
 	               	<tr>
                 		<form method="POST" action="?page=configurator_modif" name="conf_form_add">
                     		<td>
-                    			<select name="type"  class="form-control" onchange="toogleFormConnexion();">
+                    			<select name="type" id="typeNewCnx" class="form-control" onchange="toogleFormConnexion();">
                   					<option id="serialOpt" value="SERIAL">Serial Port</option>
                   					<option id="webOpt" value="WEB">Web</option>
                   				</select>
@@ -242,7 +242,8 @@ function DisplayConnexionConfigJson() {
 	var originalConnexionTab = $("#tableconnexion").html();
 
 	function toogleFormConnexion(){
-		if(document.getElementById('serialOpt').selected == 'selected'){
+		
+		if($("#typeNewCnx").find(':selected').val() == "SERIAL")){
 			document.getElementById("hostAdd").style.display='none';
 			document.getElementById("hostPortAdd").style.display='none';
 			document.getElementById("serialPortAdd").style.display='block';
