@@ -30,7 +30,7 @@ function DisplayConnexionConfigJson() {
                         	</select>
                     	</td>
 						<td>
-                   			<input type="submit" name="addCamera" value="+" class="btn btn-info"/> 
+                   			<input type="button" name="addCamera" onclick="addCamera();" value="+" class="btn btn-info"/> 
                    		</td>
                     		
         			</tr>
@@ -86,9 +86,33 @@ function DisplayConnexionConfigJson() {
 <script>
 
 
-    function addCamera(cameraType, attributeType, attributeVal){
-		
-        	
+    function addCamera(){
+    	var cameraType = document.getElementById("newCamera").value;
+    	var jsonCam = "";
+    	if(cameraType == "USB" || cameraType == "WEBCAM" ){
+    		var index = prompt("Please enter the index of the camera you want to connect", "0");
+    		if(index == null || index == ''){
+        		index = 0;
+    		}
+    		jsonCam = {"type":cameraType,"attributes":{"class":"CameraConfAttrIndex","index":index},"liveviews":[]};
+    	}else if(cameraType == "MJPEG" || cameraType == "RTSP" ){
+    		var url = prompt("Please enter the url of the camera you want to connect", "");
+    		if(url == null || url == ''){
+        		return;
+    		}
+    		jsonCam = {"type":cameraType,"attributes":{"class":"CameraConfAttrWeb","url":url},"liveviews":[]};
+    	}else {
+    		jsonCam = {"type":cameraType,"attributes":{},"liveviews":[]};
+    	}
+
+    	confJson.cameras.push(jsonCam);
+
+    	$("#table_camera").empty();
+		 $("#table_camera").html(originalCameraTab);
+
+		 for (var i = 0; i < confJson.cameras.length; i++) {
+			addCameraToHtml(i, confJson.cameras[i]);
+		}
     }
 
 	function addCameraToHtml(index, jsonCamera){
@@ -101,9 +125,7 @@ function DisplayConnexionConfigJson() {
 		for(var i=0; i < jsonCamera.liveviews.length; i++){
 			markup += addLiveviewToHtml(index, i, jsonCamera.liveviews[i]);
 		}
-		markup += '</ul><div class="modal" id="newLiveviewPanel' + index + '">'
-    			+ '<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">'
-    			+ '<option value="VIDEO_OUT">VIDEO_OUT</option><option value="HTTP_MJPEG">HTTP_MJPEG</option></select></div></td>'
+		markup += '</ul></td>'
 				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="document.getElementById(\'newLiveviewPanel' + index + '\').style.display=\'block\';"><br>'
 				+ '<input type="button" name="delCamera' + index + '" onclick="delCamera(' + index + ')" value="Delete camera" class="btn btn-warning"></td></tr>';
 
@@ -293,6 +315,12 @@ function DisplayConnexionConfigJson() {
 	toogleFormConnexion();
 	
 </script>
+<div class="modal" id="newLiveviewPanel' + index + '">
+	<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">
+    	<option value="VIDEO_OUT">VIDEO_OUT</option>
+    	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
+    </select>
+</div>
 <?php 
 }
 ?>
