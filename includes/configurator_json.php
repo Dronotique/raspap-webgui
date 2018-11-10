@@ -197,7 +197,7 @@ function DisplayConnexionConfigJson() {
 		confJson = data;  
 	    console.log( "second success" );
 	    for (var i = 0; i < confJson.cameras.length; i++) {
-			addCameraToHtml(confJson.cameras[i]);
+			addCameraToHtml(i, confJson.cameras[i]);
 		}
 
 
