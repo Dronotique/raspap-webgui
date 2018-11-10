@@ -157,7 +157,7 @@ function DisplayConnexionConfigJson() {
 	  .always(function() {
 	    console.log( "complete" );
 	  });
-	  
+	alert(confJson[0]);
 	
 	for (var i = 0; i < confJson.cameras.length; i++) {
 		addCameraToHtml(confJson.cameras[i]);
