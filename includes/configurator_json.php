@@ -146,6 +146,7 @@ function DisplayConnexionConfigJson() {
 	  console.log( "success" );
 		})
 	  .done(function(data) {
+		  alert(data);
 		confJson = data;  
 	    console.log( "second success" );
 	  })
