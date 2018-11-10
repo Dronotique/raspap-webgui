@@ -52,7 +52,7 @@ function DisplayConnexionConfigJson() {
 	               	<tr>
                 		<form method="POST" action="?page=configurator_modif" name="conf_form_add">
                     		<td>
-                    			<select name="type"  class="form-control" onchange="toogleForm();">
+                    			<select name="type"  class="form-control" onchange="toogleFormConnexion();">
                   					<option id="serialOpt" value="SERIAL" on>Serial Port</option>
                   					<option id="webOpt" value="WEB">Web</option>
                   				</select>
@@ -120,13 +120,13 @@ function DisplayConnexionConfigJson() {
 			+ jSonConnexion.type 
 			+ '</td><td>';
 		if(jSonConnexion.type == "MAVINK_SERIAL"){
-			markup += jSonConnexion.port
+			markup += jSonConnexion.attributes.port
 			+ '</td><td>'
-			+ jSonConnexion.speed;
+			+ jSonConnexion.attributes.speed;
 		}else{
-			markup += jSonConnexion.host
+			markup += jSonConnexion.attributes.host
 			+ '</td><td>'
-			+ jSonConnexion.port;
+			+ jSonConnexion.attributes.port;
 		}
 		markup += '</td><td><form method="POST" action="?page=configurator_modif" name="conf_form' + index 
 			+ '"><input type="hidden" value="' + index
