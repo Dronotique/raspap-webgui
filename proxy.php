@@ -86,9 +86,9 @@ if (isset($_REQUEST['csurl'])) {
 } elseif (isset($_SERVER['HTTP_X_PROXY_URL'])) {
     $request_url = urldecode($_SERVER['HTTP_X_PROXY_URL']);
 } else {
-    //header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
-    //header('Status: 404 Not Found');
-    //$_SERVER['REDIRECT_STATUS'] = 404;
+    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+    header('Status: 404 Not Found');
+    $_SERVER['REDIRECT_STATUS'] = 404;
     exit;
 }
 $p_request_url = parse_url($request_url);
