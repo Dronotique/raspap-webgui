@@ -87,11 +87,27 @@ function DisplayConnexionConfigJson() {
 
 
     function addCamera(cameraType, attributeType, attributeVal){
-    
+		
+        	
     }
 
-	function addCameraToHtml(jsonCamera){
+	function addCameraToHtml(index, jsonCamera){
+		var markup = '<tr><td>'
+			+ jsonCamera.type;
 
+		markup += printAttributes(jsonCamera.attributes);
+
+		markup += '</td><td><ul>'
+		for(var i=0; i < jsonCamera.liveviews.length; i++){
+			addLiveviewToHtml(jsonCamera.liveviews(i);
+		}
+		markup += '</ul><div class="modal" id="newLiveviewPanel' + index + '">'
+    			+ '<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">'
+    			+ '<option value="VIDEO_OUT">VIDEO_OUT</option><option value="HTTP_MJPEG">HTTP_MJPEG</option></select></div></td>'
+				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="document.getElementById(\'newLiveviewPanel' + index + '\').style.display=\'block\';"><br>'
+				+ '<input type="submit" name="delCamera' + index + '" value="Delete camera" class="btn btn-warning"></td></tr>';
+
+		$("#tableconnexion").append(markup);
 	}
 
 	function delCamera(camera){
@@ -101,7 +117,19 @@ function DisplayConnexionConfigJson() {
 
 	
 	function addLiveviewToHtml(jSonLiveview){
-		
+		markup += '<li>' + jSonLiveview.type;
+		markup += printAttributes(jSonLiveview.attributes);
+
+		if(jSonLiveview.filters.length > 0){
+			markup += " Filters : ";
+			for(var j=0; j < jSonLiveview.filters.length; j++){
+				if(j > 0){
+					markup += ", ";
+				}
+				markup += jSonLiveview.filters[j].type;
+			}
+		}
+		markup += '<input type="button" name="delLiveview' + index + '_' + i +'" value="-" class="btn btn-info"></li>';
 	}
 
 	function delLiveview(camera, liveview){
@@ -136,6 +164,29 @@ function DisplayConnexionConfigJson() {
 
 	}
 
+
+	function printAttributes(jsonAttr) {
+		var retAttributes = "";
+
+		var i =0;
+		Object.keys(jsonAttr).forEach(function(key) {
+			if(key != "classe"){
+				if(i > 0){
+					retAttributes+= ', ';
+				}
+				retAttributes+=key + ':' + jsonAttr[key];
+				i++;
+			}
+		})
+
+		if (i > 0){
+			retAttributes = '(' + retAttributes + ')';
+		}
+
+		return retAttributes;
+		
+	}
+	
 	var confAPI = "/proxy.php";
 	var confJsonPath = "http://localhost:8079/";
 	var confJson ={};
