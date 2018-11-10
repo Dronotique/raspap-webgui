@@ -116,7 +116,7 @@ function DisplayConnexionConfigJson() {
 		var markup = "<tr><td>"
 			+ jSonConnexion.type 
 			+ '</td><td>';
-		if(jSonConnexion.type == "MAVINK_SERIAL"){
+		if(jSonConnexion.type == "MAVLINK_SERIAL"){
 			markup += jSonConnexion.attributes.port
 			+ '</td><td>'
 			+ jSonConnexion.attributes.speed;
