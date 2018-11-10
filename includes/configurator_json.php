@@ -8,7 +8,7 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 });
 
 //var confAPI = "/includes/proxy.php";
-var confAPI = "http://" + window.location.hostname + ":8079/?callback=?&jsoncallback=?";
+var confAPI = "http://" + window.location.hostname + ":8079/?jsoncallback=?";
 var confJson = $.getJSON( confAPI, function() {
   console.log( "success" );
 	})
