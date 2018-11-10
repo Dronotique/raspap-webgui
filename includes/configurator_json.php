@@ -1,106 +1,6 @@
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script>
-var confAPI = "/proxy.php?callback=?";
-var confJsonPath = "http://localhost:8079/";
-var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
-  console.log( "success" );
-	})
-  .done(function() {
-    console.log( "second success" );
-  })
-  .fail(function(jqXHR, textStatus, errorThrown) {
-        console.log("error " + textStatus);
-        console.log("incoming Text " + jqXHR.responseText);
-  })
-  .always(function() {
-    console.log( "complete" );
-  });
-</script>
-
-
 <?php 
 
 function DisplayConnexionConfigJson() {
-    //$xmlConfFileContent = readfile("configuration.xml");
-    //$xmlConfFile = new SimpleXMLElement(utf8_encode($xmlConfFileContent));
-    $xmlConfFile = simplexml_load_file("configuration.xml");
-    $availableCnx = $xmlConfFile->children('connexions');
-
-    
-    //Camera type available
-    $availabeCameras = array ();
-    $i=0;
-    foreach ($xmlConfFile->availableCameras->availableCameras as $camera) {
-        $availabeCameras[$i] = $camera;
-        $i++;
-    }
-    
-    //List of camera configured
-    $currentCameras = array ();
-    $i=0;
-    foreach ($xmlConfFile->cameras->cameras as $camera) {
-        $cameraconf = array();
-        $cameraAttributes = array();
-        $cameraLiveviews = array();
-        
-        $cameraconf["type"] = $camera->type;
-        if($camera->attributes->index){
-            $cameraAttributes["index"] = $camera->attributes->index;
-        }
-        
-        if($camera->attributes->url){
-            $cameraAttributes["index"] = $camera->attributes->url;
-        }
-        $cameraconf["attributes"] = $cameraAttributes;
-        $j=0;
-        foreach ($camera->liveviews->liveviews as $liveview) {
-            $liveviewConf = array();
-            $liveviewConf["type"] = $liveview->type;
-            $liveviewAttributes = array();
-            
-            foreach($liveview->attributes->children() as $attribute){
-                $liveviewAttributes[$attribute->getName()] = $attribute;
-            }
-            $liveviewConf["attributes"] = $liveviewAttributes;
-            
-            $filersConf = array();
-            $h = 0;
-            foreach ($liveview->filters->filters as $filter) {
-                $filersConf[$h] = $filter->type;
-                $h++;
-            }
-            $liveviewConf["filters"] = $filersConf;
-            
-            $cameraLiveviews[$j] = $liveviewConf;
-            $j++;
-        }
-        
-        $cameraconf["liveviews"] = $cameraLiveviews;
-        
-        $currentCameras[$i] = $cameraconf;
-        $i++;
-    }
-    
-   
-    $currentSerial = array ();
-    $i=0;
-    foreach ($xmlConfFile->availableSerial->availableSerial as $serial) {
-        $currentSerial[$i] = $serial;
-        $i++;
-    }
-    
-    $currentConnexions = array ();
-    $i=0;
-    foreach ($xmlConfFile->connexions->connexions as $cnx) {
-        if($cnx->type == "MAVLINK_SERIAL"){
-            $currentConnexions[$i] = array ("type" => $cnx->type, "port" => $cnx->attributes->serial_port_com, "speed" => $cnx->attributes->serial_speed_com);
-        }else if($cnx->type == "MAVLINK_UDP"){
-            $currentConnexions[$i] = array ("type" => $cnx->type, "host" => $cnx->attributes->host, "port" => $cnx->attributes->port);
-        }else{
-            $currentConnexions[$i] = $cnx->children();
-        }
-        $i++;
-    }
 ?>
 
 <div class="row">
@@ -108,7 +8,7 @@ function DisplayConnexionConfigJson() {
       <div class="panel panel-primary">
         <div class="panel-heading"><i class="fa fa-lock fa-fw"></i><?php echo _("Configure Cameras and Connexions"); ?></div>
         <div class="panel-body" id="xonomy_editor">
-        		<table class="table table-responsive table-striped">
+        		<table class="table table-responsive table-striped" id="table_camera">
         			   <tr>
                         <th colspan="5"><?php echo _("Cameras"); ?></th>
                       </tr>
@@ -119,62 +19,14 @@ function DisplayConnexionConfigJson() {
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
-<?php 
-                        $j=0;
-                      foreach($currentCameras as $camera){ 
-?>
-						<tr>
-<?php 
-                            echo("<td>".$camera['type'] . " (");
-                            foreach($camera['attributes'] as $attribute){
-                                echo(key($camera['attributes']) . " : " . $attribute );
-                            }
-                            echo(")</td><td><ul>");
-                            $h = 0;
-                            foreach($camera['liveviews'] as $liveview){
-                                echo("<li>" . $liveview["type"] . "(");
-                                
-                                foreach($liveview["attributes"] as $attribute){
-                                    echo(key($liveview["attributes"]) . " : " . $attribute );
-                                }
-                                echo( ") Filters : ");
-                                foreach($liveview["filters"] as $filter){
-                                    echo( $filter . ", ");
-                                }
-                                echo( "<input type=\"button\" name=\"delLiveview" . $j . "_" . $h . "\" value=\"-\" class=\"btn btn-info\"/> </li>");
-                                $h++;
-                            }
-                            echo( "</ul>");
-?>
-								<div class="modal" id="newLiveviewPanel<?php echo($j);?>">
-                                	<select name="newLiveView<?php echo($j);?>" id="newLiveView<?php echo($j);?>"  class="form-control">
-                                		<option value="VIDEO_OUT">VIDEO_OUT</option>
-                                		<option value="HTTP_MJPEG">HTTP_MJPEG</option>
-                        			</select>
-                    			</div>
-							</td>
-							<td>
-								<input type="button" name="addLiveview<?php echo($j);?>" value="Add Liveview" class="btn btn-info" onClick="document.getElementById('newLiveviewPanel<?php echo($j);?>').style.display='block';"/> 
-								<br/>
-                    			<input type="submit" name="delCamera<?php echo($j);?>" value="Delete camera" class="btn btn-warning"/>
-                    		</td>
-						</tr>
-<?php 
-
-                        $j++;
-                      }
-?>
+                </table>
+                <table>
                       <tr>
                           <td>
         	                  Add new camera :
                           </td>
                           <td>
             	              <select name="newCamera" id="newCamera"  class="form-control">
-                	          <?php
-                              for($i=0; $i < sizeof($availabeCameras);$i++){
-                                  echo("<option value=\"" . $i . "\">" . $availabeCameras[$i] . "</option>");
-                              }
-                              ?>
                         	</select>
                     	</td>
 						<td>
@@ -184,7 +36,7 @@ function DisplayConnexionConfigJson() {
         			</tr>
                 </table>
         
-      			<table class="table table-responsive table-striped">
+      			<table class="table table-responsive table-striped" id="tableconnexion">
       				<tr>
                         <th colspan="5"><?php echo _("Output Connections"); ?></th>
                       </tr>
@@ -195,27 +47,8 @@ function DisplayConnexionConfigJson() {
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
-<?php 
-for($i=0; $i < sizeof($currentConnexions);$i++){
-?>
-          			<tr>            
-<?php 
-if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
-    echo("<td>Serial Port</td><td>".$currentConnexions[$i]['port'] . "</td><td>" . $currentConnexions[$i]['speed'] . "</td>");
-}else if($currentConnexions[$i]["type"] == "MAVLINK_UDP"){
-    echo("<td>Web</td><td>".$currentConnexions[$i]['host'] . "</td><td>" . $currentConnexions[$i]['port'] . "</td>");
-}
-?>
-                		<td>
-                			<form method="POST" action="?page=configurator_modif" name="conf_form<?php echo($i);?>">
-      							<input type="hidden" value="<?php echo($i);?>" name="idCnx"/>
-                				<input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"/>
-                			</form>
-                		</td>
-                	</tr>
-<?php 
-}
-?>
+                </table>
+				<table>
 	               	<tr>
                 		<form method="POST" action="?page=configurator_modif" name="conf_form_add">
                     		<td>
@@ -226,11 +59,6 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     		</td>
                     		<td>
                     			<select name="serialPort" id="serialPortAdd"  class="form-control">
-<?php 
-                            for($i=0; $i < sizeof($currentSerial);$i++){
-                                echo("<option value=\"" . $i . "\">" . $currentSerial[$i] . "</option>");
-                            }
-?>
                     			</select>
                   				<input type="text" name="host" id="hostAdd"  class="form-control" />
                     		</td>
@@ -248,20 +76,7 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
                     			<input type="submit" name="addCnx" value="Add" class="col-md-6 btn btn-info"/>
                     		</td>
                     		<script>
-                        		function toogleForm(){
-                        			if(document.getElementById('serialOpt').selected == 'selected'){
-                        				document.getElementById("hostAdd").style.display='none';
-                            			document.getElementById("hostPortAdd").style.display='none';
-                            			document.getElementById("serialPortAdd").style.display='block';
-                            			document.getElementById("serialSpeedAdd").style.display='block';
-                        			}else{
-                        				document.getElementById("hostAdd").style.display='block';
-                            			document.getElementById("hostPortAdd").style.display='block';
-                            			document.getElementById("serialPortAdd").style.display='none';
-                            			document.getElementById("serialSpeedAdd").style.display='none';
-                        			}
-                    			}
-                        		toogleForm();
+                        		
                     		</script> 
                     	</form>
                   	</tr>
@@ -270,6 +85,112 @@ if($currentConnexions[$i]["type"] == "MAVLINK_SERIAL"){
       </div>
     </div>
 </div>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script>
+
+
+    function addCamera(cameraType, attributeType, attributeVal){
+    
+    }
+
+	function addCameraToHtml(jsonCamera){
+
+	}
+
+	function delCamera(camera){
+
+	}
+
+
+	
+	function addLiveviewToHtml(jSonLiveview){
+		
+	}
+
+	function delLiveview(camera, liveview){
+
+	}
+	
+	function addFilterToHtml(jSonFilter){
+
+	}
+
+	function addConnexionToHtml(index, jSonConnexion){
+		var markup = "<tr><td>"
+			+ jSonConnexion.type 
+			+ '</td><td>';
+		if(jSonConnexion.type == "MAVINK_SERIAL"){
+			markup += jSonConnexion.port
+			+ '</td><td>'
+			+ jSonConnexion.speed;
+		}else{
+			markup += jSonConnexion.host
+			+ '</td><td>'
+			+ jSonConnexion.port;
+		}
+		markup += '</td><td><form method="POST" action="?page=configurator_modif" name="conf_form' + index 
+			+ '"><input type="hidden" value="' + index
+			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>
+		
+		document.getElementById("tableconnexion").append(markup);
+	}
+
+	function delConnexion(connexion){
+
+	}
+
+	var confAPI = "/proxy.php?callback=?";
+	var confJsonPath = "http://localhost:8079/";
+	var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
+	  console.log( "success" );
+		})
+	  .done(function() {
+	    console.log( "second success" );
+	  })
+	  .fail(function(jqXHR, textStatus, errorThrown) {
+	        console.log("error " + textStatus);
+	        console.log("incoming Text " + jqXHR.responseText);
+	  })
+	  .always(function() {
+	    console.log( "complete" );
+	  });
+	
+	for (var i = 0; i < confJson.cameras.length; i++) {
+		addCameraToHtml(confJson.cameras[i]));
+	}
+
+
+	for (var i = 0; i < confJson.cameras.length; i++) {
+		addConnexionToHtml(i, confJson.connexions[i]));
+	}
+
+	for (var i = 0; i < confJson.availableCameras.length; i++) {
+		var option = new Option(confJson.availableCameras[i], confJson.availableCameras[i]);
+		document.getElementById("newCamera").append($(option)); 
+	}
+
+	for (var i = 0; i < confJson.availableSerial.length; i++) {
+		var option = new Option(confJson.availableSerial[i], confJson.availableSerial[i]);
+		document.getElementById("serialPortAdd").append($(option)); 
+	}
+
+
+	function toogleFormConnexion(){
+		if(document.getElementById('serialOpt').selected == 'selected'){
+			document.getElementById("hostAdd").style.display='none';
+			document.getElementById("hostPortAdd").style.display='none';
+			document.getElementById("serialPortAdd").style.display='block';
+			document.getElementById("serialSpeedAdd").style.display='block';
+		}else{
+			document.getElementById("hostAdd").style.display='block';
+			document.getElementById("hostPortAdd").style.display='block';
+			document.getElementById("serialPortAdd").style.display='none';
+			document.getElementById("serialSpeedAdd").style.display='none';
+		}
+	}
+	toogleForm();
+	
+</script>
 <?php 
 }
 ?>
