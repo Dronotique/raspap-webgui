@@ -181,12 +181,12 @@ function DisplayConnexionConfigJson() {
 		if($("#typeNewCnx").find(':selected').val() == "SERIAL"){
 			var serialPort = document.getElementById("serialPortAdd").value;
 			var serialSpeed = document.getElementById("serialSpeedAdd").value;
-			var newSerialCnx = {"type":"MAVLINK_SERIAL","attributes":{"class":"ConnexionConfAttrSerial","speed":serialSpeed,"port":serialPort};
+			var newSerialCnx = {"type":"MAVLINK_SERIAL","attributes":{"class":"ConnexionConfAttrSerial","speed":serialSpeed,"port":serialPort}};
 			confJson.connexions.push(newSerialCnx);
 		}else{
 			var host = document.getElementById("hostAdd").value;
 			var hostPort = document.getElementById("hostPortAdd").value;
-			var newWebCnx = {"type":"MAVLINK_UDP","attributes":{"class":"ConnexionConfAttrWeb","host":host,"port":hostPort};
+			var newWebCnx = {"type":"MAVLINK_UDP","attributes":{"class":"ConnexionConfAttrWeb","host":host,"port":hostPort}};
 			confJson.connexions.push(newWebCnx);
 		}
 		$("#tableconnexion").empty();
