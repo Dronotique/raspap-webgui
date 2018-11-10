@@ -126,7 +126,7 @@ function DisplayConnexionConfigJson() {
 			markup += addLiveviewToHtml(index, i, jsonCamera.liveviews[i]);
 		}
 		markup += '</ul></td>'
-				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="currentCameraSelected=' + index + ';$( "#newLiveView" ).dialog();"><br>'
+				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="currentCameraSelected=' + index + ';$( \"#newLiveView\" ).dialog();"><br>'
 				+ '<input type="button" name="delCamera' + index + '" onclick="delCamera(' + index + ')" value="Delete camera" class="btn btn-warning"></td></tr>';
 
 		$("#table_camera").append(markup);
@@ -316,7 +316,7 @@ function DisplayConnexionConfigJson() {
 	toogleFormConnexion();
 </script>
 <link rel="stylesheet" href="/vendor/jquery-ui/jquery-ui.css"/>
-<!-- script src="/vendor/jquery-ui/jquery-ui.js"/-->
+<script src="/vendor/jquery-ui/jquery-ui.js"/>
 <div class="modal" id="newLiveviewPanel" title="Add new liveview">
 	<select name="newLiveView" id="newLiveView" class="form-control">
     	<option value="VIDEO_OUT">VIDEO_OUT</option>
