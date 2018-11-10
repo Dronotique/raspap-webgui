@@ -139,7 +139,7 @@ function DisplayConnexionConfigJson() {
 
 	}
 
-	var confAPI = "/proxy.php?callback=?";
+	var confAPI = "/proxy.php";
 	var confJsonPath = "http://localhost:8079/";
 	var confJson ="";
 	$.getJSON( confAPI, {csurl: confJsonPath},function() {
