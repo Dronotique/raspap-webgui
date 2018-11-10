@@ -172,7 +172,7 @@ function DisplayConnexionConfigJson() {
 		 $("#tableconnexion").empty();
 		 $("#tableconnexion").html(originalConnexionTab);
 
-		 for (var i = 0; i < confJson.cameras.length; i++) {
+		 for (var i = 0; i < confJson.connexions.length; i++) {
 			addConnexionToHtml(i, confJson.connexions[i]);
 		}
 	}
@@ -214,7 +214,7 @@ function DisplayConnexionConfigJson() {
 		}
 
 
-		for (var i = 0; i < confJson.cameras.length; i++) {
+		for (var i = 0; i < confJson.connexions.length; i++) {
 			addConnexionToHtml(i, confJson.connexions[i]);
 		}
 
