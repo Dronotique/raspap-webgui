@@ -20,7 +20,7 @@ function DisplayConnexionConfigJson() {
                         <th></th>
                       </tr>
                 </table>
-                <table>
+                <table  class="table table-responsive table-striped" >
                       <tr>
                           <td>
         	                  Add new camera :
@@ -48,12 +48,12 @@ function DisplayConnexionConfigJson() {
                         <th></th>
                       </tr>
                 </table>
-				<table>
+				<table  class="table table-responsive table-striped" >
 	               	<tr>
                 		<form method="POST" action="?page=configurator_modif" name="conf_form_add">
                     		<td>
                     			<select name="type"  class="form-control" onchange="toogleFormConnexion();">
-                  					<option id="serialOpt" value="SERIAL" on>Serial Port</option>
+                  					<option id="serialOpt" value="SERIAL">Serial Port</option>
                   					<option id="webOpt" value="WEB">Web</option>
                   				</select>
                     		</td>
