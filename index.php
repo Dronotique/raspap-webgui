@@ -67,7 +67,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo _("Alfonce Remote WiFi Configuration Portal"); ?></title>
+    <title><?php echo _("Alfonce Remote Gateway Configuration Portal"); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -114,7 +114,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
             <span class="icon-bar"></span>
           </button>
           
-	  <a class="navbar-brand" href="index.php"><?php echo _("Alfonce Wifi Portal"); ?></a>
+	  <a class="navbar-brand" href="index.php"><?php echo _("Alfonce Remote Gateway Configuration Portal"); ?></a>
         </div>
         <!-- /.navbar-header -->
 
