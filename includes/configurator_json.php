@@ -172,7 +172,7 @@ function DisplayConnexionConfigJson() {
 
 		var i =0;
 		Object.keys(jsonAttr).forEach(function(key) {
-			if(key != "classe"){
+			if(key != "class"){
 				if(i > 0){
 					retAttributes+= ', ';
 				}
