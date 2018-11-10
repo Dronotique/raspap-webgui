@@ -126,7 +126,7 @@ function DisplayConnexionConfigJson() {
 			markup += addLiveviewToHtml(index, i, jsonCamera.liveviews[i]);
 		}
 		markup += '</ul></td>'
-				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="currentCameraSelected=' + index + ';$( \"#newLiveView\" ).dialog();"><br>'
+				+ '<td><input type="button" name="addLiveview' + index + '" value="Add Liveview" class="btn btn-info" onclick="currentCameraSelected=' + index + ';$(\'#newLiveView\').dialog();"><br>'
 				+ '<input type="button" name="delCamera' + index + '" onclick="delCamera(' + index + ')" value="Delete camera" class="btn btn-warning"></td></tr>';
 
 		$("#table_camera").append(markup);
