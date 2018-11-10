@@ -99,7 +99,7 @@ function DisplayConnexionConfigJson() {
 
 		markup += '</td><td><ul>'
 		for(var i=0; i < jsonCamera.liveviews.length; i++){
-			markup += addLiveviewToHtml(jsonCamera.liveviews[i]);
+			markup += addLiveviewToHtml(index, i, jsonCamera.liveviews[i]);
 		}
 		markup += '</ul><div class="modal" id="newLiveviewPanel' + index + '">'
     			+ '<select name="newLiveView' + index + '" id="newLiveView' + index + '" class="form-control">'
@@ -116,7 +116,7 @@ function DisplayConnexionConfigJson() {
 
 
 	
-	function addLiveviewToHtml(jSonLiveview){
+	function addLiveviewToHtml(indexCamera, indexLiveview, jSonLiveview){
 		var markup = '<li>' + jSonLiveview.type;
 		markup += printAttributes(jSonLiveview.attributes);
 
@@ -129,7 +129,7 @@ function DisplayConnexionConfigJson() {
 				markup += jSonLiveview.filters[j].type;
 			}
 		}
-		markup += '<input type="button" name="delLiveview' + index + '_' + i +'" value="-" class="btn btn-info"></li>';
+		markup += '<input type="button" name="delLiveview' + indexCamera + '_' + indexLiveview +'" value="-" class="btn btn-info"></li>';
 
 		return markup;
 	}
