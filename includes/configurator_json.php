@@ -14,8 +14,8 @@ function DisplayConnexionConfigJson() {
                       </tr>
                       <tr>
                         <th><?php echo _("Type"); ?></th>
-                        <th><?php echo _("Attributes"); ?></th>
-                        <th><?php echo _("Action"); ?></th>
+                        <th><?php echo _("Liveviews"); ?></th>
+                        <th><?php echo _("Actions"); ?></th>
                         <th><?php echo _(""); ?></th>
                         <th></th>
                       </tr>
@@ -143,7 +143,7 @@ function DisplayConnexionConfigJson() {
 	}
 
 	function addConnexionToHtml(index, jSonConnexion){
-		var markup = "<tr><td>"
+		var markup = "<tr id='cnxRow" + index + "'><td>"
 			+ jSonConnexion.type 
 			+ '</td><td>';
 		if(jSonConnexion.type == "MAVLINK_SERIAL"){
@@ -162,8 +162,12 @@ function DisplayConnexionConfigJson() {
 		$("#tableconnexion").append(markup);
 	}
 
-	function delConnexion(connexion){
+	function delConnexion(index){
+		if(confJson.connexions.length > index){
+			confJson.connexions.splice(index, 1);
+		}
 
+		 $("#cnxRow" + index).remove();
 	}
 
 
