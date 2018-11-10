@@ -42,7 +42,7 @@ function RPiVersion() {
   if (array_key_exists($rev, $revisions)) {
     return $revisions[$rev];
   } else {
-    return 'Unknown Pi';
+      return 'Unknown version ' + $cpuinfo_array;
   }
 }
 
@@ -198,6 +198,13 @@ function DisplaySystem(){
       <div class="row">
         <div class="col-lg-12"> 
           <iframe src="includes/webconsole.php" class="webconsole"></iframe>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="serverinfo">
+      <div class="row">
+        <div class="col-lg-12"> 
+          <?php  phpinfo(); ?>
         </div>
       </div>
     </div>
