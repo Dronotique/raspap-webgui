@@ -130,7 +130,7 @@ function DisplayConnexionConfigJson() {
 		}
 		markup += '</td><td><form method="POST" action="?page=configurator_modif" name="conf_form' + index 
 			+ '"><input type="hidden" value="' + index
-			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>
+			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>';
 		
 		document.getElementById("tableconnexion").append(markup);
 	}
