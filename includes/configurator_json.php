@@ -8,7 +8,7 @@ var confJson = $.getJSON( confAPI, {csurl: confJsonPath},function() {
   .done(function() {
     console.log( "second success" );
   })
-  .error(function(jqXHR, textStatus, errorThrown) {
+  .fail(function(jqXHR, textStatus, errorThrown) {
         console.log("error " + textStatus);
         console.log("incoming Text " + jqXHR.responseText);
   })
