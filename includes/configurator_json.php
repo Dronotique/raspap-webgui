@@ -129,7 +129,7 @@ function DisplayConnexionConfigJson() {
 			+ '"><input type="hidden" value="' + index
 			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>';
 		
-		$("tableconnexion").append($(markup));
+		$("#tableconnexion").append(markup);
 	}
 
 	function delConnexion(connexion){
@@ -156,12 +156,12 @@ function DisplayConnexionConfigJson() {
 
 		for (var i = 0; i < confJson.availableCameras.length; i++) {
 			var option = new Option(confJson.availableCameras[i], confJson.availableCameras[i]);
-			$("newCamera").append(option); 
+			$("#newCamera").append(option); 
 		}
 
 		for (var i = 0; i < confJson.availableSerial.length; i++) {
 			var option = new Option(confJson.availableSerial[i], confJson.availableSerial[i]);
-			$("serialPortAdd").append(option); 
+			$("#serialPortAdd").append(option); 
 		}
 	  })
 	  .fail(function(jqXHR, textStatus, errorThrown) {
