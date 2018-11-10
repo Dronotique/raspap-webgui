@@ -129,7 +129,7 @@ function DisplayConnexionConfigJson() {
 			+ '"><input type="hidden" value="' + index
 			+ '" name="idCnx"><input type="submit" name="deleteCnx" value="Delete" class="col-md-6 btn btn-warning"></form></td></tr>';
 		
-		document.getElementById("tableconnexion").append($(markup));
+		$("tableconnexion").append(markup);
 	}
 
 	function delConnexion(connexion){
@@ -143,7 +143,6 @@ function DisplayConnexionConfigJson() {
 	  console.log( "success" );
 		})
 	  .done(function(data) {
-		  alert(data);
 		confJson = data;  
 	    console.log( "second success" );
 	    for (var i = 0; i < confJson.cameras.length; i++) {
