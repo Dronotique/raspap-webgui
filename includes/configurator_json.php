@@ -169,7 +169,7 @@ function DisplayConnexionConfigJson() {
 		var liveview = "";
 		
 		if(liveviewType == "HTTP_MJPEG"){ 
-			var httpPort = $("#newLiveviewPort").val();
+			var httpPort = $("#newLiveviewHttpPort").val();
 			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttrHttp","port":httpPort},"filters":[]};
 		}else{
 			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttr"},"filters":[]};
@@ -366,7 +366,7 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select><br/>
     <div id="newLiveviewPort" style="display:none">
-    	HTTP Port : <input type="text" name="port" /><br/>
+    	HTTP Port : <input type="text" name="port" id="newLiveviewHttpPort/><br/>
     </div>
    <table>
    	<tr>
