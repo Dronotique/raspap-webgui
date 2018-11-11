@@ -359,7 +359,7 @@ function DisplayConnexionConfigJson() {
 			  url: confAPI + "?csurl=" + confJsonPath + "%26action=update",
 			  dataType: 'json',
 	          contentType: 'application/json',
-			  data : JSON.stringify(confJson),
+			  data : {jsonConf : JSON.stringify(confJson)},
 			  success: function(newData){
 				  confJson = newData;
 				  refreshTableCamera();
