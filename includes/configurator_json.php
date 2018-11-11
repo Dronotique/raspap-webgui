@@ -224,12 +224,8 @@ function DisplayConnexionConfigJson() {
 	function delConnexion(index){
 		if(confJson.connexions.length > index){
 			confJson.connexions.splice(index, 1);
-			$("#tableconnexion").empty();
-			 $("#tableconnexion").html(originalConnexionTab);
 
-			 for (var i = 0; i < confJson.connexions.length; i++) {
-				addConnexionToHtml(i, confJson.connexions[i]);
-			}
+			refreshTableConnexion();
 		}
 	}
 
@@ -245,6 +241,12 @@ function DisplayConnexionConfigJson() {
 			var newWebCnx = {"type":"MAVLINK_UDP","attributes":{"class":"ConnexionConfAttrWeb","host":host,"port":hostPort}};
 			confJson.connexions.push(newWebCnx);
 		}
+
+		refreshTableConnexion();
+		
+	}
+
+	function refreshTableConnexion(){
 		$("#tableconnexion").empty();
 		 $("#tableconnexion").html(originalConnexionTab);
 
@@ -352,13 +354,17 @@ function DisplayConnexionConfigJson() {
 
 	function saveConf(){
 		$.ajax({
+			  traditional: true,
 			  type: "POST",
 			  url: confAPI + "?csurl=" + confJsonPath + "%26action=update",
 			  dataType: 'json',
 	          contentType: 'application/json',
 			  data : JSON.stringify(confJson),
-			  success: function(msg){
-				  alert(msg);
+			  success: function(newData){
+				  confJson = newData;
+				  refreshTableCamera();
+				  refreshTableConnexion();
+				  alert("Configuration updated");  
 			  }
 		});
 	}
