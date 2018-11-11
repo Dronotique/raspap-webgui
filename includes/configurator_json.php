@@ -177,7 +177,7 @@ function DisplayConnexionConfigJson() {
 
 		$("#sortableSelectedFilters").each(function( index ) {
 			liveview.filters.push({"type" : $( this ).text(), "parameters" : null});
-		};
+		});
 		confJson.cameras[camera].liveviews.push(liveview);
 
 		$("#newLiveviewPanel").dialog("close");
