@@ -370,6 +370,7 @@ function DisplayConnexionConfigJson() {
    		</td>
    		<td>
    			<ul id="sortableSelectedFilters"  class="connectedSortable">
+   				<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Push here the filters you selected</li>
     		</ul>
    		</td>
    	</tr>
