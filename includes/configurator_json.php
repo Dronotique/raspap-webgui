@@ -178,14 +178,14 @@ function DisplayConnexionConfigJson() {
 		var filters = [];
 		$("#sortableSelectedFilters").children("li").each(function( index ) {
 			filters.push({"type" : $( this ).text(), "parameters" : null});
-			console.log({"type" : $( this ).text(), "parameters" : null});
+			//console.log({"type" : $( this ).text(), "parameters" : null});
 		});
 		
 		confJson.cameras[currentCameraSelected].liveviews.push(filters);
 
 		$("#newLiveviewPanel").dialog("close");
 
-		//console.log($.param(confJson));
+		console.log($.param(confJson));
 		
 		refreshTableCamera();
 	}
