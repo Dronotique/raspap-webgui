@@ -323,6 +323,21 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select>
 </div>
+<script>
+$("#newLiveviewPanel").dialog({
+    autoOpen: false,
+    minWidth: 200,
+    show: {
+        effect: "clip",
+        duration: 200
+    },
+    hide: {
+        effect: "clip",
+        duration: 200
+    }
+});
+</script>
+
 <?php 
 }
 ?>
