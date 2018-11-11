@@ -299,6 +299,7 @@ function DisplayConnexionConfigJson() {
     	toogleFormConnexion();
 
     	$("#newLiveviewPanel").dialog({
+    		autoOpen: false,
     	    minWidth: 400,
     	    minHeight: 300,
     	    show: {
@@ -334,12 +335,12 @@ function DisplayConnexionConfigJson() {
 	
 </script>
 <div class="modal" id="newLiveviewPanel" title="Add new liveview">
-	<select name="newLiveView" id="newLiveView" class="form-control" onchange="if(this.options[this.selectedIndex].value == 'VIDEO_OUT'){$('#newLiveviewPort').style.display='none'}else{$('#newLiveviewPort').style.display='block'}">
+	<select name="newLiveView" id="newLiveView" class="form-control" onchange="if(this.options[this.selectedIndex].value == 'VIDEO_OUT'){$('#newLiveviewPort').hide()}else{$('#newLiveviewPort').show()}">
     	<option value="VIDEO_OUT">VIDEO_OUT</option>
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select>
     <input type="text" name="port" id="newLiveviewPort" style="display:none"/>
-    <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').options[this.selectedIndex].value, $('#newLiveviewPort').value)"/>
+    <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').options[this.selectedIndex].value, $('#newLiveviewPort').value);$('#newLiveviewPanel').close();"/>
 </div>
 
 <?php 
