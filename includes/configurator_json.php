@@ -176,7 +176,7 @@ function DisplayConnexionConfigJson() {
 		}
 
 		var filters = [];
-		$("#sortableSelectedFilters").each(function( index ) {
+		$("#sortableSelectedFilters").children("li").each(function( index ) {
 			filters.push({"type" : $( this ).text(), "parameters" : "null"});
 			console.log({"type" : $( this ).text(), "parameters" : "null"});
 		});
