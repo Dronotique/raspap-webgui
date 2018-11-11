@@ -100,7 +100,7 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
         <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
     
   </head>
   <body>
@@ -274,7 +274,7 @@ $extraFooterScripts = array();
     <script type="text/javascript">//$.noConflict();</script>
     
 
-	<script src="/vendor/jquery-ui/jquery-ui.js"/>
+	<script src="/vendor/jquery-ui/jquery-ui.js"></script>
 	
 <?php
 // Load non default JS/ECMAScript in footer.
