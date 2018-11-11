@@ -369,7 +369,7 @@ function DisplayConnexionConfigJson() {
    	</tr>
    	<tr>
    		<style>
-   		   #sortableAvailableFilters, #sortableSelectedFilters { list-style-type: none; margin: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; }
+   		   #sortableAvailableFilters, #sortableSelectedFilters { list-style-type: none; margin: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; width: 100%"}
            #sortableAvailableFilters li, #sortableSelectedFilters li { margin: 5px; padding: 5px; font-size: 1.2em; }
         </style>
    		<td width="50%">
