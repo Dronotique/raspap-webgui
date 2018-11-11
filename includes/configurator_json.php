@@ -296,8 +296,9 @@ function DisplayConnexionConfigJson() {
 
     		  $( function() {
     		    $( "#sortableAvailableFilters, #sortableSelectedFilters" ).sortable({
-    		      connectWith: ".connectedSortable"
-    		    });
+    		      connectWith: ".connectedSortable",
+    		      placeholder: "ui-state-highlight"
+    		    }).disableSelection();
     		  } );
     		
     	  })
@@ -314,8 +315,8 @@ function DisplayConnexionConfigJson() {
 
     	$("#newLiveviewPanel").dialog({
     		autoOpen: false,
-    	    minWidth: 400,
-    	    minHeight: 300,
+    	    minWidth: 600,
+    	    minHeight: 400,
     	    show: {
     	        effect: "clip",
     	        duration: 200
