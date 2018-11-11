@@ -79,8 +79,10 @@ function DisplayConnexionConfigJson() {
                   	</tr>
         	</table>
         </div>
-        <div class="panel-footer">
-        	<input type="button" class="btn btn-outline btn-primary" name="UpdateConf" value="Save configuration" onclick="saveConf()">
+        <div class="col-lg-12">
+            <div class="row">
+              <input type="button" class="btn btn-outline btn-primary" name="UpdateConf" value="Save configuration" onclick="saveConf()">
+            </div>
         </div>
         <div class="panel-footer"><?php echo _("<strong>Note:</strong>You have to restart gateway to apply updated configuration"); ?></div>
       </div>
