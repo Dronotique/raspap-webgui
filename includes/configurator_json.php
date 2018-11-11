@@ -369,8 +369,8 @@ function DisplayConnexionConfigJson() {
    	</tr>
    	<tr>
    		<style>
-   		   #sortableAvailableFilters, #sortableSelectedFilters { list-style-type: none; margin: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; width: 143px;}
-           #sortableAvailableFilters li, #sortableSelectedFilters li { margin: 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+   		   #sortableAvailableFilters, #sortableSelectedFilters { list-style-type: none; margin: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; }
+           #sortableAvailableFilters li, #sortableSelectedFilters li { margin: 5px; padding: 5px; font-size: 1.2em; }
         </style>
    		<td>
    			<ul id="sortableAvailableFilters"  class="droptrue">
