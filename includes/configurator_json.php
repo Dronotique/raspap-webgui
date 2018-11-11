@@ -182,6 +182,8 @@ function DisplayConnexionConfigJson() {
 		confJson.cameras[currentCameraSelected].liveviews.push(liveview);
 
 		$("#newLiveviewPanel").dialog("close");
+
+		console.log($.param(confJson));
 		
 		refreshTableCamera();
 	}
