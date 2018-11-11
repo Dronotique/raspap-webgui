@@ -287,6 +287,17 @@ function DisplayConnexionConfigJson() {
     			var option = new Option(confJson.availableSerial[i], confJson.availableSerial[i]);
     			$("#serialPortAdd").append(option); 
     		}
+
+    		for (var i = 0; i < confJson.availableFilter.length; i++) {
+    			var markup = '<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>' + confJson.availableFilter[i] + '</li>';
+    			$("#sortableFilters").append(markup); 
+    		}
+
+    		$( function() {
+    		    $( "#sortableFilters" ).sortable();
+    		    //$( "#sortable" ).disableSelection();
+    		  } );
+    		
     	  })
     	  .fail(function(jqXHR, textStatus, errorThrown) {
     	        console.log("error " + textStatus);
@@ -339,8 +350,10 @@ function DisplayConnexionConfigJson() {
 	<select name="newLiveView" id="newLiveView" class="form-control" onchange="if(this.options[this.selectedIndex].value == 'VIDEO_OUT'){$('#newLiveviewPort').hide()}else{$('#newLiveviewPort').show()}">
     	<option value="VIDEO_OUT">VIDEO_OUT</option>
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
-    </select>
-    <input type="text" name="port" id="newLiveviewPort" style="display:none"/>
+    </select><br/>
+    <input type="text" name="port" id="newLiveviewPort" style="display:none"/><br/>
+    <ul id="sortableFilters">
+    </ul>
     <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').val(), $('#newLiveviewPort').val());$('#newLiveviewPanel').dialog('close');"/>
 </div>
 
