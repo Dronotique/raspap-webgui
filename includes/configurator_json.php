@@ -170,14 +170,15 @@ function DisplayConnexionConfigJson() {
 		
 		if(liveviewType == "HTTP_MJPEG"){ 
 			var httpPort = $("#newLiveviewPort").val();
-			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttrHttp","port":httpPort},"filters":[{}]};
+			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttrHttp","port":httpPort},"filters":[]};
 		}else{
-			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttr"},"filters":[{}]};
+			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttr"},"filters":[]};
 		}
 
 		$("#sortableSelectedFilters").each(function( index ) {
 			liveview["filters"].push({"type" : $( this ).text(), "parameters" : null});
 		});
+		
 		confJson.cameras[currentCameraSelected].liveviews.push(liveview);
 
 		$("#newLiveviewPanel").dialog("close");
