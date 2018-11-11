@@ -354,12 +354,26 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select><br/>
     <input type="text" name="port" id="newLiveviewPort" style="display:none"/><br/>
-    Available Filters
-    <ul id="sortableAvailableFilters"  class="connectedSortable">
-    </ul>
-    Selected Filters
-    <ul id="sortableSelectedFilters"  class="connectedSortable">
-    </ul>
+   <table>
+   	<tr>
+   		<th>
+   			Available Filters
+   		</th>
+   		<th>
+   			Selected Filters
+   		</th>
+   	</tr>
+   	<tr>
+   		<td>
+   			<ul id="sortableAvailableFilters"  class="connectedSortable">
+    		</ul>
+   		</td>
+   		<td>
+   			<ul id="sortableSelectedFilters"  class="connectedSortable">
+    		</ul>
+   		</td>
+   	</tr>
+   </table>
     <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').val(), $('#newLiveviewPort').val());$('#newLiveviewPanel').dialog('close');"/>
 </div>
 
