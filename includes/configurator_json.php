@@ -174,15 +174,12 @@ function DisplayConnexionConfigJson() {
 		}else{
 			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttr"},"filters":[]};
 		}
-
-		var filters = [];
-		$("#sortableSelectedFilters").children("li").each(function( index ) {
-			filters.push({"type" : $( this ).text(), "parameters" : null});
-			//console.log({"type" : $( this ).text(), "parameters" : null});
-		});
-
 		
-		confJson.cameras[currentCameraSelected].liveviews.push(filters);
+		$("#sortableSelectedFilters").children("li").each(function( index ) {
+			liveview["filter"].push({"type" : $( this ).text(), "parameters" : null});
+		});
+		
+		confJson.cameras[currentCameraSelected].liveviews.push(liveview);
 
 		$("#newLiveviewPanel").dialog("close");
 
