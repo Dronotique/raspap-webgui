@@ -300,7 +300,8 @@ function DisplayConnexionConfigJson() {
 
     	$("#newLiveviewPanel").dialog({
     	    autoOpen: false,
-    	    minWidth: 200,
+    	    minWidth: 400,
+    	    minHeight: 300,
     	    show: {
     	        effect: "clip",
     	        duration: 200
@@ -335,9 +336,10 @@ function DisplayConnexionConfigJson() {
 </script>
 <div class="modal" id="newLiveviewPanel" title="Add new liveview">
 	<select name="newLiveView" id="newLiveView" class="form-control">
-    	<option value="VIDEO_OUT">VIDEO_OUT</option>
-    	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
+    	<option value="VIDEO_OUT" onclick="$('#newLiveviewPort').style.display='none'">VIDEO_OUT</option>
+    	<option value="HTTP_MJPEG" onclick="$('#newLiveviewPort').style.display='block'">HTTP_MJPEG</option>
     </select>
+    <input type="text" name="port" id="newLiveviewPort" style="display:none"/>
     <input type="button" value="Add" onclick="currentCameraSelected"/>
 </div>
 
