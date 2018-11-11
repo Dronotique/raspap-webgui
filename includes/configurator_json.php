@@ -180,6 +180,7 @@ function DisplayConnexionConfigJson() {
 			filters.push({"type" : $( this ).text(), "parameters" : null});
 			//console.log({"type" : $( this ).text(), "parameters" : null});
 		});
+
 		
 		confJson.cameras[currentCameraSelected].liveviews.push(filters);
 
