@@ -353,8 +353,10 @@ function DisplayConnexionConfigJson() {
 	function saveConf(){
 		$.ajax({
 			  type: "POST",
-			  url: confAPI + "?csurl=" + confJsonPath + "&action=update",
-			  data : confJson,
+			  url: confAPI + "?csurl=" + confJsonPath + "%26action=update",
+			  dataType: 'json',
+	          contentType: 'application/json',
+			  data : JSON.stringify(confJson),
 			  success: function(msg){
 				  alert(msg);
 			  }
