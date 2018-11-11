@@ -105,12 +105,7 @@ function DisplayConnexionConfigJson() {
 
     	confJson.cameras.push(jsonCam);
 
-    	$("#table_camera").empty();
-		 $("#table_camera").html(originalCameraTab);
-
-		 for (var i = 0; i < confJson.cameras.length; i++) {
-			addCameraToHtml(i, confJson.cameras[i]);
-		}
+    	refreshTableCamera();
     }
 
 	function addCameraToHtml(index, jsonCamera){
@@ -134,12 +129,7 @@ function DisplayConnexionConfigJson() {
 		if(confJson.cameras.length > camera){
 			confJson.cameras.splice(camera, 1);
 
-			$("#table_camera").empty();
-			 $("#table_camera").html(originalCameraTab);
-
-			 for (var i = 0; i < confJson.cameras.length; i++) {
-				addCameraToHtml(i, confJson.cameras[i]);
-			}
+			refreshTableCamera();
 		}
 	}
 
@@ -168,18 +158,31 @@ function DisplayConnexionConfigJson() {
 			if(confJson.cameras[camera].liveviews.length > liveview){
 				confJson.cameras[camera].liveviews.splice(liveview, 1);
 
-				$("#table_camera").empty();
-				 $("#table_camera").html(originalCameraTab);
-
-				 for (var i = 0; i < confJson.cameras.length; i++) {
-					addCameraToHtml(i, confJson.cameras[i]);
-				}
+				refreshTableCamera();
 			}
 		}
 	}
 	
-	function addFilterToHtml(jSonFilter){
+	function addLiveview(camera, liveviewType, attr){
+		var liveview = "";
+		if(liveviewType == "HTTP_MJPEG"){ 
+			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttrHttp","port":attr},"filters":{}}
+		}else{
+			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttr"},"filters":{}}
+		}
 
+		confJson.cameras[camera].liveviews.push(liveview);
+
+		refreshTableCamera();
+	}
+
+	function refreshTableCamera(){
+		$("#table_camera").empty();
+		 $("#table_camera").html(originalCameraTab);
+
+		 for (var i = 0; i < confJson.cameras.length; i++) {
+			addCameraToHtml(i, confJson.cameras[i]);
+		}
 	}
 
 	function addConnexionToHtml(index, jSonConnexion){
@@ -335,6 +338,7 @@ function DisplayConnexionConfigJson() {
     	<option value="VIDEO_OUT">VIDEO_OUT</option>
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select>
+    <input type="button" value="Add" onclick="currentCameraSelected"/>
 </div>
 
 <?php 
