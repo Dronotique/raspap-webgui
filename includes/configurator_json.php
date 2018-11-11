@@ -296,8 +296,7 @@ function DisplayConnexionConfigJson() {
 
     		  $( function() {
     		    $( "#sortableAvailableFilters, #sortableSelectedFilters" ).sortable({
-    		      connectWith: ".connectedSortable",
-    		      placeholder: "ui-state-highlight"
+    		      connectWith: ".connectedSortable"
     		    }).disableSelection();
     		  } );
     		
