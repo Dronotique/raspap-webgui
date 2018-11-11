@@ -366,7 +366,7 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select><br/>
     <div id="newLiveviewPort" style="display:none">
-    	HTTP Port : <input type="text" name="port" id="newLiveviewHttpPort/><br/>
+    	HTTP Port : <input type="text" name="port" id="newLiveviewHttpPort"/><br/>
     </div>
    <table>
    	<tr>
