@@ -341,7 +341,7 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select>
     <input type="text" name="port" id="newLiveviewPort" style="display:none"/>
-    <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').val(), $('#newLiveviewPort').value);$('#newLiveviewPanel').close();"/>
+    <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').val(), $('#newLiveviewPort').val());$('#newLiveviewPanel').dialog('close');"/>
 </div>
 
 <?php 
