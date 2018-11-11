@@ -369,14 +369,14 @@ function DisplayConnexionConfigJson() {
    	</tr>
    	<tr>
    		<style>
-   		   #sortableAvailableFilters, #sortableSelectedFilters { list-style-type: none; margin: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; width: 100%"}
+   		   #sortableAvailableFilters, #sortableSelectedFilters { list-style-type: none; margin: 0; float: left; margin-right: 10px; background: #eee; padding: 5px; width: 200px"}
            #sortableAvailableFilters li, #sortableSelectedFilters li { margin: 5px; padding: 5px; font-size: 1.2em; }
         </style>
-   		<td width="50%">
+   		<td>
    			<ul id="sortableAvailableFilters"  class="droptrue">
     		</ul>
    		</td>
-   		<td width="50%">
+   		<td>
    			<ul id="sortableSelectedFilters"  class="droptrue">
    				<!-- li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Push here the filters you selected</li-->
     		</ul>
