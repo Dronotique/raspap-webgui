@@ -294,11 +294,13 @@ function DisplayConnexionConfigJson() {
     		}
 
 
-    		  $( function() {
-    		    $( "#sortableAvailableFilters, #sortableSelectedFilters" ).sortable({
-    		      connectWith: ".connectedSortable"
-    		    }).disableSelection();
-    		  } );
+    		$( function() {
+    			$( "ul.droptrue" ).sortable({
+    		      connectWith: "ul"
+    		    });
+    		 
+    		    $( "#sortableAvailableFilters, #sortableSelectedFilters"  ).disableSelection();
+    		} );
     		
     	  })
     	  .fail(function(jqXHR, textStatus, errorThrown) {
@@ -354,7 +356,7 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select><br/>
     <div id="newLiveviewPort" style="display:none">
-    	Port : <input type="text" name="port" /><br/>
+    	HTTP Port : <input type="text" name="port" /><br/>
     </div>
    <table>
    	<tr>
