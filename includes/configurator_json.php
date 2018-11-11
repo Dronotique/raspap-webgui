@@ -257,11 +257,12 @@ function DisplayConnexionConfigJson() {
 		return retAttributes;
 		
 	}
-	
+
+
+	var confJson ={};
 	$( document ).ready(function() {
 		var confAPI = "/proxy.php";
 		var confJsonPath = "http://localhost:8079/";
-		var confJson ={};
     	$.getJSON( confAPI, {csurl: confJsonPath},function() {
     	  console.log( "success" );
     		})
