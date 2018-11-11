@@ -163,16 +163,25 @@ function DisplayConnexionConfigJson() {
 		}
 	}
 	
-	function addLiveview(camera, liveviewType, attr){
+	function addLiveview(){
+
+		var liveviewType = $("#newLiveView").val();
 		var liveview = "";
+		
 		if(liveviewType == "HTTP_MJPEG"){ 
-			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttrHttp","port":attr},"filters":{}}
+			var httpPort = $("#newLiveviewPort").val();
+			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttrHttp","port":httpPort},"filters":{}}
 		}else{
 			liveview = {"type":liveviewType,"attributes":{"class":"LiveviewConfAttr"},"filters":{}}
 		}
 
+		$("#sortableSelectedFilters").each(function( index ) {
+			liveview.filters.push({"type" : $( this ).text(), "parameters" : null});
+		};
 		confJson.cameras[camera].liveviews.push(liveview);
 
+		$("#newLiveviewPanel").dialog("close");
+		
 		refreshTableCamera();
 	}
 
@@ -383,7 +392,7 @@ function DisplayConnexionConfigJson() {
    		</td>
    	</tr>
    </table>
-    <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').val(), $('#newLiveviewPort').val());$('#newLiveviewPanel').dialog('close');"/>
+    <input type="button" value="Add" onclick="addLiveview();"/>
 </div>
 
 <?php 
