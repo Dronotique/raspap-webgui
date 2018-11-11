@@ -354,7 +354,7 @@ function DisplayConnexionConfigJson() {
 		$.ajax({
 			  type: "POST",
 			  url: confAPI + "?csurl=" + confJsonPath + "&action=update",
-			  data : confJson
+			  data : confJson,
 			  success: function(msg){
 				  alert(msg);
 			  }
