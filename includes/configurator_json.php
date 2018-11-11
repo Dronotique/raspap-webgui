@@ -290,12 +290,14 @@ function DisplayConnexionConfigJson() {
 
     		for (var i = 0; i < confJson.availableFilter.length; i++) {
     			var markup = '<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>' + confJson.availableFilter[i] + '</li>';
-    			$("#sortableFilters").append(markup); 
+    			$("#sortableAvailableFilters").append(markup); 
     		}
 
-    		$( function() {
-    		    $( "#sortableFilters" ).sortable();
-    		    //$( "#sortable" ).disableSelection();
+
+    		  $( function() {
+    		    $( "#sortableAvailableFilters, #sortableSelectedFilters" ).sortable({
+    		      connectWith: ".connectedSortable"
+    		    });
     		  } );
     		
     	  })
@@ -352,7 +354,11 @@ function DisplayConnexionConfigJson() {
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select><br/>
     <input type="text" name="port" id="newLiveviewPort" style="display:none"/><br/>
-    <ul id="sortableFilters">
+    Available Filters
+    <ul id="sortableAvailableFilters"  class="connectedSortable">
+    </ul>
+    Selected Filters
+    <ul id="sortableSelectedFilters"  class="connectedSortable">
     </ul>
     <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').val(), $('#newLiveviewPort').val());$('#newLiveviewPanel').dialog('close');"/>
 </div>
