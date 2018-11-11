@@ -79,6 +79,10 @@ function DisplayConnexionConfigJson() {
                   	</tr>
         	</table>
         </div>
+        <div class="panel-footer">
+        	<input type="button" class="btn btn-outline btn-primary" name="UpdateConf" value="Save configuration" onclick="saveConf()">
+        </div>
+        <div class="panel-footer"><?php echo _("<strong>Note:</strong>You have to restart gateway to apply updated configuration"); ?></div>
       </div>
     </div>
 </div>
@@ -272,9 +276,10 @@ function DisplayConnexionConfigJson() {
 
 
 	var confJson ={};
+	var confAPI = "/proxy.php";
+	var confJsonPath = "http://localhost:8079/";
 	$( document ).ready(function() {
-		var confAPI = "/proxy.php";
-		var confJsonPath = "http://localhost:8079/";
+		
     	$.getJSON( confAPI, {csurl: confJsonPath},function() {
     	  console.log( "success" );
     		})
@@ -341,6 +346,19 @@ function DisplayConnexionConfigJson() {
     	});
     	
 	});
+
+
+	function saveConf(){
+		$.ajax({
+			  type: "POST",
+			  url: confAPI + "?csurl=" + confJsonPath + "&action=update",
+			  data : confJson
+			  success: function(msg){
+				  alert(msg);
+			  }
+		});
+	}
+	
 
 	var originalCameraTab = $("#table_camera").html();
 	var originalConnexionTab = $("#tableconnexion").html();
