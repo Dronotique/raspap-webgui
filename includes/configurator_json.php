@@ -353,7 +353,7 @@ function DisplayConnexionConfigJson() {
     	<option value="VIDEO_OUT">VIDEO_OUT</option>
     	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select><br/>
-    <input type="text" name="port" id="newLiveviewPort" style="display:none"/><br/>
+    Port : <input type="text" name="port" id="newLiveviewPort" style="display:none"/><br/>
    <table>
    	<tr>
    		<th>
