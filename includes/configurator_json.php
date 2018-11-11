@@ -186,8 +186,8 @@ function DisplayConnexionConfigJson() {
 
 		$("#newLiveviewPanel").dialog("close");
 
-		console.log($.param(confJson));
-		
+		//console.log($.param(confJson));
+		console.log(JSON.stringify($.param(confJson)));		
 		refreshTableCamera();
 	}
 
