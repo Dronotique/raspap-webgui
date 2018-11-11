@@ -334,12 +334,12 @@ function DisplayConnexionConfigJson() {
 	
 </script>
 <div class="modal" id="newLiveviewPanel" title="Add new liveview">
-	<select name="newLiveView" id="newLiveView" class="form-control">
-    	<option value="VIDEO_OUT" onclick="$('#newLiveviewPort').style.display='none'">VIDEO_OUT</option>
-    	<option value="HTTP_MJPEG" onclick="$('#newLiveviewPort').style.display='block'">HTTP_MJPEG</option>
+	<select name="newLiveView" id="newLiveView" class="form-control" onchange="if(this.options[this.selectedIndex].value == 'VIDEO_OUT'){$('#newLiveviewPort').style.display='none'}else{$('#newLiveviewPort').style.display='block'}">
+    	<option value="VIDEO_OUT">VIDEO_OUT</option>
+    	<option value="HTTP_MJPEG">HTTP_MJPEG</option>
     </select>
     <input type="text" name="port" id="newLiveviewPort" style="display:none"/>
-    <input type="button" value="Add" onclick="currentCameraSelected"/>
+    <input type="button" value="Add" onclick="addLiveview(currentCameraSelected, $('#newLiveView').options[this.selectedIndex].value, $('#newLiveviewPort').value)"/>
 </div>
 
 <?php 
