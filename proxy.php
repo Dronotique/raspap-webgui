@@ -131,6 +131,10 @@ $ch = curl_init($request_url);
 if (CSAJAX_SUPPRESS_EXPECT) {
     array_push($request_headers, 'Expect:');
 }
+
+
+csajax_debug_message($request_headers);
+
 curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);   // (re-)send headers
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     // return response
 curl_setopt($ch, CURLOPT_HEADER, true);       // enabled response headers
