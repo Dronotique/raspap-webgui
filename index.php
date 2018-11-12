@@ -35,7 +35,7 @@ include_once( 'includes/networking.php' );
 include_once( 'includes/themes.php' );
 include_once( 'includes/data_usage.php' );
 include_once( 'includes/update.php' );
-include_once( 'includes/configurator.php' );
+//include_once( 'includes/configurator.php' );
 include_once( 'includes/configurator_json.php' );
 
 $output = $return = 0;
@@ -128,11 +128,11 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
         	 
           <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-              <li>
+              <!--li>
                 <a href="index.php?page=configurator"><i class="fa fa-cogs fa-fw"></i> <?php echo _("Configurator"); ?></a>
-              </li>
+              </li-->
               <li>
-                <a href="index.php?page=configurator_json"><i class="fa fa-cogs fa-fw"></i> <?php echo _("Configurator JSON"); ?></a>
+                <a href="index.php?page=configurator_json"><i class="fa fa-cogs fa-fw"></i> <?php echo _("Configurator"); ?></a>
               </li>
               <li>
                 <a href="index.php?page=wlan0_info"><i class="fa fa-dashboard fa-fw"></i> <?php echo _("Wifi Client Dashboard"); ?></a>
@@ -200,10 +200,10 @@ $extraFooterScripts = array();
         // handle page actions
         switch( $page ) {
             case "configurator":
-                DisplayConnexionConfig();
+                //DisplayConnexionConfig();
                 break;
             case "configurator_modif":
-                modifyConnexionConfig();
+                //modifyConnexionConfig();
                 break;
             case "configurator_json":
                 DisplayConnexionConfigJson();
