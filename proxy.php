@@ -55,7 +55,7 @@ $curl_options = array(
 // identify request headers
 $request_headers = array( );
 foreach ($_SERVER as $key => $value) {
-    csajax_debug_message("$key: $value\n");
+    csajax_debug_message("$key\n");
     if (strpos($key, 'HTTP_') === 0  ||  strpos($key, 'CONTENT_') === 0) {
         $headername = str_replace('_', ' ', str_replace('HTTP_', '', $key));
         $headername = str_replace(' ', '-', ucwords(strtolower($headername)));
