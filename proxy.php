@@ -134,7 +134,7 @@ if (CSAJAX_SUPPRESS_EXPECT) {
     array_push($request_headers, 'Expect:');
 }
 
-if(! $request_headers["IGNOREORIGREQHEADER"]=='true'){
+if(! $request_headers["Ignoreorigreqheader"]=='true'){
     curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);   // (re-)send headers
 }else{
     csajax_debug_message("Ingoring HTTP Headers");
