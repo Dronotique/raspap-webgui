@@ -30,7 +30,7 @@ define('CSAJAX_FILTER_DOMAIN', true);
  * handle this header correctly.
  * Recommended value: false
  */
-define('CSAJAX_SUPPRESS_EXPECT', false);
+define('CSAJAX_SUPPRESS_EXPECT', true);
 /**
  * Set debugging to true to receive additional messages - really helpful on development
  */
@@ -130,11 +130,6 @@ $ch = curl_init($request_url);
 // Suppress Expect header
 if (CSAJAX_SUPPRESS_EXPECT) {
     array_push($request_headers, 'Expect:');
-}
-
-
-foreach ($request_headers as $key => $request_headers) {
-    csajax_debug_message($key . "=" . $request_headers[$key]);
 }
 
 
