@@ -354,10 +354,10 @@ function DisplayConnexionConfigJson() {
 		$.ajax({
 			  traditional: true,
 			  type: "POST",
-			  url: confAPI + "?csurl=" + confJsonPath,
+			  url: confAPI,
 			  dataType: 'json',
 	          contentType: 'application/json',
-			  data : {action: 'update', jsonConf : JSON.stringify(confJson)},
+			  data : {csurl: confJsonPath, action: 'update', jsonConf : JSON.stringify(confJson)},
 			  success: function(newData){
 				  confJson = newData;
 				  refreshTableCamera();
