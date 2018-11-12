@@ -61,7 +61,6 @@ foreach ($_SERVER as $key => $value) {
         $headername = str_replace(' ', '-', ucwords(strtolower($headername)));
         if (!in_array($headername, array( 'Host', 'X-Proxy-Url' ))) {
             $request_headers[] = "$headername: $value";
-            csajax_debug_message("$headername\n");
         }
     }
 }
