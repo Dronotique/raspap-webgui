@@ -132,13 +132,9 @@ if (CSAJAX_SUPPRESS_EXPECT) {
     array_push($request_headers, 'Expect:');
 }
 
-
-foreach ($request_headers as $key => $request_header) {
-    csajax_debug_message($key . "=" . $request_headers[$key]);
+if(!$request_headers["IGNORE_ORIG_REQ_HEADER"]=='true'){
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);   // (re-)send headers
 }
-
-
-curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);   // (re-)send headers
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     // return response
 curl_setopt($ch, CURLOPT_HEADER, true);       // enabled response headers
 // add data for POST, PUT or DELETE requests
