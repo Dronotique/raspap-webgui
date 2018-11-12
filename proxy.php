@@ -60,7 +60,8 @@ foreach ($_SERVER as $key => $value) {
         $headername = str_replace('_', ' ', str_replace('HTTP_', '', $key));
         $headername = str_replace(' ', '-', ucwords(strtolower($headername)));
         if (!in_array($headername, array( 'Host', 'X-Proxy-Url' ))) {
-            $request_headers[] = "$headername: $value";
+            //$request_headers[] = "$headername: $value";
+            $request_headers[$headername] = $value;
         }
     }
 }
