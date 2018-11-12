@@ -133,6 +133,11 @@ if (CSAJAX_SUPPRESS_EXPECT) {
 }
 
 
+foreach ($request_headers as $key => $request_header) {
+    csajax_debug_message($key . "=" . $request_headers[$key]);
+}
+
+
 curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);   // (re-)send headers
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     // return response
 curl_setopt($ch, CURLOPT_HEADER, true);       // enabled response headers
