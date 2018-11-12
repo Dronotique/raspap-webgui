@@ -106,7 +106,7 @@ function DisplayConnexionConfigJson() {
     		}
     		jsonCam = {"type":cameraType,"attributes":{"class":"CameraConfAttrWeb","url":url},"liveviews":[]};
     	}else {
-    		jsonCam = {"type":cameraType,"attributes":{},"liveviews":[]};
+    		jsonCam = {"type":cameraType,"attributes":{"class":"CameraConfAttrIndex","index":0},"liveviews":[]};
     	}
 
     	confJson.cameras.push(jsonCam);
