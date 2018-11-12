@@ -352,7 +352,6 @@ function DisplayConnexionConfigJson() {
 
 	function saveConf(){
 		$.ajax({
-			  traditional: true,
 			  type: "POST",
 			  url: confAPI,
 			  dataType: 'json',
