@@ -357,7 +357,7 @@ function DisplayConnexionConfigJson() {
 			  url: confAPI,
 			  dataType: 'json',
 	          contentType: 'application/json',
-	          headers: {'HTTP_X_PROXY_URL': confJsonPath},
+	          headers: {'HTTP-X-PROXY-URL': confJsonPath},
 			  data : {'csurl': confJsonPath, 'action': 'update', 'jsonConf' : JSON.stringify(confJson)},
 			  success: function(newData){
 				  confJson = newData;
