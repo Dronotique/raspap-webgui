@@ -357,7 +357,7 @@ function DisplayConnexionConfigJson() {
 			  dataType: 'json',
 	          //contentType: 'application/json',
 	          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-	          headers: {'X-PROXY-URL': confJsonPath, 'IGNORE_ORIG_REQ_HEADER' : 'true'},
+	          headers: {'X-PROXY-URL': confJsonPath, 'IGNOREORIGREQHEADER' : 'true'},
 			  data : {'csurl': confJsonPath, 'action': 'update', 'jsonConf' : JSON.stringify(confJson)},
 			  success: function(newData){
 				  confJson = newData;
