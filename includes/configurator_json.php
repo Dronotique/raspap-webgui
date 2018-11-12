@@ -355,7 +355,8 @@ function DisplayConnexionConfigJson() {
 			  type: "POST",
 			  url: confAPI,
 			  dataType: 'json',
-	          contentType: 'application/json',
+	          //contentType: 'application/json',
+	          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 	          headers: {'X-PROXY-URL': confJsonPath},
 			  data : {'csurl': confJsonPath, 'action': 'update', 'jsonConf' : JSON.stringify(confJson)},
 			  success: function(newData){
