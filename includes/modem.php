@@ -11,7 +11,13 @@ function DisplayModemConf(){
       $jsonConf = json_decode($_POST['jsonConf'], true);
       
       $newConf = '/var/www/uploads/sakis3g.conf';
-      file_put_contents($newConf, $jsonConf);
+      $newFileConf = fopen($newConf, "w+");
+      
+      foreach ($jsonConf as $key => $value){
+          fwrite($newFileConf, $key . "=\"" . $value . "\"\n");
+      }
+      fclose($newFileConf);
+
   }
   
   
