@@ -7,7 +7,15 @@ function DisplayModemConf(){
   
   $modemConfFilePath = "/etc/sakis3g.conf";
   
-  if( isset($_POST['UpdateAPN']) && CSRFValidate()){
+  if( isset($_POST['startAPN']) && CSRFValidate()){
+      exec( '(sudo sakis3g connect)', $result );
+      $last_line = end($result);
+      $status->addMessage($last_line, 'info');
+  }else if( isset($_POST['stopAPN']) && CSRFValidate()){
+      exec( '(sudo sakis3g disconnect)', $result );
+      $last_line = end($result);
+      $status->addMessage($last_line, 'info');
+  }else if( isset($_POST['UpdateAPN']) && CSRFValidate()){
       $jsonConf = json_decode($_POST['jsonConf'], true);
       //var_dump($jsonConf);
       $newConf = '/var/www/uploads/sakis3g.conf';
@@ -17,7 +25,7 @@ function DisplayModemConf(){
           fwrite($newFileConf, $key . "=\"" . $value . "\"\n");
       }
       fclose($newFileConf);
-      echo '(sudo mv -f ' . $newConf . ' ' . $modemConfFilePath . ')';
+      
       exec( '(sudo mv -f ' . $newConf . ' ' . $modemConfFilePath . ')', $result );
       $last_line = end($result);
       $status->addMessage($last_line, 'info');
@@ -120,7 +128,10 @@ function DisplayModemConf(){
             </div>
             <div class="row">
                   <div class="form-group col-md-4">
-            		<input type="submit" class="btn btn-outline btn-primary" name="UpdateAPN" value="<?php echo _("Update APN"); ?>" />
+            		<input type="submit" class="btn btn-outline btn-primary" name="UpdateAPN" value="<?php echo _("Update Configuration"); ?>" />
+            		<input type="submit" class="btn btn-outline btn-info" name="startAPN" value="<?php echo _("Start connexion"); ?>" />
+            		<input type="submit" class="btn btn-outline btn-warning" name="stopAPN" value="<?php echo _("Stop connexion"); ?>" />
+            		btn btn-info
             	</div>	
             </div>
           </form>
