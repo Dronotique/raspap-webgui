@@ -178,7 +178,7 @@ function DisplayModemConf(){
 
 
         	$("#formModem").on("submit", function(event) {
-        		$("#jsonConf").val( JSON.stringify(confJson));
+        		$("#jsonConf").val( JSON.stringify(jsonConf));
         	});
        	
     	});
