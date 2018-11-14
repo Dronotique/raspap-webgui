@@ -1,0 +1,2234 @@
+[
+  {
+    "country": "Albania",
+    "network": "Vodafone",
+    "apn": "Twa",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Argentina",
+    "network": "CLARO",
+    "apn": "igprs.claro.com.ar",
+    "user": "ctigprs",
+    "password": "ctigprs999",
+    "dial": ""
+  },
+  {
+    "country": "Argentina",
+    "network": "Movistar",
+    "apn": "internet.gprs.unifon.com.ar\ninternet.unifon",
+    "user": "wap",
+    "password": "wap",
+    "dial": ""
+  },
+  {
+    "country": "Argentina",
+    "network": "Personal",
+    "apn": "gprs.personal.com",
+    "user": "[mobile number]",
+    "password": "adgj",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Amaysim",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Optus",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Telstra",
+    "apn": "telstra.internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Telstra\n(data bundles)",
+    "apn": "telstra.datapack",
+    "user": "",
+    "password": "Telstra",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Telstra\n(pay by time)",
+    "apn": "telstra.pcpack",
+    "user": "",
+    "password": "Telstra",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Three",
+    "apn": "3netaccess",
+    "user": "a",
+    "password": "a",
+    "dial": ""
+  },
+  {
+    "country": "Australia",
+    "network": "Vodafone",
+    "apn": "vfinternet.au",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "A1",
+    "apn": "a1.net",
+    "user": "ppp@a1plus.at",
+    "password": "ppp",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "BOB (A1)",
+    "apn": "bob.at",
+    "user": "data@bob.at",
+    "password": "ppp",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "Mobilkom (A1)",
+    "apn": "AON.Data",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "T-Mobile",
+    "apn": "gprsinternet",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "Telering",
+    "apn": "web",
+    "user": "web@telering.at",
+    "password": "web",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "Drei",
+    "apn": "drei.at",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "One",
+    "apn": "web.one.at\nfullspeed",
+    "user": "web",
+    "password": "web",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "Orange",
+    "apn": "web",
+    "user": "web",
+    "password": "web",
+    "dial": ""
+  },
+  {
+    "country": "Austria",
+    "network": "Yesss",
+    "apn": "web.yesss.at",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Azerbaijan",
+    "network": "Azercell",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Bangladesh",
+    "network": "Grameen Phone",
+    "apn": "gpinternet",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Belarus",
+    "network": "VELCOM",
+    "apn": "web.velcom.by\nunlim.velcom.by",
+    "user": "web\nunlim",
+    "password": "web\nunlim",
+    "dial": ""
+  },
+  {
+    "country": "Belgium",
+    "network": "Base",
+    "apn": "gprs.base.be",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Belgium",
+    "network": "Mobistar",
+    "apn": "mworld.be",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Belgium",
+    "network": "Proximus",
+    "apn": "Internet.proximus.be",
+    "user": "",
+    "password": "",
+    "dial": "*99***CID#"
+  },
+  {
+    "country": "Botswana",
+    "network": "Mascom Wireless",
+    "apn": "internet.mascom",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Brazil",
+    "network": "Claro",
+    "apn": "claro.com.br",
+    "user": "claro",
+    "password": "claro",
+    "dial": ""
+  },
+  {
+    "country": "Brazil",
+    "network": "Oi",
+    "apn": "gprs.oi.com.br",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Brazil",
+    "network": "Oi (WAP)",
+    "apn": "wapgprs.oi.com.br",
+    "user": "oiwap",
+    "password": "oioioi",
+    "dial": ""
+  },
+  {
+    "country": "Brazil",
+    "network": "TIM",
+    "apn": "tim.br",
+    "user": "tim",
+    "password": "tim",
+    "dial": ""
+  },
+  {
+    "country": "Brazil",
+    "network": "Velox",
+    "apn": "wap.telcel.com",
+    "user": "iesgprs",
+    "password": "iesgprs2002",
+    "dial": ""
+  },
+  {
+    "country": "Bulgaria",
+    "network": "GloBul",
+    "apn": "internet.globul.bg",
+    "user": "globul",
+    "password": "[none]",
+    "dial": ""
+  },
+  {
+    "country": "Bulgaria",
+    "network": "M-Tel",
+    "apn": "mms-gprs.mtel.bg",
+    "user": "mtel",
+    "password": "mtel",
+    "dial": ""
+  },
+  {
+    "country": "Cameroon",
+    "network": "MTN Cameroon",
+    "apn": "INTERNET",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Canada",
+    "network": "KORE Wireless",
+    "apn": "apn.zerogravitywireless.com",
+    "user": "[blank]",
+    "password": "[blank]",
+    "dial": ""
+  },
+  {
+    "country": "Canada",
+    "network": "Microcell\n(Fido)",
+    "apn": "internet.fido.ca",
+    "user": "fido",
+    "password": "fido",
+    "dial": ""
+  },
+  {
+    "country": "Canada",
+    "network": "Rogers AT&T",
+    "apn": "internet.com",
+    "user": "wapuser1",
+    "password": "wap",
+    "dial": ""
+  },
+  {
+    "country": "Chile",
+    "network": "ENTELPCS",
+    "apn": "imovil.entelpcs.cl",
+    "user": "entelpcs",
+    "password": "entelpcs",
+    "dial": ""
+  },
+  {
+    "country": "Chile",
+    "network": "Claro",
+    "apn": "BAM.CLAROCHILE.CL",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Chile",
+    "network": "Nextel",
+    "apn": "datacard.nextelmovil.cl",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "China",
+    "network": "China Mobile",
+    "apn": "cmnet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "China",
+    "network": "China Unicom",
+    "apn": "[none]",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Croatia",
+    "network": "T-Mobile",
+    "apn": "web.htgpr",
+    "user": 38591,
+    "password": 38591,
+    "dial": ""
+  },
+  {
+    "country": "Croatia",
+    "network": "VIPNET START",
+    "apn": "gprs0.vipnet.hr",
+    "user": 38591,
+    "password": 38591,
+    "dial": ""
+  },
+  {
+    "country": "Croatia",
+    "network": "VIPNET PRO",
+    "apn": "gprs5.vipnet.hr",
+    "user": 38591,
+    "password": 38591,
+    "dial": ""
+  },
+  {
+    "country": "Croatia",
+    "network": "VIPNET 3G",
+    "apn": "3g.vip.hr",
+    "user": 38591,
+    "password": 38591,
+    "dial": ""
+  },
+  {
+    "country": "Colombia",
+    "network": "Movistar",
+    "apn": "internet.movistar.com.co",
+    "user": "movistar",
+    "password": "movistar",
+    "dial": ""
+  },
+  {
+    "country": "Congo",
+    "network": "Vodacom",
+    "apn": "vodanet",
+    "user": "vodalive",
+    "password": "[blank]",
+    "dial": ""
+  },
+  {
+    "country": "Costa Rica",
+    "network": "IceCelular",
+    "apn": "icecelular",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Czech Republic",
+    "network": "Telefonica",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Czech Republic",
+    "network": "Vodafone",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Czech Republic",
+    "network": "T-Mobile",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Denmark",
+    "network": "Telenor",
+    "apn": "Internet",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Denmark",
+    "network": 3,
+    "apn": "[none]",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Denmark",
+    "network": "Telia DK",
+    "apn": "www.internet.mtelia.dk",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Denmark",
+    "network": "TDC Mobil",
+    "apn": "Internet",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Dominican Republic",
+    "network": "Orange",
+    "apn": "orangenet.com.do",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Egypt",
+    "network": "Click Vodafone",
+    "apn": "internet.vodafone.net",
+    "user": "internet",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Egypt",
+    "network": "MobiNil",
+    "apn": "mobinilweb",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Estonia",
+    "network": "Elisa",
+    "apn": "internet.elisa.ee",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Estonia",
+    "network": "EMT",
+    "apn": "internet.emt.ee",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Estonia",
+    "network": "Tele2",
+    "apn": "internet.tele2.ee",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Finland",
+    "network": "Dna",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Finland",
+    "network": "Elisa\n(Radiolinja)",
+    "apn": "internet",
+    "user": "rlnet",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Finland",
+    "network": "Saunalahti",
+    "apn": "internet.saunalahti",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Finland",
+    "network": "Sonera",
+    "apn": "internet",
+    "user": "[blank]",
+    "password": "[blank]",
+    "dial": ""
+  },
+  {
+    "country": "Finland",
+    "network": "Song",
+    "apn": "internet.song.fi",
+    "user": "song@internet",
+    "password": "songnet",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "Bouygues",
+    "apn": "ebouygtel.com",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "Bouygues\n(B2Bouygtel)",
+    "apn": "b2bouygtel.com",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "Free-Mobile",
+    "apn": "free",
+    "user": "No user",
+    "password": "No password",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "Orange\n(contract)",
+    "apn": "orange.fr",
+    "user": "orange",
+    "password": "orange",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "Orange MIB",
+    "apn": "orange-mib",
+    "user": "mportail",
+    "password": "mib",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "Orange\nMobicarte",
+    "apn": "orange-acte",
+    "user": "orange",
+    "password": "orange",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "SFR",
+    "apn": "websfr",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "France",
+    "network": "SFR M2M PREMIUM",
+    "apn": "websfr",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Germany",
+    "network": "D2 Vodafone",
+    "apn": "web.vodafone.de",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Germany",
+    "network": "E-Plus",
+    "apn": "internet.eplus.de",
+    "user": "eplus",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Germany",
+    "network": "O2 (3G)",
+    "apn": "surfo2",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Germany",
+    "network": "O2 (GPRS)",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Germany",
+    "network": "Quam",
+    "apn": "quam.de",
+    "user": "quam",
+    "password": "quam",
+    "dial": ""
+  },
+  {
+    "country": "Germany",
+    "network": "T-Mobile D1",
+    "apn": "internet.t-mobile",
+    "user": "internet.t-d1.de",
+    "password": "t-mobile",
+    "dial": ""
+  },
+  {
+    "country": "Ghana",
+    "network": "Areeba\n(formerly Spacefon)",
+    "apn": "internet.spacefon.com",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Greece",
+    "network": "Cosmote",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Greece",
+    "network": "WIND",
+    "apn": "",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Greece",
+    "network": "Vodafone",
+    "apn": "internet\ninternet.vodafone.gr",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Guatemala",
+    "network": "Comcel",
+    "apn": "Wap.tigo.gt",
+    "user": "Wap",
+    "password": "Wap",
+    "dial": ""
+  },
+  {
+    "country": "Guatemala",
+    "network": "PCS Digital",
+    "apn": "ideasalo",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Guyana",
+    "network": "GT&T Cellink Plus",
+    "apn": "wap.cellinkgy.com",
+    "user": "test",
+    "password": "test",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "CSL",
+    "apn": "hkcsl or\ninternet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "New World",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "Orange",
+    "apn": "web.orangehk.com",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "People",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "SmarTone",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "Sunday",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hong Kong",
+    "network": "Three",
+    "apn": "web-g.three.com.hk",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Hungary",
+    "network": "Telenor (non-sub.)",
+    "apn": "net",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Hungary",
+    "network": "T-Mobile (non-sub.)",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Hungary",
+    "network": "Vodafone\n(pre-pay)\n(un-comp.)",
+    "apn": "vitamax.snet.vodafone.net",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "AirTel",
+    "apn": "airtelgprs.com",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "BPL",
+    "apn": "bplgprs.com",
+    "user": "bplmobile",
+    "password": "[blank]",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "BSNL",
+    "apn": "celloneportal",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "Hutch\n(normal)",
+    "apn": "www",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "Hutch\n(Gujarat)",
+    "apn": "web",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "Idea Cellular",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "MTNL (Pre-paid)",
+    "apn": "gprsppsmum",
+    "user": "mtnl",
+    "password": "mtnl123",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "MTNL Mumbai",
+    "apn": "mmsmtnlmum",
+    "user": "mtnl",
+    "password": "mtnl123",
+    "dial": ""
+  },
+  {
+    "country": "India",
+    "network": "MTNL Mumbai\n(Plan 2)",
+    "apn": "gprsmtnlmum",
+    "user": "mtnl",
+    "password": "mtnl123",
+    "dial": ""
+  },
+  {
+    "country": "Indonesia",
+    "network": "Excelcomindo",
+    "apn": "www.xlgprs.net",
+    "user": "xlgprs",
+    "password": "proxl",
+    "dial": ""
+  },
+  {
+    "country": "Indonesia",
+    "network": "IM3",
+    "apn": "www.indosat-m3.net\nwap.indosat-m3.net",
+    "user": "gprs",
+    "password": "im3",
+    "dial": ""
+  },
+  {
+    "country": "Indonesia",
+    "network": "Indosat\n(Matrix)",
+    "apn": "satelindogprs.com\nindosatgprs",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Indonesia",
+    "network": "Telkomsel",
+    "apn": "internet\ntelkomsel",
+    "user": "wap",
+    "password": "wap123",
+    "dial": ""
+  },
+  {
+    "country": "Ireland",
+    "network": "Meteor",
+    "apn": "isp.mymeteor.ie",
+    "user": "my",
+    "password": "meteor",
+    "dial": ""
+  },
+  {
+    "country": "Ireland",
+    "network": "O2\n(contract)",
+    "apn": "open.internet",
+    "user": "gprs",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Ireland",
+    "network": "O2\n(pre-pay)",
+    "apn": "pp.internet",
+    "user": "gprs",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Ireland",
+    "network": "Vodafone\n(contract)",
+    "apn": "isp.vodafone.ie",
+    "user": "vodafone",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Ireland",
+    "network": "Vodafone\n(pre-pay)",
+    "apn": "live.vodafone.com",
+    "user": "vodafone",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Israel",
+    "network": "Cellcom",
+    "apn": "internetg",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Israel",
+    "network": "MTC-Vodafone",
+    "apn": "apn01",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Israel",
+    "network": "Orange",
+    "apn": "orangeinternet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Italy",
+    "network": "Blu",
+    "apn": "INTERNET",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Italy",
+    "network": "H3G",
+    "apn": "tre.it",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Italy",
+    "network": "TIM",
+    "apn": "ibox.tim.it",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Italy",
+    "network": "Vodafone\n(Omnitel)",
+    "apn": "web.omnitel.it",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Italy",
+    "network": "Wind",
+    "apn": "internet.wind\ninternet.wind.biz",
+    "user": "Wind",
+    "password": "Wind",
+    "dial": ""
+  },
+  {
+    "country": "Jamaica",
+    "network": "Cable & Wireless",
+    "apn": "wap",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Jamaica",
+    "network": "Digicel",
+    "apn": "web.digiceljamaica.com",
+    "user": "wapuser",
+    "password": "wap03jam",
+    "dial": ""
+  },
+  {
+    "country": "Japan",
+    "network": "Vodafone\n(J-Phone)",
+    "apn": "vodafone",
+    "user": "ai@vodafone",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Jersey",
+    "network": "(See UK)",
+    "apn": "[blank]",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Kazakhstan",
+    "network": "Beeline",
+    "apn": "internet.beeline.kz",
+    "user": "internet.beeline",
+    "password": "web",
+    "dial": ""
+  },
+  {
+    "country": "Kenya",
+    "network": "Safaricom",
+    "apn": "web.safaricom.com",
+    "user": "web",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Laos",
+    "network": "ETL",
+    "apn": "etlnet",
+    "user": "guest",
+    "password": "[blank]",
+    "dial": ""
+  },
+  {
+    "country": "Latvia",
+    "network": "LMT",
+    "apn": "internet.lmt.lv",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Latvia",
+    "network": "Bite",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Latvia",
+    "network": "Tele2",
+    "apn": "internet.tele2.lv",
+    "user": "wap",
+    "password": "wap",
+    "dial": "*99#"
+  },
+  {
+    "country": "Lebannon",
+    "network": "Cellis FTML",
+    "apn": "internet.ftml.com.lb",
+    "user": "plugged",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Lebannon",
+    "network": "MTC Touch",
+    "apn": "gprs.mtctouch.com.lb",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Lithuania",
+    "network": "Bite GSM",
+    "apn": "banga",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Lithuania",
+    "network": "Omnitel\n(contract)",
+    "apn": "gprs.omnitel.net",
+    "user": "guest",
+    "password": "omni",
+    "dial": ""
+  },
+  {
+    "country": "Lithuania",
+    "network": "Omnitel\n(no contract)",
+    "apn": "gprs.startas.lt",
+    "user": "omni",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Luxembourg",
+    "network": "LUXGSM",
+    "apn": "web.pt.lu",
+    "user": "guest",
+    "password": "tango",
+    "dial": ""
+  },
+  {
+    "country": "Luxembourg",
+    "network": "Tango",
+    "apn": "internet",
+    "user": "tango",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Luxembourg",
+    "network": "VOXmobile",
+    "apn": "vox.lu",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Macau",
+    "network": "CTM",
+    "apn": "ctm-mobile",
+    "user": "guest",
+    "password": 1234,
+    "dial": ""
+  },
+  {
+    "country": "Macau",
+    "network": "Macau Hutchison\nTelecom (Internet)",
+    "apn": "web.hutchisonmacau.com",
+    "user": "hutchison",
+    "password": 1234,
+    "dial": ""
+  },
+  {
+    "country": "Macau",
+    "network": "Macau Hutchison\nTelecom (MMS)",
+    "apn": "mms.hutchisonmacau.com",
+    "user": "hutchison",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "DIGI",
+    "apn": "diginet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "Celcom",
+    "apn": "celcom.net.my",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "Maxis 2G\n(contract)",
+    "apn": "internet.gprs.maxis",
+    "user": "guest",
+    "password": "wap",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "Maxis 3G\n(contract)",
+    "apn": "unet",
+    "user": "maxis",
+    "password": "net",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "Maxis\n(pre-pay)",
+    "apn": "net",
+    "user": "maxis",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "Timecel",
+    "apn": "timenett.com.my\n(timenet.com.my?)",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malaysia",
+    "network": "TM Touch",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malta",
+    "network": "Go Mobile\n(contract)",
+    "apn": "gosurfing",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Malta",
+    "network": "Go Mobile\n(pre-pay)",
+    "apn": "rtgsurfing",
+    "user": "guest",
+    "password": "webgprs2002",
+    "dial": ""
+  },
+  {
+    "country": "Mexico",
+    "network": "Telcel",
+    "apn": "internet.itelcel.com",
+    "user": "webgprs",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Moldavia",
+    "network": "Moldcell",
+    "apn": "internet",
+    "user": "gprs",
+    "password": 1987,
+    "dial": ""
+  },
+  {
+    "country": "Morocco",
+    "network": "Maroc Telecom",
+    "apn": "iam",
+    "user": "wac",
+    "password": "MEDIWAP",
+    "dial": ""
+  },
+  {
+    "country": "Morocco",
+    "network": "Medi Telecom",
+    "apn": "wap.meditel.ma",
+    "user": "MEDIWAP",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Netherlands",
+    "network": "KPN Mobile",
+    "apn": "internet",
+    "user": "KPN",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Netherlands",
+    "network": "O2",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Netherlands",
+    "network": "T-Mobile (Ben)\nactive",
+    "apn": "internet",
+    "user": "guest",
+    "password": "password",
+    "dial": ""
+  },
+  {
+    "country": "Netherlands",
+    "network": "Telfort",
+    "apn": "internet",
+    "user": "telfortnl",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Netherlands",
+    "network": "Vodafone\n(normal)",
+    "apn": "web.vodafone.nl",
+    "user": "vodafone",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Netherlands",
+    "network": "Vodafone\n(business)",
+    "apn": "office.vodafone.nl",
+    "user": "vodafone",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "New Zealand",
+    "network": "Vodafone\n(unrestricted)",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "New Zealand",
+    "network": "Vodafone\n(restricted)",
+    "apn": "www.vodafone.net.nz",
+    "user": "guest",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Nicaragua",
+    "network": "Alo Pcs",
+    "apn": "internet.ideasalo.ni",
+    "user": "internet",
+    "password": "[blank]",
+    "dial": ""
+  },
+  {
+    "country": "Nigeria",
+    "network": "Globacom\n(Internet)",
+    "apn": "gprs",
+    "user": "wap",
+    "password": "wap",
+    "dial": ""
+  },
+  {
+    "country": "Nigeria",
+    "network": "Globacom\n(WAP)",
+    "apn": "glowap",
+    "user": "wap",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Nigeria",
+    "network": "MTN Nigeria",
+    "apn": "web.gprs.mtnnigeria.net",
+    "user": "wap",
+    "password": "wap",
+    "dial": ""
+  },
+  {
+    "country": "Nigeria",
+    "network": "Vmobile",
+    "apn": "wap.vmobile",
+    "user": "wap",
+    "password": "netcom",
+    "dial": ""
+  },
+  {
+    "country": "Norway",
+    "network": "Netcom",
+    "apn": "internet.netcom.no",
+    "user": "netcom",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Norway",
+    "network": "TalkMore",
+    "apn": "(same as Netcom)",
+    "user": "",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Norway",
+    "network": "Telenor Mobil\n(Vodafone)",
+    "apn": "Internet\ninternet.vodafone.net",
+    "user": "guest",
+    "password": "ufone",
+    "dial": ""
+  },
+  {
+    "country": "Pakistan",
+    "network": "UFone",
+    "apn": "ufone.internet",
+    "user": "ufone",
+    "password": "xxx",
+    "dial": ""
+  },
+  {
+    "country": "Panama",
+    "network": "Cable & Wireless",
+    "apn": "apn01.cwpanama.com.pa",
+    "user": "xxx",
+    "password": "ctigprs999",
+    "dial": ""
+  },
+  {
+    "country": "Paraguy",
+    "network": "CTI",
+    "apn": "internet.ctimovil.com.py",
+    "user": "ctigprs",
+    "password": "tulibertad",
+    "dial": ""
+  },
+  {
+    "country": "Peru",
+    "network": "Claro (TIM)",
+    "apn": "tim.pe",
+    "user": "tim",
+    "password": "globe",
+    "dial": ""
+  },
+  {
+    "country": "Philippines",
+    "network": "Globe Telecoms\n(Web)",
+    "apn": "internet.globe.com.ph",
+    "user": "globe",
+    "password": "globe",
+    "dial": ""
+  },
+  {
+    "country": "Philippines",
+    "network": "Globe Telecoms\n(WAP)",
+    "apn": "www.globe.com.ph",
+    "user": "globe",
+    "password": "banonoy",
+    "dial": ""
+  },
+  {
+    "country": "Philippines",
+    "network": "Smart",
+    "apn": "internet",
+    "user": "witsductoor",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Philippines",
+    "network": "Sun Cellular",
+    "apn": "minternet",
+    "user": "guest",
+    "password": "erainternet",
+    "dial": ""
+  },
+  {
+    "country": "Poland",
+    "network": "Play",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Poland",
+    "network": "Plus",
+    "apn": "internet",
+    "user": "plusgsm",
+    "password": "plusgsm",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Poland",
+    "network": "Orange",
+    "apn": "internet",
+    "user": "internet",
+    "password": "internet",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Poland",
+    "network": "T-Mobile",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Portugal",
+    "network": "Optimus",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Portugal",
+    "network": "TMN",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Portugal",
+    "network": "Vodafone\n(Telecel)",
+    "apn": "internet.vodafone.pt",
+    "user": "guest",
+    "password": "beeline",
+    "dial": ""
+  },
+  {
+    "country": "Romania",
+    "network": "Vodafone",
+    "apn": "internet.vodafone.ro",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Romania",
+    "network": "Orange",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Russia",
+    "network": "BeeLine",
+    "apn": "internet.beeline.ru",
+    "user": "beeline",
+    "password": "connex",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(dv)",
+    "apn": "internet.dv",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(kvk)",
+    "apn": "internet.kvk",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(ltmsk)",
+    "apn": "internet.ltmsk",
+    "user": "guest",
+    "password": "gdata",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(Moscow)",
+    "apn": "internet.msk",
+    "user": "gdata",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(mc)",
+    "apn": "internet.mc",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(NWGSM)",
+    "apn": "internet.nw",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(Siberia)",
+    "apn": "internet.sib",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(UGSM)",
+    "apn": "internet.ugsm",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(usi)",
+    "apn": "internet.usi.ru",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Megafon\n(Volga)",
+    "apn": "internet.volga",
+    "user": "guest",
+    "password": "beeline",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "Motiv\n(uses BeeLine)",
+    "apn": "internet.beeline.ru",
+    "user": "beeline",
+    "password": "mts",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "MTS",
+    "apn": "internet.mts.ru\ninternet.kuban",
+    "user": "mts",
+    "password": "[supplied]",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "NCC",
+    "apn": "internet",
+    "user": "ncc",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "NTC",
+    "apn": "internet.ntc",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Russia",
+    "network": "PrimTel",
+    "apn": "internet.primtel.ru",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Saint Lucia",
+    "network": "Cable & Wireless",
+    "apn": "internet",
+    "user": "guest",
+    "password": "wap03oecs",
+    "dial": ""
+  },
+  {
+    "country": "Saint Vincent &\nthe Grenadines",
+    "network": "Digicel",
+    "apn": "wap.digiceloecs.com",
+    "user": "wapoecs",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Saudi Arabia",
+    "network": "STC",
+    "apn": "jawalnet.com.sa",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Senegal",
+    "network": "Tigo",
+    "apn": "wap.sentelgsm.com",
+    "user": "guest",
+    "password": "gprs",
+    "dial": ""
+  },
+  {
+    "country": "Serbia-\nMontenegro",
+    "network": "Mobtel Srbija",
+    "apn": "internet",
+    "user": "mobtel",
+    "password": 64,
+    "dial": ""
+  },
+  {
+    "country": "Serbia-\nMontenegro",
+    "network": "Telekom Srbija",
+    "apn": "gprsinternet",
+    "user": "mts",
+    "password": 64,
+    "dial": ""
+  },
+  {
+    "country": "Serbia-\nMontenegro",
+    "network": "Telekom Srbija\n(MMS service)",
+    "apn": "mms",
+    "user": "mts",
+    "password": 64,
+    "dial": ""
+  },
+  {
+    "country": "Serbia-\nMontenegro",
+    "network": "Telekom Srbija\n(WAP service)",
+    "apn": "gprswap",
+    "user": "mts",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Singapore",
+    "network": "M1",
+    "apn": "mobilenet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Singapore",
+    "network": "SingTel",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Singapore",
+    "network": "Starhub",
+    "apn": "shwapint",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Slovakia",
+    "network": "Eurotel",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Slovakia",
+    "network": "Globtel",
+    "apn": "internet",
+    "user": "guest",
+    "password": "pasvord",
+    "dial": ""
+  },
+  {
+    "country": "Slovakia",
+    "network": "Orange",
+    "apn": "internet",
+    "user": "jusernejm",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Slovenia",
+    "network": "Izimobil",
+    "apn": "izimobil",
+    "user": "izimobil",
+    "password": "izimobil",
+    "dial": "*99#"
+  },
+  {
+    "country": "Slovenia",
+    "network": "Mobitel",
+    "apn": "internet",
+    "user": "mobitel",
+    "password": "internet",
+    "dial": "*99#"
+  },
+  {
+    "country": "Slovenia",
+    "network": "Simobil",
+    "apn": "internet.simobil.si",
+    "user": "simobil",
+    "password": "internet",
+    "dial": "*99#"
+  },
+  {
+    "country": "Slovenia",
+    "network": "Tu�mobil",
+    "apn": "internet.tusmobil.si",
+    "user": "tusmobil",
+    "password": "internet",
+    "dial": "*99#"
+  },
+  {
+    "country": "South Africa",
+    "network": "Cell-C",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "South Africa",
+    "network": "MTN",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "South Africa",
+    "network": "Vodacom",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "South Africa",
+    "network": "Virgin Mobile",
+    "apn": "vdata",
+    "user": "guest",
+    "password": "AMENA",
+    "dial": ""
+  },
+  {
+    "country": "Spain",
+    "network": "Movistar",
+    "apn": "movistar.es",
+    "user": "MOVISTAR",
+    "password": "MOVISTAR",
+    "dial": ""
+  },
+  {
+    "country": "Spain",
+    "network": "Orange",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Spain",
+    "network": "Vodafone",
+    "apn": "ac.vodafone.es",
+    "user": "vodafone",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Sri Lanka",
+    "network": "Dialog GSM\n(contract)",
+    "apn": "www.dialogsl.com",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Sri Lanka",
+    "network": "Dialog GSM\n(pre-pay)",
+    "apn": "ppwap",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Sri Lanka",
+    "network": "Mobitel",
+    "apn": "isp",
+    "user": "guest",
+    "password": "vodafone",
+    "dial": ""
+  },
+  {
+    "country": "Spain",
+    "network": "Vodafone\n(Airtel)",
+    "apn": "airtelnet.es",
+    "user": "vodafone",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Sweden",
+    "network": "Tele2 data",
+    "apn": "mobileinternet.tele2.se",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Sweden",
+    "network": "Telenor Data",
+    "apn": "services.telenor.se",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Sweden",
+    "network": "Telia",
+    "apn": "online.telia.se",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Switzerland",
+    "network": "Orange",
+    "apn": "internet",
+    "user": "guest",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Switzerland",
+    "network": "Sunrise",
+    "apn": "internet",
+    "user": "internet",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Switzerland",
+    "network": "Swisscom",
+    "apn": "gprs.swisscom.ch",
+    "user": "",
+    "password": "",
+    "dial": "*99#"
+  },
+  {
+    "country": "Taiwan",
+    "network": "Chunghwa\nTelecom",
+    "apn": "emome or\ninternet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Taiwan",
+    "network": "Far EasTone",
+    "apn": "fetnet01",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Taiwan",
+    "network": "KG Telecom",
+    "apn": "internet",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Taiwan",
+    "network": "Taiwan Cellular",
+    "apn": "internet",
+    "user": "guest",
+    "password": "ais",
+    "dial": ""
+  },
+  {
+    "country": "Thailand",
+    "network": "AIS",
+    "apn": "internet",
+    "user": "ais",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Thailand",
+    "network": "DTAC",
+    "apn": "www.dtac.co.th",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Turkey",
+    "network": "Avea",
+    "apn": "",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Turkey",
+    "network": "Turkcell",
+    "apn": "",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "Turkey",
+    "network": "Vodafone",
+    "apn": "",
+    "user": "",
+    "password": "",
+    "dial": ""
+  },
+  {
+    "country": "UAE",
+    "network": "Etisalat",
+    "apn": "mnet",
+    "user": "mnet",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": 3,
+    "apn": "three.co.uk",
+    "user": "guest",
+    "password": "abc",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "Jersey\nTelecom",
+    "apn": "pepper",
+    "user": "abc",
+    "password": "password",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "O2 (contract)",
+    "apn": "wap.o2.co.uk",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "UK",
+    "network": "O2\n(contract)\n-faster-",
+    "apn": "mobile.o2.co.uk",
+    "user": "faster",
+    "password": "payandgo",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "O2\n(pre-pay)",
+    "apn": "payandgo.o2.co.uk",
+    "user": "payandgo",
+    "password": "pass",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "Orange\n(Pay Monthly)",
+    "apn": "orangeinternet",
+    "user": "user",
+    "password": "Orange",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "Orange\n(Pay and Go)",
+    "apn": "orangewap",
+    "user": "Multimedia",
+    "password": "pass",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "T-Mobile",
+    "apn": "general.t-mobile.uk",
+    "user": "user",
+    "password": "[space]",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "Virgin Mobile",
+    "apn": "goto.virginmobile.com",
+    "user": "user",
+    "password": "webs",
+    "dial": ""
+  },
+  {
+    "country": "UK",
+    "network": "Vodafone (contract)",
+    "apn": "internet",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "UK",
+    "network": "Vodafone\n(pre-pay)",
+    "apn": "pp.vodafone.co.uk",
+    "user": "wap",
+    "password": "igprs",
+    "dial": ""
+  },
+  {
+    "country": "Ukraine",
+    "network": "Djuice",
+    "apn": "www.djuice.com.ua",
+    "user": "igprs",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Ukraine",
+    "network": "Jeans",
+    "apn": "www.jeans.ua",
+    "user": "guest",
+    "password": "internet",
+    "dial": ""
+  },
+  {
+    "country": "Ukraine",
+    "network": "Kyivstar",
+    "apn": "www.kyivstar.net",
+    "user": "igprs",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Ukraine",
+    "network": "Mobi-GSM",
+    "apn": "internet.urs",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Ukraine",
+    "network": "UMC",
+    "apn": "www.umc.ua",
+    "user": "guest",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Uruguay",
+    "network": "ANCEL",
+    "apn": "gprs.ancel",
+    "user": "guest",
+    "password": "ctiweb999",
+    "dial": ""
+  },
+  {
+    "country": "Uruguay",
+    "network": "CTI",
+    "apn": "internet.ctimovil.com.uy",
+    "user": "ctiweb",
+    "password": "movistar",
+    "dial": ""
+  },
+  {
+    "country": "Uruguay",
+    "network": "Movistar",
+    "apn": "webapn.movistar.com.uy",
+    "user": "movistar",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "USA",
+    "network": "Cingular\n(ex AT&T)",
+    "apn": "proxy",
+    "user": "guest",
+    "password": "CINGULAR1",
+    "dial": ""
+  },
+  {
+    "country": "USA",
+    "network": "Cingular\n(With acceleration)",
+    "apn": "ISP.CINGULAR",
+    "user": "ISPDA@\nCINGULARGPRS\n.COM",
+    "password": "CINGULAR1",
+    "dial": ""
+  },
+  {
+    "country": "USA",
+    "network": "Cingular\n(NO acceleration)",
+    "apn": "ISP.CINGULAR",
+    "user": "ISP@\nCINGULARGPRS\n.COM",
+    "password": "CINGULAR1",
+    "dial": ""
+  },
+  {
+    "country": "USA",
+    "network": "Cingular\n(non-contract)",
+    "apn": "WAP.CINGULAR",
+    "user": "WAP@\nCINGULARGPRS\n.COM",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "USA",
+    "network": "T-Mobile (Internet)",
+    "apn": "epc.tmobile.com",
+    "user": "",
+    "password": "",
+    "dial": "*99***1#"
+  },
+  {
+    "country": "Uzbekistan",
+    "network": "Uzdunrobita",
+    "apn": "net.urd.uz",
+    "user": "user",
+    "password": "guest",
+    "dial": ""
+  },
+  {
+    "country": "Venezuela",
+    "network": "Digitel TIM",
+    "apn": "gprsweb.digitel.ve",
+    "user": "guest",
+    "password": "",
+    "dial": ""
+  }
+]

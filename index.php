@@ -37,6 +37,7 @@ include_once( 'includes/data_usage.php' );
 include_once( 'includes/update.php' );
 //include_once( 'includes/configurator.php' );
 include_once( 'includes/configurator_json.php' );
+include_once( 'includes/modem.php' );
 
 $output = $return = 0;
 $page = $_GET['page'];
@@ -155,6 +156,9 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
                 <a href="index.php?page=dhcpd_conf"><i class="fa fa-exchange fa-fw"></i> <?php echo _("Configure DHCP Server"); ?></a>
               </li>
               <?php endif; ?>
+              <li>
+                <a href="index.php?page=modem_conf"><i class="fa fa-lock fa-fw"></i> <?php echo _("3/4G Modem"); ?></a>
+              </li>
               <?php if ( RASPI_OPENVPN_ENABLED ) : ?>
               <li>
                 <a href="index.php?page=openvpn_conf"><i class="fa fa-lock fa-fw"></i> <?php echo _("Configure OpenVPN"); ?></a>
@@ -207,6 +211,9 @@ $extraFooterScripts = array();
                 break;
             case "configurator_json":
                 DisplayConnexionConfigJson();
+                break;
+            case "modem_conf":  
+                DisplayModemConf();
                 break;
           case "wlan0_info":
             DisplayDashboard();
