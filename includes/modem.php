@@ -49,7 +49,7 @@ function DisplayModemConf(){
             <?php CSRFToken() ?>
             <div class="row">
                 <div class="form-group col-md-4">
-                  	<label for="modemSelect"><?php echo _("Modem selection"); ?></label>
+                  	<label for="modemSelect"><?php echo _("USB Device selection"); ?></label>
                   	<select name="modemSelect" id="modemSelect">
 <?php 
                         
