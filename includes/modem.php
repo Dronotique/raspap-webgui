@@ -119,7 +119,7 @@ function DisplayModemConf(){
     	    console.log( "second success" );
     	    
     	    for (var i = 0; i < data.length; i++) {
-    	    	var option = new Option(i, data.country + " - " + data.network);
+    	    	var option = new Option(data[i].country + " - " + data[i].network, i);
     	    	$("#apnSelect").append(option); 
        		}
        	  })
