@@ -6,7 +6,7 @@ function DisplayModemConf(){
   $status = new StatusMessages();
   
   $modemConfFilePath = "/etc/sakis3g.conf";
-  
+   
   if( isset($_POST['startAPN']) && CSRFValidate()){
       exec( '(sudo sakis3g connect)', $result );
       $last_line = end($result);
