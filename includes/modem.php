@@ -9,7 +9,7 @@ function DisplayModemConf(){
   
   if( isset($_POST['UpdateAPN']) && CSRFValidate()){
       $jsonConf = json_decode($_POST['jsonConf'], true);
-      var_dump($jsonConf);
+      //var_dump($jsonConf);
       $newConf = '/var/www/uploads/sakis3g.conf';
       $newFileConf = fopen($newConf, "w+");
       
@@ -18,7 +18,7 @@ function DisplayModemConf(){
       }
       fclose($newFileConf);
       echo '(sudo mv ' . $newConf . ' ' . $modemConfFilePath . ')';
-      exec( '(sudo mv ' . $newConf . ' ' . $modemConfFilePath . ')', $result );
+      exec( '(sudo mv -f' . $newConf . ' ' . $modemConfFilePath . ')', $result );
       $last_line = end($result);
       $status->addMessage($last_line, 'info');
       
