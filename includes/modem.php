@@ -49,12 +49,14 @@ function DisplayModemConf(){
           
           $stposEq = strpos($line, "=");
           if($stposEq ){
-              $confTab[substr($line, 0, $stposEq)] = substr($line, $stposEq + 1);
+              $conVal = substr($line, $stposEq + 2, strlen($line)-1);
+              
+              $confTab[substr($line, 0, $stposEq)] = $conVal;
               
               $strJsonConf .= ", '";
               $strJsonConf .= substr($line, 0, $stposEq);
               $strJsonConf .= "' : '";
-              $strJsonConf .= substr($line, $stposEq + 1);
+              $strJsonConf .= $conVal;
               $strJsonConf .= "'";
           }
       }
