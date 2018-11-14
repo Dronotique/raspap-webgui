@@ -167,9 +167,6 @@ function DisplayModemConf(){
         	});
        	
     	});
-
-    	
-    
     </script>
 <?php 
 }
