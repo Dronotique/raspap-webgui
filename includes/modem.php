@@ -6,12 +6,6 @@ function DisplayModemConf(){
   $status = new StatusMessages();
   
   $modemConfFilePath = "/etc/sakis3g.conf";
-  $modemId ="";
-  $modemNetwork ="";
-  $modemApn ="";
-  $modemUser ="";
-  $modemPwd ="";
-  $modemDial ="";
   
   if ( isset($_POST['UpdateConf']) && CSRFValidate() ) {
       if($_FILES['UpdateConfFile']['error'] != ""){
@@ -45,6 +39,7 @@ function DisplayModemConf(){
   }
   
   
+  $confTab = array();
   //Get Modem Configuration from file
   if (file_exists($modemConfFilePath)) {
       $fileContent = file($modemConfFilePath);
@@ -54,9 +49,12 @@ function DisplayModemConf(){
           
           $stposEq = strpos($line, "=");
           if($stposEq ){
+              $confTab[substr($line, 0, $stposEq)] = substr($line, $stposEq + 1);
+              
               $strJsonConf .= ", '";
               $strJsonConf .= substr($line, 0, $stposEq);
               $strJsonConf .= "' : '";
+              $strJsonConf .= substr($line, $stposEq + 1);
               $strJsonConf .= "'";
           }
       }
@@ -82,7 +80,9 @@ function DisplayModemConf(){
                         exec( '(lsusb)', $return );
                         foreach( $return as $line ) {
                             $idPos = strpos($line, "ID");
-                            echo ("<option value='" . substr($line, $idPos+3, 9) . "'>" . substr($line, $idPos+13) . "</option>");
+                            $idModem = substr($line, $idPos+3, 9);
+                            $libModem = substr($line, $idPos+13);
+                            echo ("<option value='" . $idModem . "'" . ($confTab["USBMODEM"]==$idModem?'selected':'') . ">" . $libModem . "</option>");
                         }
                          
 ?>
@@ -99,31 +99,31 @@ function DisplayModemConf(){
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnNetwork"><?php echo _("APN Network"); ?></label>
-                  	<input type="text" name="apnNetwork" id="apnNetwork">
+                  	<input type="text" name="apnNetwork" id="apnNetwork" value="$confTab['##NETWORK']">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnName"><?php echo _("APN Name"); ?></label>
-                  	<input type="text" name="apnName" id="apnName">
+                  	<input type="text" name="apnName" id="apnName"  value="$confTab['CUSTOM_APN']">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnUser"><?php echo _("User"); ?></label>
-                  	<input type="text" name="apnUser" id="apnUser">
+                  	<input type="text" name="apnUser" id="apnUser"  value="$confTab['APN_USER']">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnPwd"><?php echo _("Pawword"); ?></label>
-                  	<input type="text"  name="apnPwd" id="apnPwd">
+                  	<input type="text"  name="apnPwd" id="apnPwd" value="$confTab['APN_PASS']">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="updatefirmwarefile"><?php echo _("Dial Number"); ?></label>
-                  	<input type="text" name="apnDial">
+                  	<input type="text" name="apnDial" value="$confTab['DIAL']">
             	</div>	
             </div>
             <div class="row">
@@ -147,7 +147,12 @@ function DisplayModemConf(){
     	    console.log( "second success" );
     	    
     	    for (var i = 0; i < data.length; i++) {
-    	    	var option = new Option(data[i].country + " - " + data[i].network, i);
+        	    apnLabel = data[i].country + " - " + data[i].network;
+				apnSelected = false;
+				if(apnLabel == '<?php echo($confTab['##NETWORK'])?>'){
+					apnSelected = true;
+				}
+    	    	var option = new Option(apnLabel, i, apnSelected, apnSelected);
     	    	$("#apnSelect").append(option); 
        		}
        	  })
