@@ -49,7 +49,8 @@ function DisplayModemConf(){
           
           $stposEq = strpos($line, "=");
           if($stposEq ){
-              $conVal = substr($line, $stposEq + 2, strlen($line)-2);
+              $conVal = substr($line, $stposEq + 2);
+              $conVal = substr($conVal, 0, strlen($conVal)-1);
               
               $confTab[substr($line, 0, $stposEq)] = $conVal;
               
