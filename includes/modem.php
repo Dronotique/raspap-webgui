@@ -57,7 +57,7 @@ function DisplayModemConf(){
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-primary">
-        <div class="panel-heading"><i class="fa fa-upload fa-fw"></i><?php echo _("3/4G Modem Configuration"); ?></div>
+        <div class="panel-heading"><i class="fa fa-phone fa-fw"></i><?php echo _("3/4G Modem Configuration"); ?></div>
         <div class="panel-body">
           <p><?php $status->showMessages(); ?></p>
           <form role="form" action="?page=modem_conf" method="POST" enctype="multipart/form-data" id="formModem">
