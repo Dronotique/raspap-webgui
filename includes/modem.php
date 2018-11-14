@@ -5,13 +5,6 @@ include_once( 'includes/status_messages.php' );
 function DisplayModemConf(){
   $status = new StatusMessages();
   
-  if ( isset($_POST['UpdateWebUI']) && CSRFValidate() ) {
-      exec( '(cd /var/www/html/ && sudo git pull 2>&1)', $update_git );
-      $last_line = end($update_git);
-      $status->addMessage($last_line, 'info'); 
-  }
-  
-  
   if ( isset($_POST['UpdateConf']) && CSRFValidate() ) {
       if($_FILES['UpdateConfFile']['error'] != ""){
           $status->addMessage($_FILES['UpdateConfFile']['error'] , 'danger');
@@ -58,6 +51,14 @@ function DisplayModemConf(){
                 <div class="form-group col-md-4">
                   	<label for="modemSelect"><?php echo _("Modem selection"); ?></label>
                   	<select name="modemSelect" id="modemSelect">
+<?php 
+                        
+                        exec( '(lsusb)', $return );
+                        foreach( $return as $line ) {
+                            echo ("<option value='" . substr($line, strpos("ID")+3, 9) . "'>" . substr($line, strpos("ID")+13) . "</option>");
+                        }
+                         
+?>
                   	</select>
             	</div>	
             </div>
