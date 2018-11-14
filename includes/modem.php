@@ -55,7 +55,7 @@ function DisplayModemConf(){
                         
                         exec( '(lsusb)', $return );
                         foreach( $return as $line ) {
-                            $idPos = strpos("ID");
+                            $idPos = strpos($line, "ID");
                             echo ("<option value='" . substr($line, $idPos+3, 9) . "'>" . substr($line, $idPos+12) . "</option>");
                         }
                          
