@@ -5,7 +5,7 @@ include_once( 'includes/status_messages.php' );
 function DisplayModemConf(){
   $status = new StatusMessages();
   
-  $modemConfFilePath = "/etc/sakis3g.conf";
+  $modemConfFilePath = "/etc/sakis3g.conf"; 
    
   if( isset($_POST['startAPN']) && CSRFValidate()){
       exec( '(sudo sakis3g connect)', $result );
