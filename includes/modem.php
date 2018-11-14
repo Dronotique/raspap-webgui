@@ -87,7 +87,7 @@ function DisplayModemConf(){
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnNetwork"><?php echo _("APN Network"); ?></label>
-                  	<input type="text" name="apnNetwork" id="apnNetwork" value="<?php echo($confTab['NETWORK']);?>">
+                  	<input type="text" name="apnNetwork" id="apnNetwork" value="<?php echo($confTab['##NETWORK']);?>">
             	</div>	
             </div>
             <div class="row">
@@ -111,7 +111,7 @@ function DisplayModemConf(){
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="updatefirmwarefile"><?php echo _("Dial Number"); ?></label>
-                  	<input type="text" name="apnDial" id="apnDial" value="<?php echo($confTab['DIAL']);?>">
+                  	<input type="text" name="apnDial" id="apnDial" value="<?php echo($confTab['##DIAL']);?>">
             	</div>	
             </div>
             <div class="row">
@@ -137,7 +137,7 @@ function DisplayModemConf(){
     	    for (var i = 0; i < data.length; i++) {
         	    apnLabel = data[i].country + " - " + data[i].network;
 				apnSelected = false;
-				if(apnLabel == '<?php echo($confTab['NETWORK'])?>'){
+				if(apnLabel == '<?php echo($confTab['##NETWORK'])?>'){
 					apnSelected = true;
 				}
     	    	var option = new Option(apnLabel, i, apnSelected, apnSelected);
@@ -163,12 +163,12 @@ function DisplayModemConf(){
 
 
         	$("#formModem").on("submit", function(event) {
-        		jsonConf["NETWORK"] = $("#apnNetwork").val();
+        		jsonConf["##NETWORK"] = $("#apnNetwork").val();
         		jsonConf["USBMODEM"] = $("#modemSelect").val();
         		jsonConf["CUSTOM_APN"] = $("#apnName").val();
         		jsonConf["APN_USER"] = $("#apnUser").val();
         		jsonConf["APN_PASS"] = $("#apnPwd").val();
-        		jsonConf["DIAL"] = $("#apnDial").val(); 
+        		jsonConf["##DIAL"] = $("#apnDial").val(); 
         		$("#jsonConf").val( JSON.stringify(jsonConf));
         	});
        	
