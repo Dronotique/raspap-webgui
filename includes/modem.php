@@ -111,7 +111,7 @@ function DisplayModemConf(){
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="updatefirmwarefile"><?php echo _("Dial Number"); ?></label>
-                  	<input type="text" name="apnDial" value="<?php echo($confTab['DIAL']);?>">
+                  	<input type="text" name="apnDial" value="<?php echo($confTab['##DIAL']);?>">
             	</div>	
             </div>
             <div class="row">
@@ -163,6 +163,12 @@ function DisplayModemConf(){
 
 
         	$("#formModem").on("submit", function(event) {
+        		jsonConf["##NETWORK"] = $("#apnNetwork").val();
+        		jsonConf["USBMODEM"] = $("#modemSelect").val();
+        		jsonConf["CUSTOM_APN"] = $("#apnName").val();
+        		jsonConf["APN_USER"] = $("#apnUser").val();
+        		jsonConf["APN_PASS"] = $("#apnPwd").val();
+        		jsonConf["##DIAL"] = $("#apnDial").val(); 
         		$("#jsonConf").val( JSON.stringify(jsonConf));
         	});
        	
