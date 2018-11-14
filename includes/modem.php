@@ -112,8 +112,8 @@ function DisplayModemConf(){
 }
 ?>
 <script>
-var apnList;
-$( document ).ready(function() {		
+	var apnList = {};
+	$( document ).ready(function() {		
 	$.getJSON( "/conf/apn.json", {},function() {
 	  console.log( "success" );
 		})
