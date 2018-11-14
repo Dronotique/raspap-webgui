@@ -7,35 +7,11 @@ function DisplayModemConf(){
   
   $modemConfFilePath = "/etc/sakis3g.conf";
   
-  if ( isset($_POST['UpdateConf']) && CSRFValidate() ) {
-      if($_FILES['UpdateConfFile']['error'] != ""){
-          $status->addMessage($_FILES['UpdateConfFile']['error'] , 'danger');
-      }else{
-          //error_reporting(-1);
-          $uploaddir = '/var/www/uploads/';
-          $uploadfile = $uploaddir . basename($_FILES['UpdateConfFile']['name']);
-          if (move_uploaded_file($_FILES['UpdateConfFile']['tmp_name'], $uploadfile)) {
-              $status->addMessage('File uploaded - You need to restart the module', 'info');
-          } else {
-              $status->addMessage('File uploaded error', 'danger');
-          }
-      }
-  }
-  
-  
-  if ( isset($_POST['UpdateFirmware']) && CSRFValidate() ) {
-      if($_FILES['UpdateFirmware']['error'] != ""){
-          $status->addMessage($_FILES['UpdateFirmware']['error'] , 'danger');
-      }else{
-          //error_reporting(-1);
-          $uploaddir = '/var/www/uploads/';
-          $uploadfile = $uploaddir . basename($_FILES['UpdateFirmwareFile']['name']);
-          if (move_uploaded_file($_FILES['UpdateFirmwareFile']['tmp_name'], $uploadfile)) {
-              $status->addMessage('File uploaded - You need to restart the module', 'info');
-          } else {
-              $status->addMessage('File uploaded error', 'danger');
-          }
-      }
+  if( isset($_POST['UpdateAPN']) && CSRFValidate()){
+      $jsonConf = json_decode($_POST['jsonConf'], true);
+      
+      $newConf = '/var/www/uploads/sakis3g.conf';
+      file_put_contents($newConf, $jsonConf);
   }
   
   
