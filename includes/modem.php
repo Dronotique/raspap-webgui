@@ -5,6 +5,14 @@ include_once( 'includes/status_messages.php' );
 function DisplayModemConf(){
   $status = new StatusMessages();
   
+  $modemConfFilePath = "/etc/sakis3g.conf";
+  $modemId ="";
+  $modemNetwork ="";
+  $modemApn ="";
+  $modemUser ="";
+  $modemPwd ="";
+  $modemDial ="";
+  
   if ( isset($_POST['UpdateConf']) && CSRFValidate() ) {
       if($_FILES['UpdateConfFile']['error'] != ""){
           $status->addMessage($_FILES['UpdateConfFile']['error'] , 'danger');
@@ -37,6 +45,24 @@ function DisplayModemConf(){
   }
   
   
+  //Get Modem Configuration from file
+  if (file_exists($modemConfFilePath)) {
+      $fileContent = file($modemConfFilePath);
+      
+      $strJsonConf="{1:1";
+      foreach( $fileContent as $line ) {
+          
+          $stposEq = strpos($line, "=");
+          if($stposEq ){
+              $strJsonConf .= ", '";
+              $strJsonConf .= substr($line, 0, $stposEq);
+              $strJsonConf .= "' : '";
+              $strJsonConf .= "'";
+          }
+      }
+      $strJsonConf .= "}";
+      echo("<script>jsonConf=\"" . $strJsonConf . "\";</script>");
+  }
   
   ?>
   <div class="row">
@@ -56,7 +82,7 @@ function DisplayModemConf(){
                         exec( '(lsusb)', $return );
                         foreach( $return as $line ) {
                             $idPos = strpos($line, "ID");
-                            echo ("<option value='" . substr($line, $idPos+3, 9) . "'>" . substr($line, $idPos+12) . "</option>");
+                            echo ("<option value='" . substr($line, $idPos+3, 9) . "'>" . substr($line, $idPos+13) . "</option>");
                         }
                          
 ?>
