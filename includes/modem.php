@@ -131,7 +131,6 @@ function DisplayModemConf(){
             		<input type="submit" class="btn btn-outline btn-primary" name="UpdateAPN" value="<?php echo _("Update Configuration"); ?>" />
             		<input type="submit" class="btn btn-outline btn-info" name="startAPN" value="<?php echo _("Start connexion"); ?>" />
             		<input type="submit" class="btn btn-outline btn-warning" name="stopAPN" value="<?php echo _("Stop connexion"); ?>" />
-            		btn btn-info
             	</div>	
             </div>
           </form>

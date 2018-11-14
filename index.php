@@ -38,6 +38,7 @@ include_once( 'includes/update.php' );
 //include_once( 'includes/configurator.php' );
 include_once( 'includes/configurator_json.php' );
 include_once( 'includes/modem.php' );
+include_once( 'includes/openvpn.php' );
 
 $output = $return = 0;
 $page = $_GET['page'];
