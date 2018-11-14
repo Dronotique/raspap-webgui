@@ -46,7 +46,7 @@ function DisplayModemConf(){
           }
       }
       $strJsonConf .= "}";
-      echo("<script>jsonConf=\"" . $strJsonConf . "\";</script>");
+      echo("<script>jsonConf=" . $strJsonConf . ";</script>");
   }
   
   ?>
