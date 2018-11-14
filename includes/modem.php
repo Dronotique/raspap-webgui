@@ -126,13 +126,9 @@ function DisplayModemConf(){
                   	<input type="text" name="apnDial" id="apnDial" value="<?php echo($confTab['##DIAL']);?>">
             	</div>	
             </div>
-            <div class="row">
-                  <div class="form-group col-md-4">
-            		<input type="submit" class="btn btn-outline btn-primary" name="UpdateAPN" value="<?php echo _("Update Configuration"); ?>" />
-            		<input type="submit" class="btn btn-info" name="startAPN" value="<?php echo _("Start connexion"); ?>" />
-            		<input type="submit" class="btn btn-warning" name="stopAPN" value="<?php echo _("Stop connexion"); ?>" />
-            	</div>	
-            </div>
+    		<input type="submit" class="btn btn-outline btn-primary" name="UpdateAPN" value="<?php echo _("Update Configuration"); ?>" />
+    		<input type="submit" class="btn btn-success" name="startAPN" value="<?php echo _("Start connexion"); ?>" />
+    		<input type="submit" class="btn btn-warning" name="stopAPN" value="<?php echo _("Stop connexion"); ?>" />
           </form>
         </div><!-- /.panel-body -->
       </div><!-- /.panel-default -->
