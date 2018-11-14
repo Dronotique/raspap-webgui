@@ -18,6 +18,10 @@ function DisplayModemConf(){
       }
       fclose($newFileConf);
 
+      exec( '(sudo mv ' . $newConf . ' ' . $modemConfFilePath. ')', $result );
+      $last_line = end($result);
+      $status->addMessage($last_line, 'info');
+      
   }
   
   
