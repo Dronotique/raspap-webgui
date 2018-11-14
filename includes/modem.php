@@ -17,8 +17,8 @@ function DisplayModemConf(){
           fwrite($newFileConf, $key . "=\"" . $value . "\"\n");
       }
       fclose($newFileConf);
-      echo '(sudo mv ' . $newConf . ' ' . $modemConfFilePath . ')';
-      exec( '(sudo mv -f' . $newConf . ' ' . $modemConfFilePath . ')', $result );
+      echo '(sudo mv -f ' . $newConf . ' ' . $modemConfFilePath . ')';
+      exec( '(sudo mv -f ' . $newConf . ' ' . $modemConfFilePath . ')', $result );
       $last_line = end($result);
       $status->addMessage($last_line, 'info');
       
