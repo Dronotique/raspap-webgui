@@ -71,7 +71,8 @@ function DisplayModemConf(){
         <div class="panel-heading"><i class="fa fa-upload fa-fw"></i><?php echo _("3/4G Modem Configuration"); ?></div>
         <div class="panel-body">
           <p><?php $status->showMessages(); ?></p>
-          <form role="form" action="?page=modem_conf" method="POST" enctype="multipart/form-data">
+          <form role="form" action="?page=modem_conf" method="POST" enctype="multipart/form-data" id="formModem">
+          	<input type="hidden" name="jsonConf" id="jsonConf"/>
             <?php CSRFToken() ?>
             <div class="row">
                 <div class="form-group col-md-4">
@@ -174,9 +175,15 @@ function DisplayModemConf(){
         		$("#apnPwd").val(apnList[$("#apnSelect").val()].password);
         		$("#apnDial").val(apnList[$("#apnSelect").val()].dial);
         	});
-    	  
+
+
+        	$("#formModem").on("submit", function(event) {
+        		$("#jsonConf").val( JSON.stringify(confJson));
+        	});
        	
     	});
+
+    	
     
     </script>
 <?php 
