@@ -157,11 +157,11 @@ $theme_url = 'dist/css/'.htmlspecialchars($theme, ENT_QUOTES);
               </li>
               <?php endif; ?>
               <li>
-                <a href="index.php?page=modem_conf"><i class="fa fa-lock fa-fw"></i> <?php echo _("3/4G Modem"); ?></a>
+                <a href="index.php?page=modem_conf"><i class="fa fa-blender-phone fa-fw"></i> <?php echo _("3/4G Modem"); ?></a>
               </li>
               <?php if ( RASPI_OPENVPN_ENABLED ) : ?>
               <li>
-                <a href="index.php?page=openvpn_conf"><i class="fa fa-lock fa-fw"></i> <?php echo _("Configure OpenVPN"); ?></a>
+                <a href="index.php?page=openvpn_conf"><i class="fa fa-user-secret fa-fw"></i> <?php echo _("Configure OpenVPN"); ?></a>
               </li>
               <?php endif; ?>
               <?php if ( RASPI_TORPROXY_ENABLED ) : ?>
