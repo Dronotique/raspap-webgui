@@ -8,7 +8,7 @@ function DisplayModemConf(){
   $modemConfFilePath = "/etc/sakis3g.conf";
   
   if( isset($_POST['UpdateAPN']) && CSRFValidate()){
-      $jsonConf = json_decode($_POST['jsonConf'], true);
+      $jsonConf = json_decode($_POST['jsonConf']);
       echo($jsonConf);
       $newConf = '/var/www/uploads/sakis3g.conf';
       $newFileConf = fopen($newConf, "w+");
@@ -26,17 +26,19 @@ function DisplayModemConf(){
   if (file_exists($modemConfFilePath)) {
       $fileContent = file($modemConfFilePath);
       
-      $strJsonConf="{1:1";
+      $strJsonConf="{";
       foreach( $fileContent as $line ) {
           
           $stposEq = strpos($line, "=");
           if($stposEq ){
+              if($strJsonConf != "{"){
+                  $strJsonConf .= ", '";
+              }
               $conVal = substr($line, $stposEq + 2);
               $conVal = substr($conVal, 0, strlen($conVal)-2);
               
               $confTab[substr($line, 0, $stposEq)] = $conVal;
               
-              $strJsonConf .= ", '";
               $strJsonConf .= substr($line, 0, $stposEq);
               $strJsonConf .= "' : '";
               $strJsonConf .= $conVal;
@@ -68,7 +70,7 @@ function DisplayModemConf(){
                             $idPos = strpos($line, "ID");
                             $idModem = substr($line, $idPos+3, 9);
                             $libModem = substr($line, $idPos+13);
-                            echo ("<option value='" . $idModem . "'" . ($confTab["USBMODEM"]==$idModem?'selected':'') . ">" . $libModem . "</option>");
+                            echo ("<option value='" . $idModem . "' " . ($confTab["USBMODEM"]==$idModem?'selected':'') . ">" . $libModem . "</option>");
                         }
                          
 ?>
