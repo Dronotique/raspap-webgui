@@ -9,7 +9,7 @@ function DisplayModemConf(){
   
   if( isset($_POST['UpdateAPN']) && CSRFValidate()){
       $jsonConf = json_decode($_POST['jsonConf']);
-      echo($jsonConf);
+      var_dump($jsonConf);
       $newConf = '/var/www/uploads/sakis3g.conf';
       $newFileConf = fopen($newConf, "w+");
       
