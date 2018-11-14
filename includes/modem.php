@@ -99,31 +99,31 @@ function DisplayModemConf(){
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnNetwork"><?php echo _("APN Network"); ?></label>
-                  	<input type="text" name="apnNetwork" id="apnNetwork" value="$confTab['##NETWORK']">
+                  	<input type="text" name="apnNetwork" id="apnNetwork" value="<?php echo($confTab['##NETWORK']);?>">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnName"><?php echo _("APN Name"); ?></label>
-                  	<input type="text" name="apnName" id="apnName"  value="$confTab['CUSTOM_APN']">
+                  	<input type="text" name="apnName" id="apnName"  value="<?php echo($confTab['CUSTOM_APN']);?>">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnUser"><?php echo _("User"); ?></label>
-                  	<input type="text" name="apnUser" id="apnUser"  value="$confTab['APN_USER']">
+                  	<input type="text" name="apnUser" id="apnUser"  value="<?php echo($confTab['APN_USER']);?>">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnPwd"><?php echo _("Pawword"); ?></label>
-                  	<input type="text"  name="apnPwd" id="apnPwd" value="$confTab['APN_PASS']">
+                  	<input type="text"  name="apnPwd" id="apnPwd" value="<?php echo($confTab['APN_PASS']);?>">
             	</div>	
             </div>
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="updatefirmwarefile"><?php echo _("Dial Number"); ?></label>
-                  	<input type="text" name="apnDial" value="$confTab['DIAL']">
+                  	<input type="text" name="apnDial" value="<?php echo($confTab['DIAL']);?>">
             	</div>	
             </div>
             <div class="row">
