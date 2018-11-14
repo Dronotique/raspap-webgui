@@ -64,7 +64,7 @@ function DisplayModemConf(){
             <div class="row">
                 <div class="form-group col-md-4">
                   	<label for="apnSelect"><?php echo _("APN selection"); ?></label>
-                  	<select name="apnSelect" id="apnSelect" onchange="updateAPNFields();">
+                  	<select name="apnSelect" id="apnSelect">
                   	</select>
             	</div>	
             </div>
@@ -113,36 +113,37 @@ function DisplayModemConf(){
 ?>
 <script>
 var apnList;
-$( document ).ready(function() {
-		
-    	$.getJSON( "/conf/apn.json", {},function() {
-    	  console.log( "success" );
-    		})
-    	  .done(function(data) {
-    		  apnList = data;  
-    	    console.log( "second success" );
-    	    
-    	    for (var i = 0; i < data.length; i++) {
-    	    	var option = new Option(i, data.country + " - " + data.network);
-    	    	$("#apnSelect").append(option); 
-       		}
-       	  })
-    	  .fail(function(jqXHR, textStatus, errorThrown) {
-    	        console.log("error " + textStatus);
-    	        console.log("error thrown" + errorThrown);
-    	        console.log("incoming Text " + jqXHR.responseText);
-    	  })
-    	  .always(function() {
-    	    console.log( "complete" );
-    	  });
-       	
+$( document ).ready(function() {		
+	$.getJSON( "/conf/apn.json", {},function() {
+	  console.log( "success" );
+		})
+	  .done(function(data) {
+		  apnList = data;  
+	    console.log( "second success" );
+	    
+	    for (var i = 0; i < data.length; i++) {
+	    	var option = new Option(i, data.country + " - " + data.network);
+	    	$("#apnSelect").append(option); 
+   		}
+   	  })
+	  .fail(function(jqXHR, textStatus, errorThrown) {
+	        console.log("error " + textStatus);
+	        console.log("error thrown" + errorThrown);
+	        console.log("incoming Text " + jqXHR.responseText);
+	  })
+	  .always(function() {
+	    console.log( "complete" );
+	  });
+
+    	$("#apnSelect").on("change", function(event) { 
+    		$("#apnNetwork").val(apnList[$("#apnSelect").val()].country + " - " + apnList[$("#apnSelect").val()].network);
+    		$("#apnName").val(apnList[$("#apnSelect").val()].apn);
+    		$("#apnUser").val(apnList[$("#apnSelect").val()].user);
+    		$("#apnPwd").val(apnList[$("#apnSelect").val()].password);
+    		$("#apnDial").val(apnList[$("#apnSelect").val()].dial);
+    	});
+	  
+   	
 	});
 
-	function updateAPNFields(){
-		$("#apnNetwork").val(apnList[$("#apnSelect").val()].country + " - " + apnList[$("#apnSelect").val()].network);
-		$("#apnName").val(apnList[$("#apnSelect").val()].apn);
-		$("#apnUser").val(apnList[$("#apnSelect").val()].user);
-		$("#apnPwd").val(apnList[$("#apnSelect").val()].password);
-		$("#apnDial").val(apnList[$("#apnSelect").val()].dial);
-	}
 </script>
