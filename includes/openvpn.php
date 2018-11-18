@@ -81,7 +81,7 @@ function DisplayOpenVPNConfig() {
 			</ul>
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<form role="form" action="?page=save_hostapd_conf" method="POST">
+				<form role="form" action="?page=openvpn_conf" method="POST">
 				<p><?php echo $status; ?></p>
 				<div class="tab-pane fade in active" id="openvpnclient">
 
