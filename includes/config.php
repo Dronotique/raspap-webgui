@@ -15,9 +15,14 @@ define('RASPI_HOSTAPD_CONFIG', '/etc/hostapd.conf');
 define('RASPI_WPA_SUPPLICANT_CONFIG', '/etc/wpa_supplicant/wpa_supplicant.conf');
 define('RASPI_HOSTAPD_CTRL_INTERFACE', '/var/run/hostapd');
 define('RASPI_WPA_CTRL_INTERFACE', '/var/run/wpa_supplicant');
-define('RASPI_OPENVPN_CLIENT_CONFIG', '/etc/openvpn/client.conf');
-define('RASPI_OPENVPN_SERVER_CONFIG', '/etc/openvpn/server.conf');
+#define('RASPI_OPENVPN_CLIENT_CONFIG', '/etc/openvpn/client.conf');
+#define('RASPI_OPENVPN_SERVER_CONFIG', '/etc/openvpn/server.conf');
+define('UPLOAD_DIR', '/var/www/uploads/');
+define('RASPI_OPENVPN_CLIENT_CONFIG', $UPLOAD_DIR . 'openvpn_client.ovpn');
+define('RASPI_OPENVPN_AUTH_CONFIG', $UPLOAD_DIR . 'openvpn.auth');
+define('RASPI_OPENVPN_SERVER_CONFIG', '/var/www/uploads/openvpn_server.ovpn');
 define('RASPI_TORPROXY_CONFIG', '/etc/tor/torrc');
+
 
 // Optional services, set to true to enable.
 define('RASPI_HOTSPOT_ENABLED', true );

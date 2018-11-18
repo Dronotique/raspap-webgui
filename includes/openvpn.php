@@ -1,7 +1,46 @@
 <?php 
 function DisplayOpenVPNConfig() {
 
+    
+    
+    if ( isset($_POST['StartOpenVPN']) && CSRFValidate() ) {
+        //start OpenVpn
+        exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG);
+    }
+    
+    if ( isset($_POST['SaveOpenVPNSettings']) && CSRFValidate() ) {
+        if ( isset($_POST['openvpn-config']) && CSRFValidate() ) {
+            if($_FILES['openvpn-config']['error'] != ""){
+                $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
+            }else {
+                //error_reporting(-1);
+                $uploadfile = $uploaddir . $RASPI_OPENVPN_CLIENT_CONFIG;
+                if (move_uploaded_file($_FILES['openvpn-config']['tmp_name'], $uploadfile)) {
+                    $status->addMessage('Configuration File uploaded', 'info');
+                } else {
+                    $status->addMessage('Configuration File error', 'danger');
+                };
+            }
+        }
+        
+        $fileAuth = fopen($RASPI_OPENVPN_AUTH_CONFIG, 'w');
+        fwrite($fileAuth, $_POST["openvpn_login"] . "\n");
+        fwrite($fileAuth, $_POST["openvpn_pwd"] . "\n");
+        fclose($fileAuth);
+        
+        if($_POST["openvpn_autostart"] == 'true'){
+            $fileAuth = fopen($UPLOAD_DIR . "openvpn.autostart", 'w');
+            fclose($fileAuth);
+        }else{
+            unlink($UPLOAD_DIR . "openvpn.autostart");
+        }
+    
+    }
+    
+    
+        
 	exec( 'cat '. RASPI_OPENVPN_CLIENT_CONFIG, $returnClient );
+	exec( 'cat '. RASPI_OPENVPN_AUTH_CONFIG, $returnAuth );
 	exec( 'cat '. RASPI_OPENVPN_SERVER_CONFIG, $returnServer );
 	exec( 'pidof openvpn | wc -l', $openvpnstatus);
 
@@ -42,11 +81,11 @@ function DisplayOpenVPNConfig() {
 			</ul>
 			<!-- Tab panes -->
 			<div class="tab-content">
+				<form role="form" action="?page=save_hostapd_conf" method="POST">
 				<p><?php echo $status; ?></p>
 				<div class="tab-pane fade in active" id="openvpnclient">
 
 					<h4>Client settings</h4>
-					<form role="form" action="?page=save_hostapd_conf" method="POST">
 
 					<div class="row">
 						<div class="form-group col-md-4">
@@ -56,12 +95,30 @@ function DisplayOpenVPNConfig() {
 					</div>
 					<div class="row">
 						<div class="form-group col-md-4">
+						<label for="code">Login</label> 
+						<input type="text" class="form-control" name="openvpn_login" value="<?php echo htmlspecialchars($returnAuth[0], ENT_QUOTES); ?>" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-4">
+						<label for="code">Password</label> 
+						<input type="text" class="form-control" name="openvpn_pwd" value="<?php echo htmlspecialchars($returnAuth[1], ENT_QUOTES); ?>" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-4">
+						<label for="code">Auto start ?</label> 
+						<input type="checkbox" class="form-control" name="openvpn_autostart" value="true" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-4">
 							<label for="code">Client Log</label>
 							<input type="text" class="form-control" id="disabledInput" name="log-append" type="text" placeholder="<?php echo htmlspecialchars($arrClientConfig['log-append'], ENT_QUOTES); ?>" disabled="disabled" />
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane fade" id="openvpnserver">
+				<!-- div class="tab-pane fade" id="openvpnserver">
 					<h4>Server settings</h4>
 					<div class="row">
 						<div class="form-group col-md-4">
@@ -105,19 +162,21 @@ function DisplayOpenVPNConfig() {
 						<input type="text" class="form-control" name="openvpn_status" placeholder="<?php echo htmlspecialchars($arrServerConfig['status'], ENT_QUOTES); ?>" disabled="disabled" />
 						</div>
 					</div>
-				</div>
+				</div-->
 				<input type="submit" class="btn btn-outline btn-primary" name="SaveOpenVPNSettings" value="Save settings" />
 				<?php
+				/*
 				if($hostapdstatus[0] == 0) {
 					echo '<input type="submit" class="btn btn-success" name="StartOpenVPN" value="Start OpenVPN" />' , PHP_EOL;
 				} else {
 					echo '<input type="submit" class="btn btn-warning" name="StopOpenVPN" value="Stop OpenVPN" />' , PHP_EOL;
 				}
+				*/
 ?>
 				</form>
 		</div><!-- /.panel-body -->
 	</div><!-- /.panel-primary -->
-	<div class="panel-footer"> Information provided by openvpn</div>
+	<!-- div class="panel-footer"> Information provided by openvpn</div-->
 </div><!-- /.col-lg-12 -->
 </div><!-- /.row -->
 <?php
