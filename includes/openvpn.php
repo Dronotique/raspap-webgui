@@ -92,6 +92,7 @@ function DisplayOpenVPNConfig() {
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<form role="form" action="?page=openvpn_conf" method="POST">
+				<?php CSRFToken() ?>
 				<p><?php echo $status; ?></p>
 				<div class="tab-pane fade in active" id="openvpnclient">
 

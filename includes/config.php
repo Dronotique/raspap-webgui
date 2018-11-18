@@ -20,7 +20,7 @@ define('RASPI_WPA_CTRL_INTERFACE', '/var/run/wpa_supplicant');
 define('UPLOAD_DIR', '/var/www/uploads/');
 define('RASPI_OPENVPN_CLIENT_CONFIG', $UPLOAD_DIR . 'openvpn_client.ovpn');
 define('RASPI_OPENVPN_AUTH_CONFIG', $UPLOAD_DIR . 'openvpn.auth');
-define('RASPI_OPENVPN_SERVER_CONFIG', '/var/www/uploads/openvpn_server.ovpn');
+define('RASPI_OPENVPN_SERVER_CONFIG', $UPLOAD_DIR . 'openvpn_server.ovpn');
 define('RASPI_TORPROXY_CONFIG', '/etc/tor/torrc');
 
 
