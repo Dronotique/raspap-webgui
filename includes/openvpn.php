@@ -44,9 +44,15 @@ function DisplayOpenVPNConfig() {
 	exec( 'cat '. RASPI_OPENVPN_SERVER_CONFIG, $returnServer );
 	exec( 'pidof openvpn | wc -l', $openvpnstatus);
 
-	echo($returnClient);
-	echo($returnAuth);
-	echo($returnServer);
+	foreach( $returnClient as $a ) {
+	    echo($a . "\n");
+	}
+	foreach( $returnAuth as $a ) {
+	    echo($a . "\n");
+	}
+	foreach( $returnServer as $a ) {
+	    echo($a . "\n");
+	}
 	
 	if( $openvpnstatus[0] == 0 ) {
 		$status = '<div class="alert alert-warning alert-dismissable">OpenVPN is not running
