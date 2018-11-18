@@ -6,6 +6,8 @@ function DisplayOpenVPNConfig() {
     if ( isset($_POST['StartOpenVPN']) && CSRFValidate() ) {
         //start OpenVpn
         exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG);
+    }else if( isset($_POST['StopOpenVPN']) && CSRFValidate() ) {
+        
     }
     
     if ( isset($_POST['SaveOpenVPNSettings']) && CSRFValidate() ) {
@@ -75,10 +77,10 @@ function DisplayOpenVPNConfig() {
 		<!-- /.panel-heading -->
 		<div class="panel-body">
 			<!-- Nav tabs -->
-			<ul class="nav nav-tabs">
+			<!-- ul class="nav nav-tabs">
 				<li class="active"><a href="#openvpnclient" data-toggle="tab">Client settings</a></li>
 				<li><a href="#openvpnserver" data-toggle="tab">Server settings</a></li>
-			</ul>
+			</ul-->
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<form role="form" action="?page=openvpn_conf" method="POST">
