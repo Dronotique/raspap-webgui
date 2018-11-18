@@ -177,13 +177,11 @@ function DisplayOpenVPNConfig() {
 				</div-->
 				<input type="submit" class="btn btn-outline btn-primary" name="SaveOpenVPNSettings" value="Save settings" />
 				<?php
-				/*
-				if($hostapdstatus[0] == 0) {
+				if($openvpnstatus[0] == 0) {
 					echo '<input type="submit" class="btn btn-success" name="StartOpenVPN" value="Start OpenVPN" />' , PHP_EOL;
 				} else {
 					echo '<input type="submit" class="btn btn-warning" name="StopOpenVPN" value="Stop OpenVPN" />' , PHP_EOL;
 				}
-				*/
 ?>
 				</form>
 		</div><!-- /.panel-body -->
