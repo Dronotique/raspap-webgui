@@ -3,14 +3,17 @@ function DisplayOpenVPNConfig() {
 
     
     if(CSRFValidate()){
+        echo(1);
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
+            echo(2);
             exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG);
         }else if( isset($_POST['StopOpenVPN']) ) {
             
         }
-        
+        echo(3);
         if ( isset($_POST['SaveOpenVPNSettings']) ) {
+            echo(4);
             if ( isset($_POST['openvpn-config'])) {
                 if($_FILES['openvpn-config']['error'] != ""){
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
@@ -24,19 +27,22 @@ function DisplayOpenVPNConfig() {
                     };
                 }
             }
+            echo(5);
             
             $fileAuth = fopen($RASPI_OPENVPN_AUTH_CONFIG, 'w');
             fwrite($fileAuth, $_POST["openvpn_login"] . "\n");
             fwrite($fileAuth, $_POST["openvpn_pwd"] . "\n");
             fclose($fileAuth);
-            
+            echo(6);
             if($_POST["openvpn_autostart"] == 'true'){
+                echo(7);
                 $fileAuth = fopen($UPLOAD_DIR . "openvpn.autostart", 'w');
                 fclose($fileAuth);
             }else{
                 unlink($UPLOAD_DIR . "openvpn.autostart");
             }
         
+            echo(8);
         }
     }
         
