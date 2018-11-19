@@ -17,10 +17,10 @@ function DisplayOpenVPNConfig() {
             fclose($fileAuth);
             
             if($_POST["openvpn_autostart"] == 'true'){
-                $fileAuth = fopen($UPLOAD_DIR . "openvpn.autostart", 'w');
+                $fileAuth = fopen(UPLOAD_DIR . "openvpn.autostart", 'w');
                 fclose($fileAuth);
             }else{
-                unlink($UPLOAD_DIR . "openvpn.autostart");
+                unlink(UPLOAD_DIR . "openvpn.autostart");
             }
             
             
