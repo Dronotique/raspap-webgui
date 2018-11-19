@@ -33,6 +33,7 @@ function DisplayOpenVPNConfig() {
                     //error_reporting(-1);
                     echo("****" . RASPI_OPENVPN_CLIENT_CONFIG . "****");
                     if(file_exists(RASPI_OPENVPN_CLIENT_CONFIG)){
+                        echo(7);
                         unlink(RASPI_OPENVPN_CLIENT_CONFIG);
                     }
                     if (move_uploaded_file($_FILES['openvpn-config']['tmp_name'], RASPI_OPENVPN_CLIENT_CONFIG)) {
@@ -98,7 +99,7 @@ function DisplayOpenVPNConfig() {
 			</ul-->
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<form role="form" action="?page=openvpn_conf" method="POST">
+				<form role="form" action="?page=openvpn_conf" method="POST"  enctype="multipart/form-data">
 				<?php CSRFToken() ?>
 				<p><?php echo $statusMsg; ?></p>
 				<div class="tab-pane fade in active" id="openvpnclient">
