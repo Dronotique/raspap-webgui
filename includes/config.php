@@ -17,10 +17,11 @@ define('RASPI_HOSTAPD_CTRL_INTERFACE', '/var/run/hostapd');
 define('RASPI_WPA_CTRL_INTERFACE', '/var/run/wpa_supplicant');
 #define('RASPI_OPENVPN_CLIENT_CONFIG', '/etc/openvpn/client.conf');
 #define('RASPI_OPENVPN_SERVER_CONFIG', '/etc/openvpn/server.conf');
-define('UPLOAD_DIR', '/var/www/uploads/');
-define('RASPI_OPENVPN_CLIENT_CONFIG', $UPLOAD_DIR . 'openvpn_client.ovpn');
-define('RASPI_OPENVPN_AUTH_CONFIG', $UPLOAD_DIR . 'openvpn.auth');
-define('RASPI_OPENVPN_SERVER_CONFIG', $UPLOAD_DIR . 'openvpn_server.ovpn');
+$uploadDir = '/var/www/uploads/';
+define('UPLOAD_DIR', $uploadDir);
+define('RASPI_OPENVPN_CLIENT_CONFIG', $uploadDir . 'openvpn_client.ovpn');
+define('RASPI_OPENVPN_AUTH_CONFIG', $uploadDir . 'openvpn.auth');
+define('RASPI_OPENVPN_SERVER_CONFIG', $uploadDir . 'openvpn_server.ovpn');
 define('RASPI_TORPROXY_CONFIG', '/etc/tor/torrc');
 
 
