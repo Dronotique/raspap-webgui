@@ -2,6 +2,8 @@
 function DisplayOpenVPNConfig() {
     $status = new StatusMessages();
     
+    echo $RASPI_OPENVPN_AUTH_CONFIG;
+    
     if(CSRFValidate()){
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
