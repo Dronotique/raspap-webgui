@@ -3,30 +3,21 @@ function DisplayOpenVPNConfig() {
     $status = new StatusMessages();
     
     if(CSRFValidate()){
-        echo(1);
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
-            echo(2);
             exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG);
         }else if( isset($_POST['StopOpenVPN']) ) {
             
         }
-        echo(3);
         if ( isset($_POST['SaveOpenVPNSettings']) ) {
-            echo(4);
             if ( isset($_POST['openvpn-config'])) {
-                echo(5);
                 if($_FILES['openvpn-config']['error'] != ""){
-                    echo(6);
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
                 }else {
-                    echo(7 . $RASPI_OPENVPN_CLIENT_CONFIG);
                     //error_reporting(-1);
                     if (move_uploaded_file($_FILES['openvpn-config']['tmp_name'], $RASPI_OPENVPN_CLIENT_CONFIG)) {
-                        echo(8);
                         $status->addMessage('Configuration File uploaded', 'info');
                     } else {
-                        echo(9);
                         $status->addMessage('Configuration File error', 'danger');
                     };
                 }
