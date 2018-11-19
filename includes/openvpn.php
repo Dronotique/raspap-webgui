@@ -1,6 +1,6 @@
 <?php 
 function DisplayOpenVPNConfig() {
-
+    $status = new StatusMessages();
     
     if(CSRFValidate()){
         echo(1);
