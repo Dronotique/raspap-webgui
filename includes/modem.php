@@ -5,31 +5,47 @@ include_once( 'includes/status_messages.php' );
 function DisplayModemConf(){
   $status = new StatusMessages();
   
+  $fileAutoStartPath = UPLOAD_DIR . "modem.autostart";
   $modemConfFilePath = "/etc/sakis3g.conf"; 
    
-  if( isset($_POST['startAPN']) && CSRFValidate()){
-      exec( '(sudo sakis3g connect)', $result );
-      $last_line = end($result);
-      $status->addMessage($last_line, 'info');
-  }else if( isset($_POST['stopAPN']) && CSRFValidate()){
-      exec( '(sudo sakis3g disconnect)', $result );
-      $last_line = end($result);
-      $status->addMessage($last_line, 'info');
-  }else if( isset($_POST['UpdateAPN']) && CSRFValidate()){
-      $jsonConf = json_decode($_POST['jsonConf'], true);
-      //var_dump($jsonConf);
-      $newConf = '/var/www/uploads/sakis3g.conf';
-      $newFileConf = fopen($newConf, "w+");
-      
-      foreach ($jsonConf as $key => $value){
-          fwrite($newFileConf, $key . "=\"" . $value . "\"\n");
+  if(CSRFValidate()){
+      if( isset($_POST['startAPN']) && CSRFValidate()){
+          exec( '(sudo sakis3g connect)', $result );
+          $last_line = end($result);
+          $status->addMessage($last_line, 'info');
+      }else if( isset($_POST['stopAPN']) && CSRFValidate()){
+          exec( '(sudo sakis3g disconnect)', $result );
+          $last_line = end($result);
+          $status->addMessage($last_line, 'info');
+      }else if( isset($_POST['UpdateAPN']) && CSRFValidate()){
+          $jsonConf = json_decode($_POST['jsonConf'], true);
+          //var_dump($jsonConf);
+          $newConf = '/var/www/uploads/sakis3g.conf';
+          $newFileConf = fopen($newConf, "w+");
+          
+          foreach ($jsonConf as $key => $value){
+              fwrite($newFileConf, $key . "=\"" . $value . "\"\n");
+          }
+          fclose($newFileConf);
+          
+          exec( '(sudo mv -f ' . $newConf . ' ' . $modemConfFilePath . ')', $result );
+          $last_line = end($result);
+          $status->addMessage($last_line, 'info');
+
+          if($_POST["modem_autostart"] == 'true'){
+              $fileAutoStart = fopen($fileAutoStartPath, 'w');
+              fclose($fileAutoStart);
+          }else{
+              unlink($fileAutoStartPath);
+          }
       }
-      fclose($newFileConf);
       
-      exec( '(sudo mv -f ' . $newConf . ' ' . $modemConfFilePath . ')', $result );
-      $last_line = end($result);
-      $status->addMessage($last_line, 'info');
-      
+  }
+  
+  if(file_exists($fileAutoStartPath)){
+      $autoStart = true;
+  }else{
+      $autoStart = false;
   }
   
   
@@ -126,6 +142,12 @@ function DisplayModemConf(){
                   	<input type="text" name="apnDial" id="apnDial" value="<?php echo($confTab['##DIAL']);?>">
             	</div>	
             </div>
+            <div class="row">
+				<div class="form-group col-md-4">
+				<label for="code">Auto start ?</label> 
+				<input type="checkbox" class="form-control" name="modem_autostart" value="true" <?php echo(($autoStart ? 'checked' : '')); ?> />
+				</div>
+			</div>
     		<input type="submit" class="btn btn-outline btn-primary" name="UpdateAPN" value="<?php echo _("Update Configuration"); ?>" />
     		<input type="submit" class="btn btn-success" name="startAPN" value="<?php echo _("Start connexion"); ?>" />
     		<input type="submit" class="btn btn-warning" name="stopAPN" value="<?php echo _("Stop connexion"); ?>" />

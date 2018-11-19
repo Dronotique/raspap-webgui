@@ -2,7 +2,7 @@
 function DisplayOpenVPNConfig() {
     $status = new StatusMessages();
     
-    $fileAuthPath = UPLOAD_DIR . "openvpn.autostart";
+    $fileAutoStartPath = UPLOAD_DIR . "openvpn.autostart";
     
     if(CSRFValidate()){
         if ( isset($_POST['StartOpenVPN'])  ) {
@@ -27,10 +27,10 @@ function DisplayOpenVPNConfig() {
             fclose($fileAuth);
             
             if($_POST["openvpn_autostart"] == 'true'){
-                $fileAuth = fopen($fileAuthPath, 'w');
-                fclose($fileAuth);
+                $fileAutoStart = fopen($fileAutoStartPath, 'w');
+                fclose($fileAutoStart);
             }else{
-                unlink($fileAuthPath);
+                unlink($fileAutoStartPath);
             }
             
             
@@ -58,7 +58,7 @@ function DisplayOpenVPNConfig() {
 	exec( 'pidof openvpn | wc -l', $openvpnstatus);
 	
 	
-	if(file_exists($fileAuthPath)){
+	if(file_exists($fileAutoStartPath)){
 	    $autoStart = true;
 	}else{
 	    $autoStart = false;
