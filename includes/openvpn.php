@@ -13,8 +13,8 @@ function DisplayOpenVPNConfig() {
                 $status->addMessage($a, 'info');
             }
         }else if( isset($_POST['StopOpenVPN']) ) {
-            exec("sudo pkill -SIGTERM -f 'openvpn --deamon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . "'", $startResult);
-            echo("sudo pkill -SIGTERM -f 'openvpn --deamon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . "'");
+            exec("sudo pkill -SIGTERM -f 'openvpn --daemon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . "'", $startResult);
+            echo("sudo pkill -SIGTERM -f 'openvpn --daemon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . "'");
             foreach($startResult as $a){
                 $status->addMessage($a, 'info');
             }
