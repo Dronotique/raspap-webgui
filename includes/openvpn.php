@@ -7,13 +7,17 @@ function DisplayOpenVPNConfig() {
     if(CSRFValidate()){
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
-            echo ("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . " &");
-            exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . " &", $startResult);
+            echo ("sudo openvpn --deamon  --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG );
+            exec("sudo openvpn --deamon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG, $startResult);
             foreach($startResult as $a){
                 $status->addMessage($a, 'info');
             }
         }else if( isset($_POST['StopOpenVPN']) ) {
-            
+            exec("sudo pkill -SIGTERM -f 'openvpn --deamon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . "'", $startResult);
+            echo("sudo pkill -SIGTERM -f 'openvpn --deamon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . "'");
+            foreach($startResult as $a){
+                $status->addMessage($a, 'info');
+            }
         }else if ( isset($_POST['SaveOpenVPNSettings']) ) {
             
             $fileAuth = fopen(RASPI_OPENVPN_AUTH_CONFIG, 'w');
