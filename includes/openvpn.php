@@ -2,6 +2,8 @@
 function DisplayOpenVPNConfig() {
     $status = new StatusMessages();
     
+    $fileAuthPath = UPLOAD_DIR . "openvpn.autostart";
+    
     if(CSRFValidate()){
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
@@ -17,10 +19,10 @@ function DisplayOpenVPNConfig() {
             fclose($fileAuth);
             
             if($_POST["openvpn_autostart"] == 'true'){
-                $fileAuth = fopen(UPLOAD_DIR . "openvpn.autostart", 'w');
+                $fileAuth = fopen($fileAuthPath, 'w');
                 fclose($fileAuth);
             }else{
-                unlink(UPLOAD_DIR . "openvpn.autostart");
+                unlink($fileAuthPath);
             }
             
             
@@ -49,6 +51,14 @@ function DisplayOpenVPNConfig() {
 	exec( 'cat '. RASPI_OPENVPN_AUTH_CONFIG, $returnAuth );
 	exec( 'cat '. RASPI_OPENVPN_SERVER_CONFIG, $returnServer );
 	exec( 'pidof openvpn | wc -l', $openvpnstatus);
+	
+	
+	if(file_exists($fileAuthPath)){
+	    $autoStart = true;
+	}else{
+	    $autoStart = false;
+	}
+	
 	
 	if( $openvpnstatus[0] == 0 ) {
 		$statusMsg = '<div class="alert alert-warning alert-dismissable">OpenVPN is not running
@@ -116,7 +126,7 @@ function DisplayOpenVPNConfig() {
 					<div class="row">
 						<div class="form-group col-md-4">
 						<label for="code">Auto start ?</label> 
-						<input type="checkbox" class="form-control" name="openvpn_autostart" value="true" />
+						<input type="checkbox" class="form-control" name="openvpn_autostart" value="true" <?php echo(($autoStart ? 'checked' : '')); ?> />
 						</div>
 					</div>
 					<div class="row">
