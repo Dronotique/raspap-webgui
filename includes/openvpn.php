@@ -10,6 +10,20 @@ function DisplayOpenVPNConfig() {
             
         }
         if ( isset($_POST['SaveOpenVPNSettings']) ) {
+            
+            $fileAuth = fopen($RASPI_OPENVPN_AUTH_CONFIG, 'w');
+            fwrite($fileAuth, $_POST["openvpn_login"] . "\n");
+            fwrite($fileAuth, $_POST["openvpn_pwd"] . "\n");
+            fclose($fileAuth);
+            
+            if($_POST["openvpn_autostart"] == 'true'){
+                $fileAuth = fopen($UPLOAD_DIR . "openvpn.autostart", 'w');
+                fclose($fileAuth);
+            }else{
+                unlink($UPLOAD_DIR . "openvpn.autostart");
+            }
+            
+            
             if ( isset($_POST['openvpn-config'])) {
                 if($_FILES['openvpn-config']['error'] != ""){
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
@@ -23,20 +37,7 @@ function DisplayOpenVPNConfig() {
                         $status->addMessage('Configuration File error', 'danger');
                     };
                 }
-            }
-            
-            $fileAuth = fopen($RASPI_OPENVPN_AUTH_CONFIG, 'w');
-            fwrite($fileAuth, $_POST["openvpn_login"] . "\n");
-            fwrite($fileAuth, $_POST["openvpn_pwd"] . "\n");
-            fclose($fileAuth);
-            
-            if($_POST["openvpn_autostart"] == 'true'){
-                $fileAuth = fopen($UPLOAD_DIR . "openvpn.autostart", 'w');
-                fclose($fileAuth);
-            }else{
-                unlink($UPLOAD_DIR . "openvpn.autostart");
-            }
-        
+            }            
         }
     }
         
