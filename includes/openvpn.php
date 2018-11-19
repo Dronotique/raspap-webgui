@@ -5,13 +5,13 @@ function DisplayOpenVPNConfig() {
     if(CSRFValidate()){
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
-            exec("sudo openvpn --config " . $RASPI_OPENVPN_CLIENT_CONFIG);
+            exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG);
         }else if( isset($_POST['StopOpenVPN']) ) {
             
         }
         if ( isset($_POST['SaveOpenVPNSettings']) ) {
             
-            $fileAuth = fopen($RASPI_OPENVPN_AUTH_CONFIG, 'w');
+            $fileAuth = fopen(RASPI_OPENVPN_AUTH_CONFIG, 'w');
             fwrite($fileAuth, $_POST["openvpn_login"] . "\n");
             fwrite($fileAuth, $_POST["openvpn_pwd"] . "\n");
             fclose($fileAuth);
@@ -29,11 +29,11 @@ function DisplayOpenVPNConfig() {
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
                 }else {
                     //error_reporting(-1);
-                    echo("****" . $RASPI_OPENVPN_CLIENT_CONFIG . "****");
-                    if(file_exists($RASPI_OPENVPN_CLIENT_CONFIG)){
-                        unlink($RASPI_OPENVPN_CLIENT_CONFIG);
+                    echo("****" . RASPI_OPENVPN_CLIENT_CONFIG . "****");
+                    if(file_exists(RASPI_OPENVPN_CLIENT_CONFIG)){
+                        unlink(RASPI_OPENVPN_CLIENT_CONFIG);
                     }
-                    if (move_uploaded_file($_FILES['openvpn-config']['tmp_name'], $RASPI_OPENVPN_CLIENT_CONFIG)) {
+                    if (move_uploaded_file($_FILES['openvpn-config']['tmp_name'], RASPI_OPENVPN_CLIENT_CONFIG)) {
                         echo(8);
                         $status->addMessage('Configuration File uploaded', 'info');
                     } else {
