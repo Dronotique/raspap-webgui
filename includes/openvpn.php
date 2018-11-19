@@ -76,7 +76,7 @@ function DisplayOpenVPNConfig() {
 			<div class="panel-heading"><i class="fa fa-lock fa-fw"></i> Configure OpenVPN </div>
 		<!-- /.panel-heading -->
 		<div class="panel-body">
-			<p><?php $status->showMessages(); ?></p>
+			<p><?php //$status->showMessages(); ?></p>
 			<!-- Nav tabs -->
 			<!-- ul class="nav nav-tabs">
 				<li class="active"><a href="#openvpnclient" data-toggle="tab">Client settings</a></li>
