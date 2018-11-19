@@ -29,6 +29,7 @@ function DisplayOpenVPNConfig() {
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
                 }else {
                     //error_reporting(-1);
+                    echo("****" . $RASPI_OPENVPN_CLIENT_CONFIG . "****");
                     if(file_exists($RASPI_OPENVPN_CLIENT_CONFIG)){
                         unlink($RASPI_OPENVPN_CLIENT_CONFIG);
                     }
