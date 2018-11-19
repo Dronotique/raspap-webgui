@@ -8,7 +8,10 @@ function DisplayOpenVPNConfig() {
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
             echo ("1");
-            exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . " &");
+            exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . " &", $startResult);
+            foreach($startResult as $a){
+                $status->addMessage($a, 'info');
+            }
         }else if( isset($_POST['StopOpenVPN']) ) {
             
         }else if ( isset($_POST['SaveOpenVPNSettings']) ) {
