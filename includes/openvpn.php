@@ -11,8 +11,7 @@ function DisplayOpenVPNConfig() {
             exec("sudo openvpn --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG . " &");
         }else if( isset($_POST['StopOpenVPN']) ) {
             
-        }
-        if ( isset($_POST['SaveOpenVPNSettings']) ) {
+        }else if ( isset($_POST['SaveOpenVPNSettings']) ) {
             
             $fileAuth = fopen(RASPI_OPENVPN_AUTH_CONFIG, 'w');
             fwrite($fileAuth, $_POST["openvpn_login"] . "\n");
