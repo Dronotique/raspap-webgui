@@ -7,8 +7,8 @@ function DisplayOpenVPNConfig() {
     if(CSRFValidate()){
         if ( isset($_POST['StartOpenVPN'])  ) {
             //start OpenVpn
-            echo ("sudo openvpn --deamon  --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG );
-            exec("sudo openvpn --deamon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG, $startResult);
+            echo ("sudo openvpn --daemon  --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG );
+            exec("sudo openvpn --daemon --config " . RASPI_OPENVPN_CLIENT_CONFIG . " --auth-user-pass " . RASPI_OPENVPN_AUTH_CONFIG, $startResult);
             foreach($startResult as $a){
                 $status->addMessage($a, 'info');
             }
