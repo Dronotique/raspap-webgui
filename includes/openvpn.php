@@ -20,7 +20,7 @@ function DisplayOpenVPNConfig() {
                     echo(6);
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
                 }else {
-                    echo(7);
+                    echo(7 . $RASPI_OPENVPN_CLIENT_CONFIG);
                     //error_reporting(-1);
                     if (move_uploaded_file($_FILES['openvpn-config']['tmp_name'], $RASPI_OPENVPN_CLIENT_CONFIG)) {
                         echo(8);
