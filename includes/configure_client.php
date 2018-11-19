@@ -61,7 +61,7 @@ function DisplayWPAConfig(){
           unset($tmp_networks[$_POST['ssid' . $post_match[1]]]);
           //gestion Networkmanager
           exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]],  $resultDelCxn);
-          echo( "nmcli connection delete " . $_POST['ssid' . $post_match[1]] ."\n");
+          //echo( "nmcli connection delete " . $_POST['ssid' . $post_match[1]] ."\n");
           foreach($resultDelCxn as $line) {
             echo( $line . "\n");
           }
@@ -78,15 +78,15 @@ function DisplayWPAConfig(){
           }
           //Gestion network manager on supprime et on recré²
           exec("nmcli connection delete " . $_POST['ssid' . $post_match[1]],  $resultDelCxn);
-          echo( "nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
-          foreach($resultDelCxn as $line) {
+          //echo( "nmcli connection delete " . $_POST['ssid' . $post_match[1]]);
+          /*foreach($resultDelCxn as $line) {
               echo( $line . "\n");
-          }
+          }*/
           exec("nmcli device wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"", $resultDelCxn);
-          echo("nmcli device wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
+          /*echo("nmcli device wifi connect \"" . $_POST['ssid' . $post_match[1]] . "\" password \"" .  $_POST['passphrase' . $post_match[1]] ."\"");
           foreach($resultDelCxn as $line) {
               echo( $line . "\n");
-          }
+          }*/
         }
       }
 
