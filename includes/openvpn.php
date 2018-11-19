@@ -26,7 +26,7 @@ function DisplayOpenVPNConfig() {
             }
             
             
-            if ( isset($_POST['openvpn-config'])) {
+            if ( isset($_FILES['openvpn-config'])) {
                 if($_FILES['openvpn-config']['error'] != ""){
                     $status->addMessage($_FILES['openvpn-config']['error'] , 'danger');
                 }else {
